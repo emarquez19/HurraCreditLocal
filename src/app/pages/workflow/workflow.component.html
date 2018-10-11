@@ -1,0 +1,763 @@
+<!--Navbar-->
+<app-navbar></app-navbar>
+
+<div class="content-wrapper">
+
+  <!-- Stunning Header -->
+  <div class="crumina-stunning-header stunning-bg-5 stunning-header--content-center stunning-header--bg-photo custom-color c-white fill-white">
+    <div class="container">
+      <div class="stunning-header-content">
+        <h2 class="h1 stunning-header-title mt-40">¡Hola Jesus!</h2><br>
+        <h4 class="h4 stunning-header-title" style="margin-top: 0px!important;">¿Listo para iniciar tu solicitud?</h4>
+        <div class="inline-items mb-70 mt-30">
+          <div class="author-block inline-items">
+            <div class="author-avatar">
+              <img src="assets/img/user1.jpg" alt="user avatar">
+            </div>
+            <div class="author-info">
+              <div class="author-prof">SECTOR WEB</div>
+              <h6 class="author-name">Jesus Rivera</h6>
+            </div>
+          </div>
+
+          <a href="/canceled" class="btn btn--large btn--red btn--with-shadow f-right">
+            Cancelar Solicitud
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay-standard overlay--blue"></div>
+  </div>
+  <!-- ... end Stunning Header -->
+
+  <!-- workflow -->
+  <section class="negative-margin-top80 mb-100 workflow-wizard">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="course-details">
+            <ul class="course-details-control" role="tablist">
+
+              <li role="presentation" class="tab-control active">
+                <a href="#personal" role="tab" data-toggle="tab" class="control-item">
+                  <img src="assets/img/personal.png" alt="icon">
+                  Personal
+                </a>
+              </li>
+
+              <li role="presentation" class="tab-control">
+                <a href="#work" role="tab" data-toggle="tab" class="control-item">
+                  <img src="assets/img/work.png" alt="icon">
+                  Empleo
+                </a>
+              </li>
+
+              <li role="presentation" class="tab-control">
+                <a href="#home" role="tab" data-toggle="tab" class="control-item">
+                  <img src="assets/img/home.png" alt="icon">
+                  Domicilio
+                </a>
+              </li>
+
+              <li role="presentation" class="tab-control">
+                <a href="#credit" role="tab" data-toggle="tab" class="control-item credit-controltab">
+                  <img src="assets/img/credit.png" alt="icon">
+                  Crédito
+                </a>
+              </li>
+
+              <li role="presentation" class="tab-control">
+                <a href="#resolution" role="tab" data-toggle="tab" class="control-item">
+                  <img src="assets/img/resolution.png" alt="icon">
+                  Resolución
+                </a>
+              </li>
+
+            </ul>
+
+            <div class="tab-content items-with-border">
+
+              <!--PANEL DE DATOS PERSONALES-->
+              <div role="tabpanel" class="tab-pane fade in active" id="personal">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+                    <h3>Datos personales</h3>
+                    <p class="weight-bold mb-30">
+                      Ayudanos a complementar la información de tu expediente.<br>
+                      <small>¡Saber más acerca de nuestros clientes nos permite dar opciones de crédito más personalizadas!</small>
+                    </p>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> RFC</h6>
+                        <div class="mb-10">
+                            <input placeholder="Capturalo para autocompletar tus datos." type="text">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Primer nombre</h6>
+                        <div>
+                            <input placeholder="¿Cómo te llamas?" type="text">
+                        </div>
+                    </div>
+
+                    <div class="md-separator"></div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6>Segundo nombre</h6>
+                        <div>
+                            <input placeholder="¿Cómo te llamas?" type="text">
+                        </div>
+                    </div>
+
+                    <div class="lg-separator"></div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Primer apellido</h6>
+                        <div>
+                            <input placeholder="¿Cómo te apellidas?" type="text">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6>Segundo apellido</h6>
+                        <div>
+                            <input placeholder="¿Cómo te apellidas?" type="text">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Fecha de nacimiento</h6>
+                        <div>
+                            <input placeholder="¿Cuándo naciste?" type="text">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Estado de nacimiento</h6>
+                        <div>
+                            <select>
+                              <option data-display="¿Dónde naciste?">¿Dónde naciste?</option>
+                              <option value="1">Jalisco</option>
+                              <option value="2">Nayarit</option>
+                              <option value="3">Sinaloa</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Genero</h6>
+                        <div>
+                            <select>
+                              <option data-display="¿Dónde naciste?">Seleccione...</option>
+                              <option value="1">Hombre</option>
+                              <option value="2">Mujer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Estado Civil</h6>
+                        <div>
+                            <select>
+                              <option data-display="Seleccione...">Seleccione</option>
+                              <option value="1">Hombre</option>
+                              <option value="2">Mujer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Cantidad dependientes</h6>
+                        <div>
+                            <input placeholder="¿Cuantos depende de usted?" type="number">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Nivel de estudio</h6>
+                        <div>
+                            <select>
+                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="1">Universidad</option>
+                              <option value="2">Preparatoria</option>
+                              <option value="2">Primaria</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Teléfono celular</h6>
+                        <div>
+                            <input placeholder="¡Confirmaremos este teléfono!" type="number">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
+                      <div class="btn-slider-wrap pt80">
+
+                        <div class="btn-next btn--style">
+                          <span>Siguiente</span>
+                          <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
+                          <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--PANEL DE DATOS DEL EMPLEO-->
+              <div role="tabpanel" class="tab-pane fade" id="work">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h3>Datos de tu Empleo</h3>
+                    <p class="weight-bold mb-30">
+                      Ayudanos a complementar la información de tu expediente.<br>
+                      <small>¡Saber más acerca de nuestros clientes nos permite dar opciones de crédito más personalizadas!</small>
+                    </p>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Lugar de trabajo</h6>
+                        <div class="mb-10">
+                            <input placeholder="¿Dónde trabajas?" type="text">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6>¿Cada cuanto te pagan?</h6>
+                        <div>
+                            <select>
+                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="1">Diario</option>
+                              <option value="2">Semanal</option>
+                              <option value="3">Quincenal</option>
+                              <option value="3">Mensual</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="md-separator"></div>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Sueldo mensual</h6>
+                        <div>
+                            <input placeholder="¿Cuál es tu sueldo?" type="text">
+                        </div>
+                    </div>
+
+                    <div class="lg-separator"></div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <h6>Tipo de contratación</h6>
+                        <div>
+                            <select>
+                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="1">Indefinida</option>
+                              <option value="2">1 año</option>
+                              <option value="3">2 años</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Fecha inicio laboral</h6>
+                        <div>
+                            <input placeholder="DD/MM/YYYY" type="date">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Puesto</h6>
+                        <div>
+                            <input placeholder="¿Cúal es tu puesto?" type="text">
+                        </div>
+                    </div>
+
+                    <div class="lg-separator"></div>
+                    <div class="md-separator"></div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Tipo de trabajo</h6>
+                        <div>
+                            <select>
+                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="1">lorem ipsum</option>
+                              <option value="2">lorem ipsum</option>
+                              <option value="3">lorem ipsum</option>
+                              <option value="4">lorem ipsum</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Teléfono del trabajo</h6>
+                        <div>
+                            <input placeholder="¿Cúal es tu teléfono?" type="tel">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> ¿Cúanto gastas al mes?</h6>
+                        <div>
+                            <input placeholder="¿Cúanto gastas?" type="text">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
+                      <div class="btn-slider-wrap pt80">
+
+                        <div class="btn-prev btn--style">
+                          <svg class="hurra-icon icon-hover hurra-icon-arrow-left-1"><use xlink:href="#hurra-icon-arrow-left-1"></use></svg>
+                          <svg class="hurra-icon hurra-icon-arrow-left1"><use xlink:href="#hurra-icon-arrow-left1"></use></svg>
+                          <span>Anterior</span>
+                        </div>
+                        <div class="btn-next btn--style">
+                          <span>Siguiente</span>
+                          <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
+                          <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
+                        </div>
+                        
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!--PANEL DE DATOS DEL DOMICILIO-->
+              <div role="tabpanel" class="tab-pane fade" id="home">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h3>Datos de tu Domicilio</h3>
+                    <p class="weight-bold mb-30">
+                      Ayudanos a complementar la información de tu expediente.<br>
+                      <small>¡Saber más acerca de nuestros clientes nos permite dar opciones de crédito más personalizadas!</small>
+                    </p>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Código postal</h6>
+                        <div class="mb-10">
+                            <input placeholder="Código postal" type="text">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Estado</h6>
+                        <div>
+                            <select>
+                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="1">Jalisco</option>
+                              <option value="2">Nayarit</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="md-separator"></div>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Ciudad</h6>
+                        <div>
+                            <select>
+                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="1">Guadalajara</option>
+                              <option value="2">Zapopan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="lg-separator"></div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <h6><span class="fa fa-asterisk c-red"></span> Municipio / Delegación</h6>
+                        <div>
+                            <select>
+                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="1">Guadalajara</option>
+                              <option value="2">Zapopan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <h6><span class="fa fa-asterisk c-red"></span> Colonia</h6>
+                        <div>
+                            <select>
+                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="1">La giralda</option>
+                              <option value="2">Ciudad del sol</option>
+                              <option value="2">Chapalita</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Calle</h6>
+                        <div>
+                            <input placeholder="¿En qué calle vives?" type="text">
+                        </div>
+                    </div>
+
+                    <div class="lg-separator"></div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Número exterior</h6>
+                        <div>
+                            <input placeholder="¿Qué exterior tienes?" type="text">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h6>Número interior</h6>
+                        <div>
+                            <input placeholder="¿Qué interior tienes?" type="text">
+                        </div>
+                    </div>
+
+                    <div class="md-separator"></div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                      <h6><span class="fa fa-asterisk c-red"></span> Tipo de Vivienda</h6>
+                        <div>
+                            <select>
+                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="1">Rentada</option>
+                              <option value="2">Propia</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <h6><span class="fa fa-asterisk c-red"></span> Otras señas</h6>
+                        <div>
+                            <input placeholder="Otras señas" type="text">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <h6><span class="fa fa-asterisk c-red"></span> ¿Desde cuándo vives aquí?</h6>
+                        <div>
+                            <select>
+                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="1">1 año</option>
+                              <option value="2">2 años</option>
+                              <option value="3">3 años</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
+                      <div class="btn-slider-wrap pt80">
+
+                        <div class="btn-prev btn--style">
+                          <svg class="hurra-icon icon-hover hurra-icon-arrow-left-1"><use xlink:href="#hurra-icon-arrow-left-1"></use></svg>
+                          <svg class="hurra-icon hurra-icon-arrow-left1"><use xlink:href="#hurra-icon-arrow-left1"></use></svg>
+                          <span>Anterior</span>
+                        </div>
+                        <div class="btn-next btn--style">
+                          <span>Siguiente</span>
+                          <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
+                          <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
+                        </div>
+                        
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!--PANEL DE DATOS DEL CREDITO-->
+              <div role="tabpanel" class="tab-pane fade visibleOnStart" id="credit">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h3 class="text-center">Selecciona el monto de tu crédito</h3>
+                    <p class="weight-bold mb-30 text-center">
+                      Desliza la barra de izquierda a derecha para seleccionar el monto del crédito que deseas solicitar.
+                    </p>
+
+                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 text-center" id="credit-slider-block">
+                        <p class="input-show-credit-value">$<span [textContent]="creditValue | number:'1.2-2'"></span></p>
+                        <div class="mb-10">
+                          <ng5-slider [(value)]="creditValue" [options]="options" class="credit-slider-value"></ng5-slider>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 crumina-pricings mt-70">
+                      <div class="row">
+                        <div class="pricing-tables-wrap bg-light">
+                          <p class="weight-bold mb-30 text-center">
+                            Selecciona tu forma de financiamiento
+                          </p>
+                          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 no-padding" data-mh="pricing-item">
+                            <div class="crumina-module crumina-pricing-tables-item pricing-tables-item-solid bg-light">
+                              <div class="bg-layer full-block"></div>
+                              <div class="main-pricing-content">
+                                <span class="selectect-mark animated infinite pulse">¡Seleccionado!</span>
+                                <h5 class="pricing-title c-primary">Paga</h5>
+                                <h2 class="h1 rate">$<span class="price">646</span>.09</h2>
+                                <h6 class="period">Cada Quincena</h6>
+                                <p class="pricing-description">durante un plazo de:</p>
+                              </div>
+                              <a href="javascript:void(0);" (click)="selectThisPlan($event)" class="btn btn--green btn--with-shadow btn-thin btn-credit-plans">
+                                6 Meses
+                              </a>
+                            </div>
+                          </div>
+                          
+                          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 no-padding" data-mh="pricing-item">
+                            <div class="crumina-module crumina-pricing-tables-item pricing-tables-item-solid bg-light">
+                              <div class="bg-layer full-block"></div>
+                              <div class="main-pricing-content">
+                                <span class="selectect-mark animated infinite pulse">¡Seleccionado!</span>
+                                <h5 class="pricing-title c-primary">Paga</h5>
+                                <h2 class="h1 rate">$<span class="price">498</span>.60</h2>
+                                <h6 class="period">Cada Quincena</h6>
+                                <p class="pricing-description">durante un plazo de:</p>
+                              </div>
+                              <a href="javascript:void(0);" (click)="selectThisPlan($event)" class="btn btn--green btn--with-shadow btn-thin btn-credit-plans">
+                                8 Meses
+                              </a>
+                            </div>
+                          </div>
+                          
+                          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 no-padding" data-mh="pricing-item">
+                            <div class="crumina-module crumina-pricing-tables-item pricing-tables-item-solid bg-light">
+                              <div class="bg-layer full-block"></div>
+                              <div class="main-pricing-content">
+                                <span class="selectect-mark animated infinite pulse">¡Seleccionado!</span>
+                                <h5 class="pricing-title c-primary">Paga</h5>
+                                <h2 class="h1 rate">$<span class="price">351</span>.62</h2>
+                                <h6 class="period">Cada Quincena</h6>
+                                <p class="pricing-description">durante un plazo de:</p>
+                              </div>
+                              <a href="javascript:void(0);" (click)="selectThisPlan($event)" class="btn btn--green btn--with-shadow btn-thin btn-credit-plans">
+                                12 Meses
+                              </a>
+                            </div>
+                          </div>
+                          
+                          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 no-padding" data-mh="pricing-item">
+                            <div class="crumina-module crumina-pricing-tables-item pricing-tables-item-solid bg-light">
+                              <div class="bg-layer full-block"></div>
+                              <div class="main-pricing-content">
+                                <span class="selectect-mark animated infinite pulse">¡Seleccionado!</span>
+                                <h5 class="pricing-title c-primary">Paga</h5>
+                                <h2 class="h1 rate">$<span class="price">160</span>.32</h2>
+                                <h6 class="period">Cada Quincena</h6>
+                                <p class="pricing-description">durante un plazo de:</p>
+                              </div>
+                              <a href="javascript:void(0);" (click)="selectThisPlan($event)" class="btn btn--green btn--with-shadow btn-thin btn-credit-plans">
+                                36 Meses
+                              </a>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
+                      <div class="btn-slider-wrap pt80">
+
+                        <div class="btn-prev btn--style">
+                          <svg class="hurra-icon icon-hover hurra-icon-arrow-left-1"><use xlink:href="#hurra-icon-arrow-left-1"></use></svg>
+                          <svg class="hurra-icon hurra-icon-arrow-left1"><use xlink:href="#hurra-icon-arrow-left1"></use></svg>
+                          <span>Anterior</span>
+                        </div>
+                        <div class="btn-next btn--style">
+                          <span>Siguiente</span>
+                          <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
+                          <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
+                        </div>
+                        
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!--PANEL DE DATOS DE LA RESOLUCION-->
+              <div role="tabpanel" class="tab-pane fade" id="resolution">
+
+                <div class="row" *ngIf="msjfn==='success'">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="wrapper-confeti">
+                      <div class="confetti-149"></div>
+                      <div class="confetti-148"></div>
+                      <div class="confetti-147"></div>
+                      <div class="confetti-146"></div>
+                      <div class="confetti-145"></div>
+                      <div class="confetti-144"></div>
+                      <div class="confetti-143"></div>
+                      <div class="confetti-142"></div>
+                      <div class="confetti-141"></div>
+                      <div class="confetti-140"></div>
+                      <div class="confetti-139"></div>
+                      <div class="confetti-138"></div>
+                      <div class="confetti-137"></div>
+                      <div class="confetti-136"></div>
+                      <div class="confetti-135"></div>
+                      <div class="confetti-134"></div>
+                      <div class="confetti-133"></div>
+                      <div class="confetti-132"></div>
+                      <div class="confetti-131"></div>
+                      <div class="confetti-130"></div>
+                      <div class="confetti-129"></div>
+                      <div class="confetti-128"></div>
+                      <div class="confetti-127"></div>
+                      <div class="confetti-126"></div>
+                      <div class="confetti-125"></div>
+                      <div class="confetti-124"></div>
+                      <div class="confetti-123"></div>
+                      <div class="confetti-122"></div>
+                      <div class="confetti-121"></div>
+                      <div class="confetti-120"></div>
+                      <div class="confetti-119"></div>
+                      <div class="confetti-118"></div>
+                      <div class="confetti-117"></div>
+                      <div class="confetti-116"></div>
+                      <div class="confetti-115"></div>
+                      <div class="confetti-114"></div>
+                      <div class="confetti-113"></div>
+                      <div class="confetti-112"></div>
+                      <div class="confetti-111"></div>
+                      <div class="confetti-110"></div>
+                      <div class="confetti-109"></div>
+                      <div class="confetti-108"></div>
+                      <div class="confetti-107"></div>
+                      <div class="confetti-106"></div>
+                      <div class="confetti-105"></div>
+                      <div class="confetti-104"></div>
+                      <div class="confetti-103"></div>
+                      <div class="confetti-102"></div>
+                      <div class="confetti-101"></div>
+                      <div class="confetti-100"></div>
+                      <div class="confetti-99"></div>
+                      <div class="confetti-98"></div>
+                      <div class="confetti-97"></div>
+                      <div class="confetti-96"></div>
+                      <div class="confetti-95"></div>
+                      <div class="confetti-94"></div>
+                      <div class="confetti-93"></div>
+                      <div class="confetti-92"></div>
+                      <div class="confetti-91"></div>
+                      <div class="confetti-90"></div>
+                      <div class="confetti-89"></div>
+                      <div class="confetti-88"></div>
+                      <div class="confetti-87"></div>
+                      <div class="confetti-86"></div>
+                      <div class="confetti-85"></div>
+                      <div class="confetti-84"></div>
+                      <div class="confetti-83"></div>
+                      <div class="confetti-82"></div>
+                      <div class="confetti-81"></div>
+                      <div class="confetti-80"></div>
+                      <div class="confetti-79"></div>
+                      <div class="confetti-78"></div>
+                      <div class="confetti-77"></div>
+                      <div class="confetti-76"></div>
+                      <div class="confetti-75"></div>
+                      <div class="confetti-74"></div>
+                      <div class="confetti-73"></div>
+                      <div class="confetti-72"></div>
+                      <div class="confetti-71"></div>
+                      <div class="confetti-70"></div>
+                      <div class="confetti-69"></div>
+                      <div class="confetti-68"></div>
+                      <div class="confetti-67"></div>
+                      <div class="confetti-66"></div>
+                      <div class="confetti-65"></div>
+                      <div class="confetti-64"></div>
+                      <div class="confetti-63"></div>
+                      <div class="confetti-62"></div>
+                      <div class="confetti-61"></div>
+                      <div class="confetti-60"></div>
+                      <div class="confetti-59"></div>
+                      <div class="confetti-58"></div>
+                      <div class="confetti-57"></div>
+                      <div class="confetti-56"></div>
+                      <div class="confetti-55"></div>
+                      <div class="confetti-54"></div>
+                      <div class="confetti-53"></div>
+                      <div class="confetti-52"></div>
+                      <div class="confetti-51"></div>
+                      <div class="confetti-50"></div>
+                      <div class="confetti-49"></div>
+                      <div class="confetti-48"></div>
+                      <div class="confetti-47"></div>
+                      <div class="confetti-46"></div>
+                      <div class="confetti-45"></div>
+                      <div class="confetti-44"></div>
+                      <div class="confetti-43"></div>
+                      <div class="confetti-42"></div>
+                      <div class="confetti-41"></div>
+                      <div class="confetti-40"></div>
+                      <div class="confetti-39"></div>
+                      <div class="confetti-38"></div>
+                      <div class="confetti-37"></div>
+                      <div class="confetti-36"></div>
+                      <div class="confetti-35"></div>
+                      <div class="confetti-34"></div>
+                      <div class="confetti-33"></div>
+                      <div class="confetti-32"></div>
+                      <div class="confetti-31"></div>
+                      <div class="confetti-30"></div>
+                      <div class="confetti-29"></div>
+                      <div class="confetti-28"></div>
+                      <div class="confetti-27"></div>
+                      <div class="confetti-26"></div>
+                      <div class="confetti-25"></div>
+                      <div class="confetti-24"></div>
+                      <div class="confetti-23"></div>
+                      <div class="confetti-22"></div>
+                      <div class="confetti-21"></div>
+                      <div class="confetti-20"></div>
+                      <div class="confetti-19"></div>
+                      <div class="confetti-18"></div>
+                      <div class="confetti-17"></div>
+                      <div class="confetti-16"></div>
+                      <div class="confetti-15"></div>
+                      <div class="confetti-14"></div>
+                      <div class="confetti-13"></div>
+                      <div class="confetti-12"></div>
+                      <div class="confetti-11"></div>
+                      <div class="confetti-10"></div>
+                      <div class="confetti-9"></div>
+                      <div class="confetti-8"></div>
+                      <div class="confetti-7"></div>
+                      <div class="confetti-6"></div>
+                      <div class="confetti-5"></div>
+                      <div class="confetti-4"></div>
+                      <div class="confetti-3"></div>
+                      <div class="confetti-2"></div>
+                      <div class="confetti-1"></div>
+                      <div class="confetti-0"></div>
+                    </div>
+                    <h2 class="text-center">¡Felicidades!</h2>
+                    <p class="weight-bold text-center"><b>Tu crédito ha sido aprobado.</b><br>Ahora solo debes confirmar los datos para el depósito y ayudarnos a completar una simple encuesta.</p>
+                    <img src="assets/img/hand.gif" alt="exito" class="success-gif">
+                  </div>
+                  <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
+                      <div class="btn-slider-wrap pt80">
+
+                        <div class="btn-next btn--style js-finalstep-popup">
+                          <span>Aceptar</span>
+                          <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
+                          <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
+                        </div>
+                        
+                      </div>
+                    </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ... end Course Details -->
+
+
+</div>
+  
+<!--Footer-->
+<app-footer></app-footer>

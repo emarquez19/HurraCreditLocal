@@ -1,1 +1,103 @@
 /* You can add global styles to this file, and also import other style files */
+.swal-msj {
+    input {
+        width: 100%!important;
+        max-width: 100%!important;
+    }
+}
+.input-show-credit-value {
+    // border: none!important;
+    font-size: 2.5rem!important;
+    text-align: center;
+    border: 2px solid #d9e4ef;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 5px 25px;
+    transition: all .3s ease;
+    font-size: 16px;
+    color: #273f5b;
+    margin-bottom: 50px;
+    border-radius: 50px;
+    width: inherit;
+    outline: none;
+    display: inline-block;
+    // padding: 10px 15px!important
+}
+.btn-credit-plan {
+    padding: 18px 40px!important;
+}
+.btn-thin{
+    font-weight: 300!important;
+}
+.ng5-slider .ng5-slider-selection {
+    background: #313952!important;
+}
+.ng5-slider .ng5-slider-bar{
+    height: 8px!important;
+    border-radius: 6px!important;
+}
+.ng5-slider .ng5-slider-pointer{
+    background-color: #01a23c!important;
+}
+.ng5-slider-active::after {
+    background-color: #fff!important;
+}
+.ng5-slider .ng5-slider-pointer:after{
+    content: '$'!important;
+    /* width: 8px; */
+    /* height: 8px; */
+    position: absolute!important;
+    top: 4px!important;
+    left: 11px!important;
+    border-radius: 4px!important;
+    background: transparent!important;
+    font-weight: 700!important;
+    color: #fff!important;
+}
+
+.selectect-mark {
+    display: none;
+}
+
+.selected-plan{
+    // border: solid 1px red!important;
+    z-index: 1000;
+
+    .bg-layer{
+        background-color: #313952!important;
+        box-shadow: 20px 0 60px 0 rgba(0, 0, 0, 0.1)!important;
+        border-radius: 10px!important;
+        transition: all .3s ease!important;
+        transform: translate3d(0, 0, 0) scale(1.05)!important;
+        backface-visibility: hidden!important;
+    }
+    
+    .rate, .period {
+        color: #fff!important;
+    }
+
+    .pricing-description {
+        color: #c7ddf7!important;
+    }
+
+    .selectect-mark {
+        display: block;
+        color: #15ce0f !important;
+        position: absolute;
+        top: 5px;
+        font-weight: bold;
+        font-size: 25px;
+        width: calc(100% - 23%);
+    }
+    
+}
+.visibleOnStart{
+    display: block!important;
+    z-index: -1!important;
+    max-height: 1px!important;
+}
+
+.success-gif{
+    display: block;
+    margin: auto;
+}

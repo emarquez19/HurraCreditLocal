@@ -9,8 +9,14 @@ import { FaqsComponent } from './pages/faqs/faqs.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { IndexComponent } from './pages/index/index.component';
-import { IndexNavbarComponent } from './components/index-navbar/index-navbar.component';
 
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { WorkflowComponent } from './pages/workflow/workflow.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { Ng5SliderModule } from 'ng5-slider';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,11 +25,21 @@ import { IndexNavbarComponent } from './components/index-navbar/index-navbar.com
     LoginComponent,
     NotFoundComponent,
     IndexComponent,
-    IndexNavbarComponent,
+    NavbarComponent,
+    FooterComponent,
+    WorkflowComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Ng5SliderModule,
+    SweetAlert2Module.forRoot({
+        customClass: 'swal-msj',
+        confirmButtonColor: '#ffa500',
+        cancelButtonClass: 'btn btn-danger'
+    }),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

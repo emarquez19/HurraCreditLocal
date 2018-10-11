@@ -2074,7 +2074,7 @@ div:hover > .btn-reverse-bg-green {
 
 .pricing-tables-item-solid {
   text-align: center;
-  margin: 0 2px;
+  margin: 0 12px;
   min-height: 100%;
   padding: 60px 30px;
   display: flex;
@@ -2102,7 +2102,7 @@ div:hover > .btn-reverse-bg-green {
       font-size: 60px; }
   .pricing-tables-item-solid .period {
     color: #fff;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
     transition: all .3s ease; }
   .pricing-tables-item-solid .position-item {
     margin-bottom: 7px;
@@ -2119,13 +2119,16 @@ div:hover > .btn-reverse-bg-green {
     .pricing-tables-item-solid:hover .rate,
     .pricing-tables-item-solid:hover .period {
       color: #273f5b; }
+      .pricing-tables-item-solid.bg-light:hover .pricing-description {
+        color: #c7ddf7!important;
+      }
   .pricing-tables-item-solid.bg-light .bg-layer {
     background-color: #fff; }
   .pricing-tables-item-solid.bg-light .rate,
   .pricing-tables-item-solid.bg-light .period {
     color: #273f5b; }
   .pricing-tables-item-solid.bg-light:hover .bg-layer {
-    background-color: #121921; }
+    background-color: #313952; }
   .pricing-tables-item-solid.bg-light:hover .rate,
   .pricing-tables-item-solid.bg-light:hover .period {
     color: #fff; }
@@ -3727,7 +3730,7 @@ ol.comments {
 .course-details {
   border-radius: 10px;
   box-shadow: 40px 0 100px 0 rgba(18, 25, 33, 0.07);
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #fff; }
   .course-details .post-details-shared {
     border-top: none;
@@ -3735,7 +3738,7 @@ ol.comments {
     width: 100%;
     overflow: hidden; }
   .course-details .tab-content {
-    padding: 60px; }
+    padding: 30px 60px 60px; }
   .course-details .curriculum-list {
     margin: 0 -60px;
     box-shadow: none;
@@ -3743,7 +3746,9 @@ ol.comments {
 
 .course-details-control {
   background-color: #ecf5fe;
-  padding: 30px 60px 0 60px; }
+  padding: 30px 60px 0 60px;
+  border-radius: 10px 10px 0px 0px;
+}
   .course-details-control .tab-control a {
     text-transform: none;
     font-size: 18px;

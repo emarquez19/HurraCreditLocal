@@ -363,7 +363,7 @@ svg.hurra-icon {
       width: 0;
       height: 3px;
       border-radius: 3px;
-      background-color: #0083ff;
+      background-color: orange;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -372,7 +372,7 @@ svg.hurra-icon {
   .tab-control + .tab-control {
     margin-left: 30px; }
   .tab-control.active a {
-    color: #0083ff; }
+    color: orange; }
     .tab-control.active a:after {
       opacity: 1;
       width: 100%; }

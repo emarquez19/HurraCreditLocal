@@ -683,17 +683,34 @@ h5, .h5 {
 
 h6, .h6 {
   margin: .5em 0;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.3em;
   font-weight: 700;
   color: #273f5b;
   font-family: "Nunito", Arial, "Helvetica Neue", Helvetica, sans-serif;
-  letter-spacing: 0.02em; }
+  letter-spacing: 0.02em;}
   h6 a, .h6 a {
     color: inherit; }
-  @media (max-width: 800px) {
+  @media (max-width: 767px) {
     h6, .h6 {
-      font-size: 1.4em; } }
+      font-size: 1.4em; } 
+    .product-item h6, .product-item .h6 {
+      font-size: 17px!important;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 800px) {
+    h6, .h6 {
+      font-size: 1.4em; } 
+    .product-item h6, .product-item .h6 {
+      font-size: 14.5px!important;
+    }
+  }
+
+  @media (min-width: 801px) and (max-width: 991) {
+    .product-item h6, .product-item .h6 {
+      font-size: 14px!important;
+    }
+  }
   @media (max-width: 640px) {
     h6, .h6 {
       font-size: 1.2em; } }
@@ -5478,8 +5495,8 @@ License: http://codecanyon.net/licenses
 .primary-menu-menu > li > .megamenu .megamenu-row .col11,
 .primary-menu-menu > li > .megamenu .megamenu-row .col12 {
   display: block;
-  min-height: 254px!important;
-  height: 254px;
+  min-height: 244px!important;
+  height: 244px;
   float: left;
   padding: 35px 20px; }
   .primary-menu-menu > li > .megamenu .megamenu-row .col1:first-child,
@@ -5839,11 +5856,12 @@ License: http://codecanyon.net/licenses
   .mt-minus-200 {
     margin-top: -200px!important;
   }
-  /* .lg-separator{
-    display: table;
-  } */
+  .lg-separator{
+    clear: both;
+  }
   .md-separator{
     display: none;
+    clear: both;
   }
   .force-check{
     min-width: 30px!important;
@@ -5897,9 +5915,34 @@ License: http://codecanyon.net/licenses
   overflow-x: hidden!important;
   overflow-y: hidden!important;
 }
+.tab-control a img {
+  width: 40px;
+  display: block;
+  text-align: center;
+  margin: auto;
+}
 
 /* 14 - MOBILE MODE (RESPONSIVE MODE)
 ======================================*/
+@media (min-width: 320px) and (max-width: 499px){
+  .tab-control {
+    width: 100%!important;
+  }
+  .tab-control a img {
+    vertical-align: bottom!important;
+    display: inline-block!important;
+  }
+}
+@media (min-width: 500px) and (max-width: 689px){
+  .tab-control {
+    width: 18%!important;
+  }
+}
+@media (min-width: 690px) and (max-width: 767px){
+  .tab-control {
+    width: 13.5%!important;
+  }
+}
 @media (max-width: 768px) {
   .crumina-info-box .info-box-content{
     clear: none!important;
@@ -6414,7 +6457,7 @@ nav li.menu-item-has-mega-menu ul.mega-menu-row li {
   padding: 0 !important; }
 
 .product-item {
-  padding: 35px 20px;
+  padding: 35px 20px 0px;
   min-height: 100%;
   transition: all .3s ease; }
 .product-item img {
@@ -6734,7 +6777,7 @@ nav li.menu-item-has-mega-menu ul.mega-menu-row li {
   background-image: url("../img/stunning-bg4.jpg"); }
 
 .stunning-bg-5 {
-  background-image: url("../img/stunning-bg5.jpg"); }
+  background-image: url("../img/stunning-bg5.svg"); }
 
 .overlay--dark {
   background-color: rgba(18, 25, 33, 0.8); }
@@ -7005,7 +7048,7 @@ nav li.menu-item-has-mega-menu ul.mega-menu-row li {
 @media (max-width: 1024px) {
   .top-bar {
     width: 320px;
-    transform: translate(-50%, -103%);
+    transform: translate(-50%, -113%);
     position: absolute;
     left: 50%;
     border-radius: 0 0 10px 10px;
@@ -7672,6 +7715,15 @@ img.mfp-img {
   .mt-60{
     margin-top: 60px!important;
   }
+  .mt-70{
+    margin-top: 70px!important;
+  }
+  .mt-80{
+    margin-top: 80px!important;
+  }
+  .mt-100{
+    margin-top: 100px!important;
+  }
   .mb-10{
     margin-bottom: 10px!important;
   }
@@ -7689,6 +7741,15 @@ img.mfp-img {
   }
   .mb-60{
     margin-bottom: 60px!important;
+  }
+  .mb-70{
+    margin-bottom: 70px!important;
+  }
+  .mb-80{
+    margin-bottom: 80px!important;
+  }
+  .mb-100{
+    margin-bottom: 100px!important;
   }
   .footer-legals {
     font-weight: bold;

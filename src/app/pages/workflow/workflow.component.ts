@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Options } from 'ng5-slider';
 
 declare const $: any;
 declare const jQuery: any;
@@ -8,15 +8,24 @@ declare var Swiper: any;
 declare var Segment: any;
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-workflow',
+  templateUrl: './workflow.component.html',
+  styleUrls: ['./workflow.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class WorkflowComponent implements OnInit {
 
-  constructor(
-    private router: Router
-  ) { }
+  creditValue = 3000;
+  options: Options = {
+    floor: 3000,
+    ceil: 9000,
+    // minLimit: 4500,
+    showSelectionBar: true,
+    translate: (creditValue: number): string => {
+        return '$' + creditValue.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
+    }
+  };
+
+  constructor() { }
 
   ngOnInit() {
     // Global var
@@ -540,6 +549,12 @@ export class LoginComponent implements OnInit {
             return false;
         });
 
+        jQuery('.js-finalstep-popup').on('click', function () {
+            $('body').addClass('noScrolling');
+            setTimeout(function() {  $('.finalstep-popup').addClass('open'); }, 300);
+            return false;
+        });
+
         jQuery('.js-popup-close').on('click', function () {
             $('body').removeClass('noScrolling');
 
@@ -548,6 +563,7 @@ export class LoginComponent implements OnInit {
             {  $('.popup-gallery').removeClass('open'); }
             {  $('.aviso-popup').removeClass('open'); }
             {  $('.terminos-popup').removeClass('open'); }
+            {  $('.finalstep-popup').removeClass('open'); }
             return false;
         });
 
@@ -625,9 +641,6 @@ export class LoginComponent implements OnInit {
           //     offset: 40 // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
           // });
 
-
-
-
             if ($('#menu-icon-wrapper').length) {
                 CRUMINA.burgerAnimation();
             }
@@ -640,6 +653,29 @@ export class LoginComponent implements OnInit {
                 indicatorFirstLevel: "&#xf0d7",
                 indicatorSecondLevel: "&#xf105"
             });
+
+            // setTimeout(() => {
+            //     $('.ng5-slider .ng5-slider-pointer').click();
+            //     alert('click');
+            // }, 2000);
+            // setTimeout(() => {
+                // $('.ng5-slider-span ng5-slider-bubble ng5-slider-limit ng5-slider-floor').text().toLocaleString('en');
+                // alert('click');
+            $('#credit-slider-block').find('.ng5-slider-pointer-min').addClass('animated infinite wobble');
+
+            $('#credit').removeClass('visibleOnStart');
+
+            // setTimeout(() => {
+            //     $('#credit-slider-block').find('.ng5-slider-span ng5-slider-bar-wrapper').click();
+            // }, 2000);
+
+            $('.credit-controltab').click(function (){
+                setTimeout(function() {
+                    $('#credit-slider-block').find('.ng5-slider-pointer-min').removeClass('animated infinite wobble');
+                }, 4000);
+            });
+
+            // }, 2000);
         });
 
         CRUMINA.fixedHeader();
@@ -667,29 +703,42 @@ export class LoginComponent implements OnInit {
     })(jQuery);
   }
 
+  
+//   userChangeStart(): void {
+//     event.preventDefault();
+//   }
+
+//    onUserChange(): void {
+//     let floorValue = '' + this.options.floor + '';
+//     let ceilValue = '' + this.options.ceil + '';
+//     let creditValueModel = '' + this.creditValue + '';
+
+//     floorValue = parseFloat(floorValue).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
+//     ceilValue = parseFloat(ceilValue).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
+//     creditValueModel = parseFloat(creditValueModel).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
+
+//     $('#credit-slider-block .ng5-slider-floor').text('$' + floorValue);
+//     $('#credit-slider-block .ng5-slider-ceil').text('$' + ceilValue);
+//     $('#credit-slider-block .ng5-slider-model-value').text('$' + creditValueModel);
+//   }
+
   scrollToElement($element): void {
     console.log($element);
     $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
   }
 
-  flipRegisterBoard() {
-    $('#login-block').hide();
-    $('#register-block').show();
+  selectThisPlan($event): void {
+
+    const clickedElement = $event.target || $event.srcElement;
+    const active = document.querySelector('.selected-plan');
+    if(active){
+        active.classList.remove('selected-plan');
+    }
+    clickedElement.parentElement.className += ' selected-plan';
   }
 
-  flipLoginBoard() {
-    $('#register-block').hide();
-    $('#login-block').show();
-  }
-
-  public checkMyCode(code: string): void {
-    this.router.navigate(['/workflow']);
-  }
-
-  public handleCancelCodeChecking(dismissMethod: string): void {
-    // dismissMethod can be 'cancel', 'overlay', 'close', and 'timer'
-    // ... do something
-    alert('Good');
+  evaluateFinalStep(msjresp){
+    
   }
 
 }

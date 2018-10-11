@@ -1,3 +1,6 @@
+<!-- Preloader -->
+<app-loader></app-loader>
+
 <!-- Header -->
 <header class="header header--small-lines" id="site-header">
     <div class="top-bar top-bar-dark">
@@ -65,57 +68,6 @@
                 <a routerLink="/index" class="smoothscroll">Inicio</a>
               </li>
   
-              <li class="menu-item-has-mega-menu menu-item-has-children" id="como-funciona">
-                <a class="cursor">Como Funciona</a>
-                <div class="megamenu with-products">
-                  <div class="megamenu-row">
-  
-                    <div class="col6" data-mh="product-item">
-                      <div class="product-item text-center">
-                        <img src="assets/img/menu.png" alt="step 1">
-                        <h6><strong>1.</strong> Elige la empresa en la que trabajas.</h6>
-                      </div>
-                    </div>
-  
-                    <div class="col6" data-mh="product-item">
-                      <div class="product-item text-center">
-                        <img src="assets/img/resume.png" alt="step 2">
-                        <h6><strong>2.</strong> Llenas una simple solicitud.</h6>
-                      </div>
-                    </div>
-  
-                    <div class="col6" data-mh="product-item">
-                      <div class="product-item text-center">
-                        <img src="assets/img/email.png" alt="step 3">
-                        <h6><strong>3.</strong> Te enviamos un correo con tu NIP.</h6>
-                      </div>
-                    </div>
-  
-                    <div class="col6" data-mh="product-item">
-                      <div class="product-item text-center">
-                        <img src="assets/img/checked.png" alt="step 4">
-                        <h6><strong>4.</strong> Aceptas que te depositemos el préstamo.</h6>
-                      </div>
-                    </div>
-  
-                    <div class="col6" data-mh="product-item">
-                      <div class="product-item text-center">
-                        <img src="assets/img/pay.png" alt="step 5">
-                        <h6><strong>5.</strong> Hacemos el deposito a tu cuenta.</h6>
-                      </div>
-                    </div>
-  
-                    <div class="col6" data-mh="product-item">
-                      <div class="product-item text-center">
-                        <img src="assets/img/small-calendar.png" alt="step 6">
-                        <h6><strong>6.</strong> Te hacemos el descuento automático en tu cuenta.</h6>
-                      </div>
-                    </div>
-  
-                  </div>
-                </div>
-              </li>
-  
               <li class="lang-mobile-menu">
                 <!-- <a href="#"><i class="fa fa-cog"></i> Idioma</a> -->
                 <a href="#">Idioma</a>
@@ -176,7 +128,7 @@
                       <p class="text-center mt-10">Por tu seguridad, no confíes tu contraseña o información sensible a nadie</p>
 
                       <div class="text-center mt-20">
-                          <a routerLink="/index" class="btn btn--orange btn--with-shadow">
+                          <a routerLink="/workflow" class="btn btn--orange btn--with-shadow">
                               Ingrear a mi cuenta
                           </a>
                       </div>
@@ -211,13 +163,13 @@
                   <aside class="widget w-about items-with-border" style="background: #fff;">
                     <div class="row">
                       <div class="col-lg-8 col-md-8 col-sm-12">
-                          <h6 class="mb-20 mt-30">RFC</h6>
+                          <h6 class="mb-20 mt-30"><span class="fa fa-asterisk c-red"></span> RFC</h6>
                           <div class="mb-10">
                               <input name="name" placeholder="Capturalo para autocompletar tus datos." type="text">
                           </div>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-12">
-                          <h6 class="mb-20 mt-30">Soy</h6>
+                          <h6 class="mb-20 mt-30"><span class="fa fa-asterisk c-red"></span> Soy</h6>
                             <div class="radio-tile-group">
                               <div class="input-container">
                                 <input id="man" class="radio-button" type="radio" name="radio" />
@@ -247,7 +199,7 @@
                           </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h6>Primer nombre</h6>
+                          <h6><span class="fa fa-asterisk c-red"></span> Primer nombre</h6>
                           <div>
                               <input name="name" placeholder="¿Cómo te llamas?" type="text">
                           </div>
@@ -259,7 +211,7 @@
                           </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h6>Primer apellido</h6>
+                          <h6><span class="fa fa-asterisk c-red"></span> Primer apellido</h6>
                           <div>
                               <input name="name" placeholder="¿Cómo te apellidas?" type="text">
                           </div>
@@ -271,13 +223,13 @@
                           </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h6>Fecha de nacimiento</h6>
+                          <h6><span class="fa fa-asterisk c-red"></span> Fecha de nacimiento</h6>
                           <div>
                               <input name="name" placeholder="¿Cuándo naciste?" type="text">
                           </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h6>Estado de nacimiento</h6>
+                          <h6><span class="fa fa-asterisk c-red"></span> Estado de nacimiento</h6>
                           <div>
                               <!-- <input name="name" placeholder="¿Dónde naciste?" type="text"> -->
                               <select>
@@ -289,13 +241,13 @@
                           </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h6>Correo electrónico</h6>
+                          <h6><span class="fa fa-asterisk c-red"></span> Correo electrónico</h6>
                           <div>
                               <input name="name" placeholder="correo@servermail.com" type="email">
                           </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h6>Confirmar correo</h6>
+                          <h6><span class="fa fa-asterisk c-red"></span> Confirmar correo</h6>
                           <div>
                               <input name="name" placeholder="correo@servermail.com" type="email">
                           </div>
@@ -316,7 +268,10 @@
                     </div>
 
                     <div class="text-center mt-20">
-                        <a routerLink="/index" class="btn btn--orange btn--with-shadow">
+                        <a href="javascript:void(0)" class="btn btn--orange btn--with-shadow" 
+                        [swal]="{ title: 'Aviso Importante', input: 'number', html: '¡Confirma la creación de tu cuenta, ingresando el código que te enviamos por correo electrónico!', allowEscapeKey: false, allowOutsideClick: false}" 
+                        (confirm)="checkMyCode($event)" 
+                        (cancel)="handleCancelCodeChecking($event)">
                             Registrar mi cuenta
                         </a>
                     </div>
