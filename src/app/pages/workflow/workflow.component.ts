@@ -6,6 +6,7 @@ declare const jQuery: any;
 declare var ease: any;
 declare var Swiper: any;
 declare var Segment: any;
+declare var lory: any;
 
 @Component({
   selector: 'app-workflow',
@@ -25,9 +26,11 @@ export class WorkflowComponent implements OnInit {
     }
   };
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+
     // Global var
     const CRUMINA = <any>{};
 
@@ -738,13 +741,16 @@ export class WorkflowComponent implements OnInit {
               return false;
             }
             
-            var oLoop = false;
+            var oLoop = true;
           
             var slides = slider.querySelectorAll('.slider-item');
             slides = [].slice.call(slides); // to create array from slides list 
             var prev = slider.querySelector('.slider-control-prev');
             var next = slider.querySelector('.slider-control-next');
-            var qnext = $('.btn-question-next');
+            // var qnext = $('.btn-question-next');
+            // var qnext = slider.querySelector('#main-slider .btn-question-next');
+            const classname = slider.querySelectorAll('.btn-question-next');
+
           
             //generate pages
             var paginator = slider.querySelector('.slider-paginator');
@@ -766,10 +772,10 @@ export class WorkflowComponent implements OnInit {
               // last page hide next arrow
               if (activePage === slides.length - 1) {
                 next.classList.add('is-hidden');
-                qnext.classList.add('is-hidden');
+                // qnext.classList.add('is-hidden');
               } else {
                 next.classList.remove('is-hidden');
-                qnext.classList.remove('is-hidden');
+                // qnext.classList.remove('is-hidden');
               }
               if (activePage === 0) {
                 prev.classList.add('is-hidden');
@@ -786,7 +792,7 @@ export class WorkflowComponent implements OnInit {
                 }
                 pages[activePage].classList.add('active')
                 if (!oLoop) {
-                  checkArrows();    
+                  checkArrows();
                 }
               }
             }
@@ -834,11 +840,32 @@ export class WorkflowComponent implements OnInit {
               e && e.preventDefault();
               slideToNext();
             }
-            qnext.onclick = function(e) {
-              e && e.preventDefault();
-              slideToNext();
-            }
-          
+
+            setTimeout(() => {
+
+                const ManageQuestions = function(e) {
+                    e && e.preventDefault();
+                    slideToNext();
+
+                        if (activePage > (slides.length - 6)) {
+                            document.getElementById('text-modal-finalstep-title').innerHTML = 'Para finalizar, sube tus documentos';
+                            for (let indxi = 3; indxi < (slides.length - 1); indxi++) {
+                                slides[indxi].classList.remove('document-item-slider-prevent');
+                            }
+                        }
+
+                        if (activePage > (slides.length - 2)) {
+                            document.getElementById('text-modal-finalstep-title').innerHTML = '¡En hora buena!<br>Proceso Culminado';
+                            for (let indxid = 3; indxid <= (slides.length - 2); indxid++) {
+                                slides[indxid].classList.add('document-item-slider-prevent');
+                            }
+                        }
+                };
+
+                for (let ind = 0; ind < classname.length; ind++) {
+                    classname[ind].addEventListener('click', ManageQuestions, false);
+                }
+            }, 100);
           }
     }, 200);
   }

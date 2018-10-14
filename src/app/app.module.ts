@@ -18,6 +18,8 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { Ng5SliderModule } from 'ng5-slider';
 import { FormsModule } from '@angular/forms';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
