@@ -39,14 +39,14 @@
           <div class="course-details">
             <ul class="course-details-control" role="tablist">
 
-              <li role="presentation" class="tab-control completed-tab">
+              <li role="presentation" class="tab-control active">
                 <a href="#personal" role="tab" data-toggle="tab" class="control-item">
                   <img src="assets/img/personal.png" alt="icon">
                   <span>Personal</span>
                 </a>
               </li>
 
-              <li role="presentation" class="tab-control active">
+              <li role="presentation" class="tab-control completed-tab">
                 <a href="#work" role="tab" data-toggle="tab" class="control-item">
                   <img src="assets/img/work.png" alt="icon">
                   <span>Empleo</span>
@@ -91,13 +91,14 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> RFC</h6>
                         <div class="mb-10">
-                            <input placeholder="Capturalo para autocompletar tus datos." type="text">
+                            <input placeholder="Capturalo para autocompletar tus datos." type="text" required minlength="12" maxlength="13">
+                            <div class="form-error-msj animated infinite slower-more shake"><i class="fa fa-exclamation-circle"></i> El RFC es un campo requerido</div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Primer nombre</h6>
                         <div>
-                            <input placeholder="¿Cómo te llamas?" type="text">
+                            <input placeholder="¿Cómo te llamas?" type="text" mask="SSSSSSSSSSSSSSSSSSSS">
                         </div>
                     </div>
 
@@ -105,8 +106,8 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6>Segundo nombre</h6>
-                        <div>
-                            <input placeholder="¿Cómo te llamas?" type="text">
+                        <div class="form-group">
+                            <input placeholder="¿Cómo te llamas?" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                         </div>
                     </div>
 
@@ -114,25 +115,28 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Primer apellido</h6>
-                        <div>
-                            <input placeholder="¿Cómo te apellidas?" type="text">
+                        <div class="form-group">
+                            <input placeholder="¿Cómo te apellidas?" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6>Segundo apellido</h6>
-                        <div>
-                            <input placeholder="¿Cómo te apellidas?" type="text">
+                        <div class="form-group">
+                            <input placeholder="¿Cómo te apellidas?" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Fecha de nacimiento</h6>
-                        <div>
-                            <input placeholder="¿Cuándo naciste?" type="text">
+                        <div class="form-group">
+                            <!-- <input placeholder="¿Cuándo naciste?" type="text" mask="00/00/0000"> -->
+                            <mat-datepicker-toggle matSuffix [for]="calBirthDay"></mat-datepicker-toggle>
+                            <mat-datepicker #calBirthDay></mat-datepicker>
+                            <input [matDatepicker]="calBirthDay" class="form-control" placeholder="DD/MM/YYYY" mask="00/00/0000">
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Estado de nacimiento</h6>
-                        <div>
+                        <div class="form-group">
                             <select>
                               <option data-display="¿Dónde naciste?">¿Dónde naciste?</option>
                               <option value="1">Jalisco</option>
@@ -143,7 +147,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Genero</h6>
-                        <div>
+                        <div class="form-group">
                             <select>
                               <option data-display="¿Dónde naciste?">Seleccione...</option>
                               <option value="1">Hombre</option>
@@ -153,7 +157,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Estado Civil</h6>
-                        <div>
+                        <div class="form-group">
                             <select>
                               <option data-display="Seleccione...">Seleccione</option>
                               <option value="1">Hombre</option>
@@ -163,13 +167,13 @@
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Cantidad dependientes</h6>
-                        <div>
-                            <input placeholder="¿Cuantos depende de usted?" type="number">
+                        <div class="form-group">
+                            <input placeholder="¿Cuantos depende de usted?" type="text" mask="9{2}">
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Nivel de estudio</h6>
-                        <div>
+                        <div class="form-group">
                             <select>
                               <option data-display="Seleccione...">Seleccione...</option>
                               <option value="1">Universidad</option>
@@ -180,18 +184,18 @@
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Teléfono celular</h6>
-                        <div>
-                            <input placeholder="¡Confirmaremos este teléfono!" type="number">
+                        <div class="form-group">
+                            <input placeholder="¡Confirmaremos este teléfono!" type="text" mask="(00) 0000-0000" prefix="+52">
                         </div>
                     </div>
                     <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
                       <div class="btn-slider-wrap pt80">
 
-                        <div class="btn-next btn--style">
+                        <button class="btn-next btn--style" type="submit">
                           <span>Siguiente</span>
                           <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                           <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
-                        </div>
+                        </button>
 
                       </div>
                     </div>
@@ -211,14 +215,14 @@
                     
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Lugar de trabajo</h6>
-                        <div class="mb-10">
+                        <div class="mb-10 form-group">
                             <input placeholder="¿Dónde trabajas?" type="text">
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6>¿Cada cuanto te pagan?</h6>
-                        <div>
+                        <div class="form-group">
                             <select>
                               <option data-display="Seleccione...">Seleccione...</option>
                               <option value="1">Diario</option>
@@ -233,8 +237,8 @@
                     
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Sueldo mensual</h6>
-                        <div>
-                            <input placeholder="¿Cuál es tu sueldo?" type="text">
+                        <div class="form-group">
+                            <input placeholder="¿Cuál es tu sueldo?" class="text-left" currencyMask [(ngModel)]="sueldoMensual" [options]="{ prefix: '$ ', thousands: ',', decimal: '.' }" type="text">
                         </div>
                     </div>
 
@@ -242,7 +246,7 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <h6>Tipo de contratación</h6>
-                        <div>
+                        <div class="form-group">
                             <select>
                               <option data-display="Seleccione...">Seleccione...</option>
                               <option value="1">Indefinida</option>
@@ -254,14 +258,16 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Fecha inicio laboral</h6>
-                        <div>
-                            <input placeholder="DD/MM/YYYY" type="date">
+                        <div class="form-group">
+                            <mat-datepicker-toggle matSuffix [for]="calStartWorking"></mat-datepicker-toggle>
+                            <mat-datepicker #calStartWorking></mat-datepicker>
+                            <input [matDatepicker]="calStartWorking" class="form-control" placeholder="DD/MM/YYYY" mask="00/00/0000">
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Puesto</h6>
-                        <div>
+                        <div class="form-group">
                             <input placeholder="¿Cúal es tu puesto?" type="text">
                         </div>
                     </div>
@@ -271,7 +277,7 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Tipo de trabajo</h6>
-                        <div>
+                        <div class="form-group">
                             <select>
                               <option data-display="Seleccione...">Seleccione...</option>
                               <option value="1">lorem ipsum</option>
@@ -284,31 +290,32 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Teléfono del trabajo</h6>
-                        <div>
-                            <input placeholder="¿Cúal es tu teléfono?" type="tel">
+                        <div class="form-group">
+                            <input placeholder="¿Cúal es tu teléfono?" type="text" mask="(00) 0000-0000" prefix="+52">
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> ¿Cúanto gastas al mes?</h6>
-                        <div>
-                            <input placeholder="¿Cúanto gastas?" type="text">
+                        <div class="form-group">
+                            <input placeholder="¿Cúanto gastas?" class="text-left" currencyMask [(ngModel)]="gastosPorMes" [options]="{ prefix: '$ ', thousands: ',', decimal: '.' }" type="text">
                         </div>
                     </div>
 
                     <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
                       <div class="btn-slider-wrap pt80">
 
-                        <div class="btn-prev btn--style">
-                          <svg class="hurra-icon icon-hover hurra-icon-arrow-left-1"><use xlink:href="#hurra-icon-arrow-left-1"></use></svg>
-                          <svg class="hurra-icon hurra-icon-arrow-left1"><use xlink:href="#hurra-icon-arrow-left1"></use></svg>
+                        <button class="btn-next btn--style" type="submit">
                           <span>Anterior</span>
-                        </div>
-                        <div class="btn-next btn--style">
+                          <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
+                          <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
+                        </button>
+
+                        <button class="btn-next btn--style" type="submit">
                           <span>Siguiente</span>
                           <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                           <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
-                        </div>
+                        </button>
                         
                       </div>
                     </div>
@@ -329,14 +336,14 @@
                     
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Código postal</h6>
-                        <div class="mb-10">
-                            <input placeholder="Código postal" type="text">
+                        <div class="mb-10 form-group">
+                            <input placeholder="Código postal" type="text" mask="00000" maxlength="5" minlength="5">
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Estado</h6>
-                        <div>
+                        <div class="form-group">
                             <select>
                               <option data-display="Seleccione...">Seleccione...</option>
                               <option value="1">Jalisco</option>
@@ -349,7 +356,7 @@
                     
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Ciudad</h6>
-                        <div>
+                        <div class="form-group">
                             <select>
                               <option data-display="Seleccione...">Seleccione...</option>
                               <option value="1">Guadalajara</option>
@@ -362,7 +369,7 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <h6><span class="fa fa-asterisk c-red"></span> Municipio / Delegación</h6>
-                        <div>
+                        <div class="form-group">
                             <select>
                               <option data-display="Seleccione...">Seleccione...</option>
                               <option value="1">Guadalajara</option>
@@ -373,7 +380,7 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <h6><span class="fa fa-asterisk c-red"></span> Colonia</h6>
-                        <div>
+                        <div class="form-group">
                             <select>
                               <option data-display="Seleccione...">Seleccione...</option>
                               <option value="1">La giralda</option>
@@ -385,7 +392,7 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Calle</h6>
-                        <div>
+                        <div class="form-group">
                             <input placeholder="¿En qué calle vives?" type="text">
                         </div>
                     </div>
@@ -394,15 +401,15 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Número exterior</h6>
-                        <div>
-                            <input placeholder="¿Qué exterior tienes?" type="text">
+                        <div class="form-group">
+                            <input placeholder="¿Qué exterior tienes?" type="text" mask="0000000">
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <h6>Número interior</h6>
-                        <div>
-                            <input placeholder="¿Qué interior tienes?" type="text">
+                        <div class="form-group">
+                            <input placeholder="¿Qué interior tienes?" type="text" mask="0000000">
                         </div>
                     </div>
 
@@ -410,7 +417,7 @@
 
                     <div class="col-lg-4 col-md-4 col-sm-12">
                       <h6><span class="fa fa-asterisk c-red"></span> Tipo de Vivienda</h6>
-                        <div>
+                        <div class="form-group">
                             <select>
                               <option data-display="Seleccione...">Seleccione...</option>
                               <option value="1">Rentada</option>
@@ -421,14 +428,14 @@
 
                     <div class="col-lg-8 col-md-8 col-sm-12">
                         <h6><span class="fa fa-asterisk c-red"></span> Otras señas</h6>
-                        <div>
+                        <div class="form-group">
                             <input placeholder="Otras señas" type="text">
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <h6><span class="fa fa-asterisk c-red"></span> ¿Desde cuándo vives aquí?</h6>
-                        <div>
+                        <div class="form-group">
                             <select>
                               <option data-display="Seleccione...">Seleccione...</option>
                               <option value="1">1 año</option>
@@ -441,17 +448,18 @@
                     <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
                       <div class="btn-slider-wrap pt80">
 
-                        <div class="btn-prev btn--style">
-                          <svg class="hurra-icon icon-hover hurra-icon-arrow-left-1"><use xlink:href="#hurra-icon-arrow-left-1"></use></svg>
-                          <svg class="hurra-icon hurra-icon-arrow-left1"><use xlink:href="#hurra-icon-arrow-left1"></use></svg>
-                          <span>Anterior</span>
-                        </div>
-                        <div class="btn-next btn--style">
-                          <span>Siguiente</span>
-                          <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
-                          <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
-                        </div>
-                        
+                          <button class="btn-next btn--style" type="submit">
+                            <span>Anterior</span>
+                            <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
+                            <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
+                          </button>
+    
+                          <button class="btn-next btn--style" type="submit">
+                            <span>Siguiente</span>
+                            <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
+                            <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
+                          </button>
+                      
                       </div>
                     </div>
 
@@ -470,7 +478,7 @@
 
                     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 text-center" id="credit-slider-block">
                         <p class="input-show-credit-value">$<span [textContent]="creditValue | number:'1.2-2'"></span></p>
-                        <div class="mb-10">
+                        <div class="mb-10 form-group">
                           <ng5-slider [(value)]="creditValue" [options]="options" class="credit-slider-value"></ng5-slider>
                         </div>
                     </div>
@@ -552,16 +560,17 @@
                     <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
                       <div class="btn-slider-wrap pt80">
 
-                        <div class="btn-prev btn--style">
-                          <svg class="hurra-icon icon-hover hurra-icon-arrow-left-1"><use xlink:href="#hurra-icon-arrow-left-1"></use></svg>
-                          <svg class="hurra-icon hurra-icon-arrow-left1"><use xlink:href="#hurra-icon-arrow-left1"></use></svg>
-                          <span>Anterior</span>
-                        </div>
-                        <div class="btn-next btn--style">
-                          <span>Siguiente</span>
-                          <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
-                          <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
-                        </div>
+                          <button class="btn-next btn--style" type="submit">
+                            <span>Anterior</span>
+                            <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
+                            <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
+                          </button>
+    
+                          <button class="btn-next btn--style" type="submit">
+                            <span>Siguiente</span>
+                            <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
+                            <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
+                          </button>
                         
                       </div>
                     </div>
@@ -734,12 +743,12 @@
                   <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
                       <div class="btn-slider-wrap pt80">
 
-                        <div class="btn-next btn--style js-finalstep-popup">
+                        <button class="btn-next btn--style js-finalstep-popup"  type="submit">
                           <span>Aceptar</span>
                           <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                           <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
-                        </div>
-                        
+                        </button>
+
                       </div>
                     </div>
                 </div>
@@ -790,7 +799,7 @@
                   <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12">
                       <h6><span class="fa fa-asterisk c-red"></span> Banco</h6>
-                      <div>
+                      <div class="form-group">
                           <select>
                             <option data-display="Seleccione...">Seleccione...</option>
                             <option value="3">Banamex</option>
@@ -801,8 +810,8 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
                       <h6><span class="fa fa-asterisk c-red"></span> CLABE</h6>
-                      <div>
-                          <input placeholder="18 digitos" type="text">
+                      <div class="form-group">
+                          <input placeholder="18 digitos" type="text" mask="000000000000000000" minlength="18" maxlength="18">
                       </div>
                     </div>
                   </div>
@@ -825,26 +834,26 @@
                   <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12">
                       <h6><span class="fa fa-asterisk c-red"></span> Teléfono</h6>
-                      <div>
-                          <input placeholder="¿Cuál es su teléfono?" type="text">
+                      <div class="form-group">
+                          <input placeholder="¿Cuál es su teléfono?" type="text" mask="(00) 0000-0000" prefix="+52">
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
                       <h6><span class="fa fa-asterisk c-red"></span> Nombres</h6>
-                      <div>
-                          <input placeholder="¿Cómo se llamas?" type="text">
+                      <div class="form-group">
+                          <input placeholder="¿Cómo se llamas?" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
                       <h6><span class="fa fa-asterisk c-red"></span> Apellido Paterno</h6>
-                      <div>
-                          <input placeholder="Apellid paterno" type="text">
+                      <div class="form-group">
+                          <input placeholder="Apellid paterno" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
                       <h6><span class="fa fa-asterisk c-red"></span> Apellido Materno</h6>
-                      <div>
-                          <input placeholder="Apellido materno" type="text">
+                      <div class="form-group">
+                          <input placeholder="Apellido materno" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                       </div>
                     </div>
                   </div>
@@ -867,26 +876,26 @@
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12">
                     <h6><span class="fa fa-asterisk c-red"></span> Teléfono</h6>
-                    <div>
-                        <input placeholder="¿Cuál es su teléfono?" type="text">
+                    <div class="form-group">
+                        <input placeholder="¿Cuál es su teléfono?" type="text" mask="(00) 0000-0000" prefix="+52">
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12">
                     <h6><span class="fa fa-asterisk c-red"></span> Nombres</h6>
-                    <div>
-                        <input placeholder="¿Cómo se llamas?" type="text">
+                    <div class="form-group">
+                        <input placeholder="¿Cómo se llamas?" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12">
                     <h6><span class="fa fa-asterisk c-red"></span> Apellido Paterno</h6>
-                    <div>
-                        <input placeholder="Apellido paterno" type="text">
+                    <div class="form-group">
+                        <input placeholder="Apellido paterno" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12">
                     <h6><span class="fa fa-asterisk c-red"></span> Apellido Materno</h6>
-                    <div>
-                        <input placeholder="Apellido materno" type="text">
+                    <div class="form-group">
+                        <input placeholder="Apellido materno" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                     </div>
                   </div>
                   </div>
@@ -900,11 +909,11 @@
         <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
             <div class="btn-slider-wrap pt80">
 
-              <div class="btn-next btn--style" (click)="goFinalStep2()">
+              <button class="btn-next btn--style" (click)="goFinalStep2()">
                 <span>Continuar</span>
                 <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                 <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
-              </div>
+              </button>
               
             </div>
           </div>

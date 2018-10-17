@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Options } from 'ng5-slider';
+import { Observable } from 'rxjs/Observable';
 
 declare const $: any;
 declare const jQuery: any;
 declare var ease: any;
 declare var Swiper: any;
 declare var Segment: any;
-declare var lory: any;
+
 
 @Component({
   selector: 'app-workflow',
@@ -26,6 +27,22 @@ export class WorkflowComponent implements OnInit {
     }
   };
 
+    // declaracion de variables para la convercio de la fecha
+    dSinseDate: Date;
+    iSinseDate: number;
+    dDateUntil: Date;
+    iDateUntil: number;
+    dDateStatusSince: Date;
+    iDateStatusSince: number;
+    dDateStatusUntil: Date;
+    iDateStatusUntil: number;
+//   patterns = {
+//     'e': { pattern: new RegExp(/[0-3]/) },
+//     'f': { pattern: new RegExp(/[0-9]/) },
+//     'g': { pattern: new RegExp(/[0-1]/) },
+//     'h': { pattern: new RegExp(/[0-2]/) },
+//   };
+
   constructor() {
   }
 
@@ -37,7 +54,7 @@ export class WorkflowComponent implements OnInit {
     (function ($) {
         // USE STRICT
         'use strict';
-
+        
         // ----------------------------------------------------/
         // Predefined Variables
         // ----------------------------------------------------/
@@ -104,20 +121,6 @@ export class WorkflowComponent implements OnInit {
             );
         };
 
-
-        /* -----------------------
-        * Parallax footer
-        * --------------------- */
-
-        CRUMINA.parallaxFooter = function () {
-            if ($footer.length && $footer.hasClass('js-fixed-footer')) {
-                $footer.before('<div class="block-footer-height"></div>');
-                $('.block-footer-height').matchHeight({
-                    target: $footer
-                });
-            }
-        };
-
         /* -----------------------
         * Preloader
         * --------------------- */
@@ -181,16 +184,6 @@ export class WorkflowComponent implements OnInit {
             }
         };
 
-
-
-        /* -----------------------------
-        * Toggle search overlay
-        * ---------------------------*/
-        CRUMINA.toggleSearch = function () {
-            $('.search-popup').toggleClass('open');
-            $('.search-full-screen input').focus();
-        };
-
         /* -----------------------------
         * Embedded Video in pop up
         * ---------------------------*/
@@ -227,39 +220,6 @@ export class WorkflowComponent implements OnInit {
             });
         };
 
-        /* -----------------------------
-        * Isotope sorting
-        * ---------------------------*/
-
-        CRUMINA.IsotopeSort = function () {
-            const $container = $('.sorting-container');
-            $container.each(function () {
-                const $current = $(this);
-                const layout = ($current.data('layout').length) ? $current.data('layout') : 'masonry';
-                $current.isotope({
-                    itemSelector: '.sorting-item',
-                    layoutMode: layout,
-                    percentPosition: true
-                });
-
-                $current.imagesLoaded().progress(function () {
-                    $current.isotope('layout');
-                });
-
-                var $sorting_buttons = $current.siblings('.sorting-menu').find('li');
-
-                $sorting_buttons.on('click', function () {
-                    if ($(this).hasClass('active')) return false;
-                    $(this).parent().find('.active').removeClass('active');
-                    $(this).addClass('active');
-                    var filterValue = $(this).data('filter');
-                    if (typeof filterValue != "undefined") {
-                        $current.isotope({filter: filterValue});
-                        return false;
-                    }
-                });
-            });
-        };
 
         /* -----------------------------
         * Sliders and Carousels
@@ -291,18 +251,6 @@ export class WorkflowComponent implements OnInit {
                     $depth = ($t.data('depth')) ? $t.data('depth') : 0,
                     $slidesSpace = ($showItems > 1 && true !== $nospace ) ? 20 : 0;
 
-                // if ($showItems > 1) {
-                //     $breakPoints = {
-                //         480: {
-                //             slidesPerView: 1,
-                //             slidesPerGroup: 1
-                //         },
-                //         768: {
-                //             slidesPerView: 2,
-                //             slidesPerGroup: 2
-                //         }
-                //     }
-                // }
 
                 swipers['swiper-' + index] = new Swiper('.swiper-' + index, {
                     pagination: '.pagination-' + index,
@@ -580,6 +528,14 @@ export class WorkflowComponent implements OnInit {
             return false;
         });
 
+        // $('.currency-mask').focus(function(){
+        //     const valueCurrencyThis = $(this).val();
+        //     $(this).val(parseFloat(valueCurrencyThis).toFixed(2));
+        // });
+        // $('.currency-mask').blur(function(){
+        //     const valueCurrencyThis = $(this).val();
+        //     $(this).val(parseFloat(valueCurrencyThis).toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,'));
+        // });
 
         /* -----------------------------
         * On DOM ready functions
@@ -615,23 +571,10 @@ export class WorkflowComponent implements OnInit {
                 const value = $(this).val().toLowerCase();
                 $('#work-group-search-block [data-work-filter]').filter(function() {
                   $(this).toggle($(this).find('.pricing-title').text().toLowerCase().indexOf(value) > -1);
-                //   if ($(this).find('.pricing-title').text().toLowerCase().indexOf(value) = -1) {
-                //       $('.no-records-filters').show();
-                //   } else {
-                //     $('.no-records-filters').hide();
-                //   }
-                    console.log($(this).find('.pricing-title').text().toLowerCase().indexOf(value));
+                    // console.log($(this).find('.pricing-title').text().toLowerCase().indexOf(value));
                 });
             });
 
-        /* -----------------------
-        * SmoothScroll
-        * --------------------- */
-
-          // const scroll  = new SmoothScroll('a[href*="#"]', {
-          //     ignore: '[data-toggle]', // Selector for links to ignore (must be a valid CSS selector)
-          //     offset: 40 // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
-          // });
 
             if ($('#menu-icon-wrapper').length) {
                 CRUMINA.burgerAnimation();
@@ -646,20 +589,9 @@ export class WorkflowComponent implements OnInit {
                 indicatorSecondLevel: "&#xf105"
             });
 
-            // setTimeout(() => {
-            //     $('.ng5-slider .ng5-slider-pointer').click();
-            //     alert('click');
-            // }, 2000);
-            // setTimeout(() => {
-                // $('.ng5-slider-span ng5-slider-bubble ng5-slider-limit ng5-slider-floor').text().toLocaleString('en');
-                // alert('click');
             $('#credit-slider-block').find('.ng5-slider-pointer-min').addClass('animated infinite wobble');
 
             $('#credit').removeClass('visibleOnStart');
-
-            // setTimeout(() => {
-            //     $('#credit-slider-block').find('.ng5-slider-span ng5-slider-bar-wrapper').click();
-            // }, 2000);
 
             $('.credit-controltab').click(function (){
                 setTimeout(function() {
@@ -667,15 +599,12 @@ export class WorkflowComponent implements OnInit {
                 }, 4000);
             });
 
-            // }, 2000);
         });
 
         CRUMINA.fixedHeader();
         CRUMINA.initSwiper();
         CRUMINA.equalHeight();
         CRUMINA.mediaPopups();
-        // CRUMINA.IsotopeSort();
-        CRUMINA.parallaxFooter();
 
         // Dom mofifications
         $('select').niceSelect();

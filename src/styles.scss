@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 .swal-msj {
     input {
         width: 100%!important;
@@ -126,8 +127,25 @@
 .fw-300{
     font-weight: 300!important;
 }
-.ert{
-    border: solid 10px red!important;
+.form-error-msj{
+    width: 100%!important;
+    color: red;
+    font-size: 0.8rem!important;
+    padding: 2px!important;
+    position: absolute;
+    bottom: 5px!important;
+    left: 35px;
+}
+.tab-content{
+    input, textarea, select, .nice-select {
+        margin-bottom: 25px!important;
+    }
+}
+.text-left{
+    text-align: left!important;
+}
+.text-right{
+    text-align: right!important;
 }
 .modalbody-popup{
     .slider {
@@ -189,5 +207,45 @@
       .slider-page.active {
         background-color: #bada55;
       }
-      
+}
+
+.mat-icon-button {
+    position: absolute!important;
+    right: 28px;
+    top: 41px;
+}
+.mat-calendar{
+    .mat-icon-button {
+        position: relative!important;
+        right: inherit!important;
+        top: inherit!important;
+    }
+}
+.mat-datepicker-content{
+    padding-bottom: 10px!important;
+    background: #f9fcff!important;
+}
+.mat-calendar-table{
+    border: none!important;
+    th, td {
+        border: none!important;
+    }
+    .mat-calendar-table-header{
+        th {
+            font-weight: bold!important;
+            color: orange!important;
+        }
+    }
+}
+.mat-calendar-body-selected {
+    background-color: #313952!important;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+}
+.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+    border-color: orange!important;
 }

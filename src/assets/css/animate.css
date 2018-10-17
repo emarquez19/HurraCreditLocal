@@ -3612,6 +3612,10 @@
   -webkit-animation-duration: 3s;
   animation-duration: 3s;
 }
+.animated.slower-more {
+  -webkit-animation-duration: 12s;
+  animation-duration: 12s;
+}
 
 @media (prefers-reduced-motion) {
   .animated {
