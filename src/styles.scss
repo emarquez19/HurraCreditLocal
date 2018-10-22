@@ -147,6 +147,24 @@
 .text-right{
     text-align: right!important;
 }
+select{
+    &:after{
+        border-bottom: 2px solid #ccc;
+        border-right: 2px solid #ccc;
+        content: '';
+        display: block;
+        height: 10px;
+        margin-top: -6px;
+        pointer-events: none;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform-origin: 66% 66%;
+        transform: rotate(45deg);
+        transition: all 0.15s ease-in-out;
+        width: 10px;
+    }
+}
 .modalbody-popup{
     .slider {
         position: relative;

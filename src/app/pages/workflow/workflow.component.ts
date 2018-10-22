@@ -607,7 +607,7 @@ export class WorkflowComponent implements OnInit {
         CRUMINA.mediaPopups();
 
         // Dom mofifications
-        $('select').niceSelect();
+        $('.nice-select-holder select').niceSelect();
 
         CRUMINA.preloader();
         CRUMINA.layerInit();

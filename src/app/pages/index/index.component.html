@@ -7,24 +7,48 @@
       <div class="container">
         <div class="top-bar-contact">
           <div class="contact-item">
-            <a href="tel:3313611437"><i class="fa fa-whatsapp icon-fill-header"></i> (33) 13 611 437</a>
+            <a href="tel:{{ 'topheader.tlfshort' | translate }}"><i class="fa fa-whatsapp icon-fill-header"></i> {{ 'topheader.tlf' | translate }}</a>
           </div>
           <div class="contact-item">
             <svg class="hurra-icon hurra-icon-letter"><use xlink:href="#hurra-icon-letter"></use></svg>
-            <a href="mailto:info@hurra.credit">info@hurra.credit</a>
+            <a href="mailto:{{ 'topheader.email' | translate }}">{{ 'topheader.email' | translate }}</a>
           </div>
         </div>
   
         <div class="contact-item language-switcher pull-right">
-          <!-- <svg class="hurra-icon world hurra-icon-world-map"><use xlink:href="#hurra-icon-world-map"></use></svg> -->
-          <select>
-            <option value="1">Español</option>
-            <option value="2">Ingles</option>
-          </select>
+          <!-- <select #langSelect (change)="translate.use(langSelect.value)" style="display: block!important;" id="edddddd">
+            <option value="es" [value]="es" [selected]="es" ng-reflect-value="es">Español</option>
+            <option value="en" [value]="en" [selected]="en" ng-reflect-value="en">Ingles</option>
+          </select> -->
+          <!-- <div class="nice-select">
+            <ul class="list">
+            <li *ngFor="let langs of translate.getLangs()" >
+              <a #langSelected (click)="translate.use(langSelected.rel)" [rel]="langs" [class.active]="langs === translate.currentLang">{{ langs }}</a>
+            </li>
+          </ul>
+          </div> -->
+
+          <div class="nice-select" tabindex="0">
+            <span>{{ 'topheader.selectedlang' | translate }}</span>
+            <ul class="list">
+              <li (click)="translate.use('es')" class="option">{{ 'topheader.esEs' | translate }}</li>
+              <li (click)="translate.use('en')" class="option">{{ 'topheader.enEn' | translate }}</li>
+            </ul>
+          </div>
+          
+
+            <!-- <div style="border: solid 1px orange!important"> -->
+                <!-- <button #langSelectee *ngFor="let langee of translate.getLangs()" (click)="translate.use(langSelectee.value)" [value]="langee" [class.active]="langee === translate.currentLang">{{ langee }}</button>
+            </div>
+
+          <header>
+              <button (click)="translate.use('es')">ES</button>
+              <button (click)="translate.use('en')">EN</button>
+          </header> -->
         </div>
   
         <div class="follow_us mr-20">
-          <span>Siguenos en:</span>
+          <span>{{ 'topheader.follow' | translate }}</span>
           <div class="socials">
             <a href="" class="social__item">
               <i class="fa fa-facebook-square"></i>
@@ -64,53 +88,53 @@
   
             <ul class="primary-menu-menu">
               <li class="menu-item-has-children">
-                <a (click)="scrollToElement(startpage)" href="javascript:void(0);">Inicio</a>
+                <a (click)="scrollToElement(startpage)" href="javascript:void(0);">{{ 'nav.home' | translate }}</a>
               </li>
   
               <li class="menu-item-has-mega-menu menu-item-has-children" id="como-funciona">
-                <a (click)="scrollToElement(howitworks)" href="javascript:void(0);">Como Funciona</a>
+                <a (click)="scrollToElement(howitworks)" href="javascript:void(0);">{{ 'nav.howitworks' | translate }}</a>
                 <div class="megamenu with-products">
                   <div class="megamenu-row">
   
                     <div class="col6" data-mh="product-item">
                       <div class="product-item text-center">
                         <img src="assets/img/menu.png" alt="step 1">
-                        <h6><strong>1.</strong> Elige la empresa en la que trabajas.</h6>
+                        <h6><strong>1.</strong> {{ 'nav.how1' | translate }}.</h6>
                       </div>
                     </div>
   
                     <div class="col6" data-mh="product-item">
                       <div class="product-item text-center">
                         <img src="assets/img/resume.png" alt="step 2">
-                        <h6><strong>2.</strong> Llenas una simple solicitud.</h6>
+                        <h6><strong>2.</strong> {{ 'nav.how2' | translate }}.</h6>
                       </div>
                     </div>
   
                     <div class="col6" data-mh="product-item">
                       <div class="product-item text-center">
                         <img src="assets/img/email.png" alt="step 3">
-                        <h6><strong>3.</strong> Te enviamos un correo con tu NIP.</h6>
+                        <h6><strong>3.</strong> {{ 'nav.how3' | translate }}.</h6>
                       </div>
                     </div>
   
                     <div class="col6" data-mh="product-item">
                       <div class="product-item text-center">
                         <img src="assets/img/checked.png" alt="step 4">
-                        <h6><strong>4.</strong> Aceptas que te depositemos el préstamo.</h6>
+                        <h6><strong>4.</strong> {{ 'nav.how4' | translate }}.</h6>
                       </div>
                     </div>
   
                     <div class="col6" data-mh="product-item">
                       <div class="product-item text-center">
                         <img src="assets/img/pay.png" alt="step 5">
-                        <h6><strong>5.</strong> Hacemos el deposito a tu cuenta.</h6>
+                        <h6><strong>5.</strong> {{ 'nav.how5' | translate }}.</h6>
                       </div>
                     </div>
   
                     <div class="col6" data-mh="product-item">
                       <div class="product-item text-center">
                         <img src="assets/img/small-calendar.png" alt="step 6">
-                        <h6><strong>6.</strong> Te descontamos en automático de tu cuenta.</h6>
+                        <h6><strong>6.</strong> {{ 'nav.how6' | translate }}.</h6>
                       </div>
                     </div>
   
@@ -119,36 +143,36 @@
               </li>
   
               <li class="menu-item-has-children">
-                <a (click)="scrollToElement(workgroup)" href="javascript:void(0);">Empresas</a>
+                <a (click)="scrollToElement(workgroup)" href="javascript:void(0);">{{ 'nav.workgroup' | translate }}</a>
               </li>
   
               <li class="menu-item-has-children">
-                <a (click)="scrollToElement(aboutus)" href="javascript:void(0);">Nosotros</a>
+                <a (click)="scrollToElement(aboutus)" href="javascript:void(0);">{{ 'nav.aboutus' | translate }}</a>
               </li>
   
               <li class="menu-item-has-children">
-                <a (click)="scrollToElement(contactus)" href="javascript:void(0);">Contacto</a>
+                <a (click)="scrollToElement(contactus)" href="javascript:void(0);">{{ 'nav.contact' | translate }}</a>
               </li>
   
               <li class="lang-mobile-menu">
                 <!-- <a href="#"><i class="fa fa-cog"></i> Idioma</a> -->
-                <a href="#">Idioma</a>
+                <a href="javascript:void(0);">{{ 'topheader.selectedlang' | translate }}</a>
                 <ul class="sub-menu">
                   <li>
-                    <a href="#">
-                      <img src="assets/img/mexico.svg" alt="Esp">&nbsp;<span>Español México</span>
+                    <a href="javascript:void(0);" (click)="translate.use('es')">
+                      <img src="assets/img/mexico.svg" alt="Esp">&nbsp;<span>{{ 'topheader.esEs' | translate }}</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <img src="assets/img/united-states.svg" alt="Eng">&nbsp;<span>Ingles USA</span>
+                    <a href="javascript:void(0);" (click)="translate.use('en')">
+                      <img src="assets/img/united-states.svg" alt="Eng">&nbsp;<span>{{ 'topheader.enEn' | translate }}</span>
                     </a>
                   </li>
                 </ul>
               </li>
   
               <li class="menu-item-has-children">
-                <a routerLink="/login">Mi Cuenta</a>
+                <a routerLink="/login">{{ 'nav.login' | translate }}</a>
               </li>
             </ul>
   
@@ -166,7 +190,7 @@
   <div class="content-wrapper" #startpage>
     <!-- Main Slider -->
     <div class="crumina-module crumina-module-slider container-full-width">
-      <div class="swiper-container main-slider navigation-center-both-sides" data-effect="fade" data-autoplay="5000" data-crossfade="true">
+      <div class="swiper-container main-slider navigation-center-both-sides" data-effect="fade" data-autoplay="5000" data-show-items="3">
   
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
@@ -177,15 +201,18 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                   <div class="slider-content align-both mt-0">
                     <h2 class="slider-content-title fz-3rem" data-swiper-parallax="-100">
-                      <span class="c-primary">Créditos de Nómina </span>
-                      Inmediatos
+                      <span class='c-primary'>Créditos de Nómina </span>Inmediatos
+                      <!-- <span class='c-primary'>{{ 'slider.slidertitle1' | translate }} </span>{{ 'slider.slidertitle1part2' | translate }} -->
+                      <!-- <span [innerHTML]="'slider.slidertitle1' | translate"></span> -->
                     </h2>
                     <h6 class="slider-content-text" data-swiper-parallax="-200">
-                      <b>¿Necesitas un préstamo de nómina?</b><br>Ahora con <b>Hurra Credit</b>, es muy sencillo, no esperes más ¡solicita el tuyo ahora!
+                        <!-- <span [innerHTML]="'slider.slidersubtitle1' | translate"></span> -->
+                        <b>¿Necesitas un préstamo de nómina?</b><br>Ahora con <b>Hurra Credit</b>, es muy sencillo, no esperes más ¡solicita el tuyo ahora!
                     </h6>
                     <div class="main-slider-btn-wrap" data-swiper-parallax="-300">
                       <a href="#" class="btn btn--orange btn--with-shadow">
-                        ¡ Necesito Dinero Extra !
+                          <!-- {{ 'slider.slider1btn' | translate }} -->
+                          ¡ Necesito Dinero Extra !
                       </a>
                     </div>
                   </div>
@@ -204,13 +231,13 @@
               <div class="row table-cell">
                 <div class="col-lg-6 col-md-12 col-sm-12">
                   <div class="slider-content align-both mt-0">
-                    <h2 class="slider-content-title" data-swiper-parallax="-100">100% en línea y desde el dispositivo de tu preferencia</h2>
+                    <h2 class="slider-content-title" data-swiper-parallax="-100">{{ 'slider.slidertitle2' | translate }}</h2>
                     <h6 class="slider-content-text" data-swiper-parallax="-200">
-                      <b>¡Solicitarlo es muy Fácil!</b> Puedes hacerlo desde cualquier dispositivo móvil o de escritorio y desde la comodidad de tu hogar.
+                        <span [innerHTML]="'slider.slidersubtitle2' | translate"></span>
                     </h6>
                     <div class="main-slider-btn-wrap" data-swiper-parallax="-300">
                       <a href="#" class="btn btn--lime btn--with-shadow">
-                        ¡ Necesito Dinero Extra !
+                          {{ 'slider.slider1btn' | translate }}
                       </a>
                     </div>
                   </div>
@@ -230,16 +257,14 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                   <div class="slider-content align-both">
                     <h2 class="slider-content-title" data-swiper-parallax="-100">
-                      <span class="c-primary">¿Aún no es quincena </span>
-                      y necesitas dinero extra?
+                      <span [innerHTML]="'slider.slidertitle3' | translate"></span>
                     </h2>
                     <h6 class="slider-content-text" data-swiper-parallax="-200">
-                      <b>¡Ya no tienes que esperar!</b><br>
-                      Solicita tu crédito nómina con nosotros, es muy fácil, sencillo y 100% en línea.
+                      <span [innerHTML]="'slider.slidersubtitle3' | translate"></span>
                     </h6>
                     <div class="main-slider-btn-wrap" data-swiper-parallax="-300">
                       <a href="#" class="btn btn--orange btn--with-shadow">
-                        ¡ Necesito Dinero Extra !
+                          {{ 'slider.slider1btn' | translate }}
                       </a>
                     </div>
                   </div>
@@ -277,15 +302,14 @@
         <div class="row">
           <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 mt-20 mb-20">
             <div class="crumina-module crumina-heading">
-              <h6 class="heading-sup-title">HURRA CREDIT</h6>
-              <h2 class="heading-title">¿Cómo funcionan<br><span class="c-primary">Nuestros Créditos?</span></h2>
-              <p class="heading-text">Con <b>Hurra Credit</b>, ahora es muy sencillo, en tan solo 6 simples pasos podrás disfrutar de nuestro servicio. No esperes más y solicita tu crédito nómina con nosotros.
-              </p>
+              <h6 class="heading-sup-title">{{ 'howitworks.hurra' | translate }}</h6>
+              <h2 class="heading-title"><span [innerHTML]="'howitworks.title' | translate"></span></h2>
+              <p class="heading-text"><span [innerHTML]="'howitworks.context' | translate"></span></p>
             </div>
-            <a href="02_company.html" class="btn btn-small btn--icon-right btn-border btn--with-shadow c-primary">
+            <a href="/login" class="btn btn-small btn--icon-right btn-border btn--with-shadow c-primary">
               <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
               <div class="text">
-                <span class="title">Solicitar mi crédito Nómina</span>
+                <span class="title">{{ 'howitworks.btnaction' | translate }}</span>
               </div>
             </a>
           </div>
@@ -298,7 +322,7 @@
                     <img class="hurra-icon" src="assets/img/menu.png" alt="Paso 1">
                   </div>
                   <div class="info-box-content">
-                    <a href="#" class="h5 info-box-title"><strong>1.</strong> Elige la empresa en la que trabajas.</a>
+                    <a href="#" class="h5 info-box-title"><strong>1.</strong> {{ 'howitworks.how1' | translate }}.</a>
                   </div>
                 </div>
               </div>
@@ -308,7 +332,7 @@
                     <img class="hurra-icon" src="assets/img/resume.png" alt="Paso 2">
                   </div>
                   <div class="info-box-content">
-                    <a href="#" class="h5 info-box-title"><strong>2.</strong> Llena una simple solicitud.</a>
+                    <a href="#" class="h5 info-box-title"><strong>2.</strong> {{ 'howitworks.how2' | translate }}.</a>
                   </div>
                 </div>
               </div>
@@ -318,7 +342,7 @@
                     <img class="hurra-icon" src="assets/img/email.png" alt="Paso 3">
                   </div>
                   <div class="info-box-content">
-                    <a href="#" class="h5 info-box-title"><strong>3.</strong> Te enviamos un correo con tu NIP.</a>
+                    <a href="#" class="h5 info-box-title"><strong>3.</strong> {{ 'howitworks.how3' | translate }}.</a>
                   </div>
                 </div>
               </div>
@@ -328,7 +352,7 @@
                     <img class="hurra-icon" src="assets/img/checked.png" alt="Paso 4">
                   </div>
                   <div class="info-box-content">
-                    <a href="#" class="h5 info-box-title"><strong>4.</strong> Aceptas que te depositemos el préstamo.</a>
+                    <a href="#" class="h5 info-box-title"><strong>4.</strong> {{ 'howitworks.how4' | translate }}.</a>
                   </div>
                 </div>
               </div>
@@ -338,7 +362,7 @@
                     <img class="hurra-icon" src="assets/img/pay.png" alt="Paso 5">
                   </div>
                   <div class="info-box-content">
-                    <a href="#" class="h5 info-box-title"><strong>5.</strong> Hacemos el depósito a tu cuenta.</a>
+                    <a href="#" class="h5 info-box-title"><strong>5.</strong> {{ 'howitworks.how5' | translate }}.</a>
                   </div>
                 </div>
               </div>
@@ -348,7 +372,7 @@
                     <img class="hurra-icon" src="assets/img/small-calendar.png" alt="Paso 6">
                   </div>
                   <div class="info-box-content">
-                    <a href="#" class="h5 info-box-title"><strong>6.</strong> Te hacemos el descuento automático en tu cuenta.</a>
+                    <a href="#" class="h5 info-box-title"><strong>6.</strong> {{ 'howitworks.how6' | translate }}.</a>
                   </div>
                 </div>
               </div>
@@ -369,15 +393,15 @@
               <img src="assets/img/logo-v-250.png" alt="hurra credit">
             </div>
             <div class="col-lg-4 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-              <h5 class="c-white">Servicio de Calidad</h5>
-              <p class="c-semitransparent-white">Ofreciendo a nuestros clientes una alternativa de financiamiento fácil, rápida y responsable al momento de cubrir imprevistos.</p>
+              <h5 class="c-white">{{ 'counters.title' | translate }}</h5>
+              <p class="c-semitransparent-white">{{ 'counters.subtitle' | translate }}</p>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
               <div class="crumina-module crumina-counter-item">
                 <div class="counter-numbers counter c-yellow text-center">
                   +<span data-speed="500" data-refresh-interval="3" data-to="1000" data-from="0">1000</span>
                 </div>
-                <h5 class="counter-title text-center">Créditos Otorgados</h5>
+                <h5 class="counter-title text-center">{{ 'counters.tag1' | translate }}</h5>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
@@ -385,7 +409,7 @@
                 <div class="counter-numbers counter c-yellow text-center">
                   +<span data-speed="500" data-refresh-interval="3" data-to="250" data-from="2">250</span>
                 </div>
-                <h5 class="counter-title text-center">Empleados Activos</h5>
+                <h5 class="counter-title text-center">{{ 'counters.tag2' | translate }}</h5>
               </div>
             </div>
           </div>
@@ -400,9 +424,8 @@
         <div class="row mb-40">
           <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 align-center">
             <div class="crumina-module crumina-heading">
-              <h2 class="heading-title">¿ En dónde trabajas ?</h2>
-              <div class="heading-text">¿Listo para iniciar tu solicitud? Selecciona la empresa para la cual trabajas actualmente haciendo clic en el botón “Aquí trabajo”.
-              </div>
+              <h2 class="heading-title">{{ 'workgroup.title' | translate }}</h2>
+              <div class="heading-text">{{ 'workgroup.subtitle' | translate }}</div>
             </div>
           </div>
         </div>
@@ -411,12 +434,17 @@
             <div class="widget w-search">
               <form method="get">
                 <div class="with-icon">
-                  <input name="name" placeholder="¿En que empresa trabajas?" type="text" id="workgroup-search-input">
+                  <input name="name" placeholder="{{ 'workgroup.searchplaceholder' | translate }}" type="text" id="workgroup-search-input">
                   <svg class="hurra-icon hurra-icon-search"><use xlink:href="#hurra-icon-search"></use></svg>
                 </div>
               </form>
             </div>
           </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center mb-50 mt-minus-20">
+                <a href="javascript:void(0);" routerLink="/login" class="c-orange-light">¿No pudiste encontrarte? ¿Quieres que tu empresa forma parte de Hurra Credits? <b>¡Has click aqui!</b></a>
+            </div>
         </div>
         <div class="row" id="work-group-search-block">
           <div class="pricing-wrap">
@@ -429,9 +457,9 @@
                 </div>
                 <div class="main-pricing-content">
                   <a href="#" class="h5 pricing-title invisible">Auto West</a>
-                  <p class="pricing-description">¿Trabajas para esta Empresa?</p>
+                  <p class="pricing-description">{{ 'workgroup.itemlabel' | translate }}</p>
                   <a href="#" class="more-arrow">
-                    <span>Si, aquí trabajo</span>
+                    <span>{{ 'workgroup.itembutton' | translate }}</span>
                     <div class="btn-next">
                       <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                       <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
@@ -449,9 +477,9 @@
                 </div>
                 <div class="main-pricing-content">
                   <a href="#" class="h5 pricing-title invisible">Pmroca</a>
-                  <p class="pricing-description">¿Trabajas para esta Empresa?</p>
+                  <p class="pricing-description">{{ 'workgroup.itemlabel' | translate }}</p>
                   <a href="#" class="more-arrow">
-                    <span>Si, aquí trabajo</span>
+                    <span>{{ 'workgroup.itembutton' | translate }}</span>
                     <div class="btn-next">
                       <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                       <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
@@ -471,9 +499,9 @@
                 </div>
                 <div class="main-pricing-content">
                   <a href="#" class="h5 pricing-title invisible">En-trega</a>
-                  <p class="pricing-description">¿Trabajas para esta Empresa?</p>
+                  <p class="pricing-description">{{ 'workgroup.itemlabel' | translate }}</p>
                   <a href="#" class="more-arrow">
-                    <span>Si, aquí trabajo</span>
+                    <span>{{ 'workgroup.itembutton' | translate }}</span>
                     <div class="btn-next">
                       <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                       <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
@@ -493,9 +521,9 @@
                 </div>
                 <div class="main-pricing-content">
                   <a href="#" class="h5 pricing-title invisible">Rom</a>
-                  <p class="pricing-description">¿Trabajas para esta Empresa?</p>
+                  <p class="pricing-description">{{ 'workgroup.itemlabel' | translate }}</p>
                   <a href="#" class="more-arrow">
-                    <span>Si, aquí trabajo</span>
+                    <span>{{ 'workgroup.itembutton' | translate }}</span>
                     <div class="btn-next">
                       <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                       <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
@@ -515,9 +543,9 @@
                 </div>
                 <div class="main-pricing-content">
                   <a href="#" class="h5 pricing-title invisible">Sector web</a>
-                  <p class="pricing-description">¿Trabajas para esta Empresa?</p>
+                  <p class="pricing-description">{{ 'workgroup.itemlabel' | translate }}</p>
                   <a href="#" class="more-arrow">
-                    <span>Si, aquí trabajo</span>
+                    <span>{{ 'workgroup.itembutton' | translate }}</span>
                     <div class="btn-next">
                       <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                       <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
@@ -535,9 +563,9 @@
                 </div>
                 <div class="main-pricing-content">
                   <a href="#" class="h5 pricing-title invisible">Sumieideas</a>
-                  <p class="pricing-description">¿Trabajas para esta Empresa?</p>
+                  <p class="pricing-description">{{ 'workgroup.itemlabel' | translate }}</p>
                   <a href="#" class="more-arrow">
-                    <span>Si, aquí trabajo</span>
+                    <span>{{ 'workgroup.itembutton' | translate }}</span>
                     <div class="btn-next">
                       <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                       <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
@@ -551,7 +579,7 @@
             <div class="md-separator col-md-12 col-sm-12 col-xs-12"></div> -->
             
           </div>
-          <div class="row">
+          <div class="row to-hide">
             <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
               <div class="pt80 no-records-filters">
                   <p>¡Lo sentimos! No pudimos encontrar la empresa para la cual trabajas, dentro de nuestros clientes.</p>
@@ -562,10 +590,10 @@
                 <div class="btn-prev btn--style disabled-element">
                   <svg class="hurra-icon icon-hover hurra-icon-arrow-left-1"><use xlink:href="#hurra-icon-arrow-left-1"></use></svg>
                   <svg class="hurra-icon hurra-icon-arrow-left1"><use xlink:href="#hurra-icon-arrow-left1"></use></svg>
-                  <span>Anterior</span>
+                  <span>{{ 'workgroup.prev' | translate }}</span>
                 </div>
                 <div class="btn-next btn--style disabled-element">
-                  <span>Siguiente</span>
+                  <span>{{ 'workgroup.next' | translate }}</span>
                   <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                   <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
                 </div>
@@ -583,17 +611,16 @@
         <div class="row">
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <div class="crumina-module crumina-heading">
-              <h6 class="heading-sup-title">HURRA CREDIT</h6>
-              <h2 class="heading-title">¿Quiénes Somos?</h2>
-              <p class="heading-text">Somos una <b>FINTECH</b> que te ayuda a resolver tus problemas en emergencias. Ofreciendo a nuestros clientes una alternativa de financiamiento fácil, rápida y responsable al momento de cubrir imprevistos.
-              </p>
+              <h6 class="heading-sup-title">{{ 'about.hurra' | translate }}</h6>
+              <h2 class="heading-title">{{ 'about.title' | translate }}</h2>
+              <p class="heading-text" [innerHTML]="'about.subtitle' | translate"></p>
             </div>
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="crumina-module crumina-info-box info-box--standard">
                   <div class="info-box-image display-flex">
                     <svg class="hurra-icon hurra-icon-checked force-check"><use xlink:href="#hurra-icon-checked"></use></svg>
-                    <h6 class="info-box-title">Operamos desde el 2012.</h6>
+                    <h6 class="info-box-title">{{ 'about.item1' | translate }}</h6>
                   </div>
                 </div>
               </div>
@@ -601,7 +628,7 @@
                 <div class="crumina-module crumina-info-box info-box--standard">
                   <div class="info-box-image display-flex">
                     <svg class="hurra-icon hurra-icon-checked force-check"><use xlink:href="#hurra-icon-checked"></use></svg>
-                    <h6 class="info-box-title">Tenemos cobertura en toda la República.</h6>
+                    <h6 class="info-box-title">{{ 'about.item2' | translate }}</h6>
                   </div>
                 </div>
               </div>
@@ -609,7 +636,7 @@
                 <div class="crumina-module crumina-info-box info-box--standard">
                   <div class="info-box-image display-flex">
                     <svg class="hurra-icon hurra-icon-checked force-check"><use xlink:href="#hurra-icon-checked"></use></svg>
-                    <h6 class="info-box-title">Todos nuestros procesos son en línea para brindarte un servicio rápido y eficiente.</h6>
+                    <h6 class="info-box-title">{{ 'about.item3' | translate }}</h6>
                   </div>
                 </div>
               </div>
@@ -617,7 +644,7 @@
                 <div class="crumina-module crumina-info-box info-box--standard">
                   <div class="info-box-image display-flex">
                     <svg class="hurra-icon hurra-icon-checked force-check"><use xlink:href="#hurra-icon-checked"></use></svg>
-                    <h6 class="info-box-title">Somos una empresa ágil, confiable y dispuestos a ayudar en cualquier emergencia.</h6>
+                    <h6 class="info-box-title">{{ 'about.item4' | translate }}</h6>
                   </div>
                 </div>
               </div>
@@ -642,19 +669,19 @@
   
               <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
                 <div class="crumina-module crumina-heading">
-                  <h2 class="heading-title">¿Dudas? Contáctanos</h2>
-                  <div class="heading-text">Para nosotros será un placer atender tus dudas, así que no dudes en contactarnos.
-                  </div>
+                  <h2 class="heading-title">{{ 'contact.title' | translate }}</h2>
+                  <div class="heading-text">{{ 'contact.subtitle' | translate }}</div>
                 </div>
   
                 <form class="contact-form items-with-border" method="post">
                   <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                      <input name="name" placeholder="Nombre Completo" type="text">
+                      <input name="name" placeholder="{{ 'contact.form1' | translate }}" type="text">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                      <span class="hide span-translate">{{ 'contact.form2' | translate }}</span>
                       <select>
-                        <option data-display="¿Dónde trabajas?">¿Dónde trabajas?</option>
+                        <option value="0" selected disabled>{{ 'contact.form2' | translate }}</option>
                         <option value="1">Auto West</option>
                         <option value="2">pmroca</option>
                         <option value="3">en-trega</option>
@@ -663,17 +690,17 @@
                   </div>
                   <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                      <input name="mail" placeholder="Correo Electrónico" type="email">
+                      <input name="mail" placeholder="{{ 'contact.form3' | translate }}" type="email">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                      <input name="tlf" placeholder="Teléfono" type="number">
+                      <input name="tlf" placeholder="{{ 'contact.form4' | translate }}" type="text" mask="(00) 0000-0000" prefix="+52">
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <textarea name="message" class="" required="" placeholder="Tu Mensaje" style="height: 140px;"></textarea>
+                      <textarea name="message" class="" required="" placeholder="{{ 'contact.form5' | translate }}" style="height: 140px;"></textarea>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <a href="#" class="btn btn--orange btn--with-shadow cd-nav-trigger">
-                        Enviar Mensaje
+                          {{ 'contact.button' | translate }}
                       </a>
                     </div>
                   </div>
@@ -681,16 +708,16 @@
               </div>
               <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
                 <div class="heading-text">
-                  <i class="fa fa-map-marker"></i> Ostia 2750 Int. 6, Lomas de Guevara, Guadalajara, Jalisco, C.P. 44657.
+                  <i class="fa fa-map-marker"></i> {{ 'contact.address' | translate }}
                 </div>
                 <div class="heading-text">
-                    <a href="tel:01332305660"><i class="fa fa-phone"></i> (01) 33 2305 6602.</a>
+                    <a href="tel:{{ 'contact.phoneank' | translate }}"><i class="fa fa-phone"></i> {{ 'contact.phone' | translate }}.</a>
                 </div>
                 <div class="heading-text">
-                    <a href="tel:3313611437"><i class="fa fa-whatsapp"></i> (33) 13 611 437.</a>
+                    <a href="tel:{{ 'contact.whatsappank' | translate }}"><i class="fa fa-whatsapp"></i> {{ 'contact.whatsapp' | translate }}.</a>
                 </div>
                 <div class="heading-text">
-                  <a href="mailto:info@hurra.credit"><i class="fa fa-envelope-o"></i> info@hurra.credit</a>
+                  <a href="mailto:{{ 'contact.email' | translate }}"><i class="fa fa-envelope-o"></i> {{ 'contact.email' | translate }}</a>
                 </div>
               </div>
             </div>
@@ -713,11 +740,7 @@
                 <img src="assets/img/logo-white.png" alt="hurra">
               </a>
             </div>
-            <p class="declaration">Claritas est etiam processus dynamicus, qui sequitur mutationem
-              consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
-              anteposuerit litterarum formas humanitatis per. Investigationes demonstraverunt lectores
-              legere me lius quod ii legunt saepius.
-            </p>
+            <p class="declaration">{{ 'footer.context' | translate }}</p>
             <!-- <a href="02_company.html" class="learn-more">Learn more about hurra</a> -->
           </div>
         </div>
@@ -725,34 +748,34 @@
         <div class="col-lg-3 col-md-3 col-sm-12 col-sm-offset-0 col-xs-12">
           <div class="widget w-list">
   
-            <h5 class="widget-title">Enlaces de Interés</h5>
+            <h5 class="widget-title">{{ 'footer.titlesection1' | translate }}</h5>
             <ul class="list list--primary">
               <li>
-                <a (click)="scrollToElement(startpage)" href="javascript:void(0);">Inicio</a>
+                <a (click)="scrollToElement(startpage)" href="javascript:void(0);">{{ 'footer.home' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a (click)="scrollToElement(howitworks)" href="javascript:void(0);">Como funciona</a>
+                <a (click)="scrollToElement(howitworks)" href="javascript:void(0);">{{ 'footer.howitworks' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a (click)="scrollToElement(aboutus)" href="javascript:void(0);">Nosotros</a>
+                <a (click)="scrollToElement(aboutus)" href="javascript:void(0);">{{ 'footer.about' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a (click)="scrollToElement(workgroup)" href="javascript:void(0);">Empresas</a>
+                <a (click)="scrollToElement(workgroup)" href="javascript:void(0);">{{ 'footer.workgroup' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a (click)="scrollToElement(contactus)" href="javascript:void(0);">Contacto</a>
+                <a (click)="scrollToElement(contactus)" href="javascript:void(0);">{{ 'footer.contact' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a routerLink="/login">Mi Cuenta</a>
+                <a routerLink="/login">{{ 'footer.account' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a routerLink="/faqs">Preguntas Frecuentes</a>
+                <a routerLink="/faqs">{{ 'footer.faqs' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
             </ul>
@@ -762,7 +785,7 @@
         <div class="col-lg-4 col-md-4 col-sm-12 col-sm-offset-0 col-xs-12">
           <div class="widget w-contacts">
   
-            <h5 class="widget-title">Importante</h5>
+            <h5 class="widget-title">{{ 'footer.titlesection2' | translate }}</h5>
   
             <div class="contact-item display-flex mt-minus-20">
               <img src="assets/img/ssl-logo.png" alt="ssl">
@@ -774,7 +797,7 @@
           <div class="widget w-follow mt-40">
             <ul>
               <li style="color: orange; width: 100%">
-                Siguenos en nuestras redes sociales
+                {{ 'footer.follow' | translate }}
               </li>
               <li>
                 <a href="#" class="c-white">
@@ -802,7 +825,7 @@
                   Copyright © 2018 <a routerLink="/index" class="sub-footer__link">HURRA</a>
               </span>
   
-              <span>Todos los derechos reservados. Consulta nuestro <a href="#" class="footer-legals js-aviso-popup">aviso de privacidad</a> y nuestros <a href="#" class="footer-legals js-terminos-popup">términos y condiciones</a>.</span>
+              <span>{{ 'footer.legalpart1' | translate }} <a href="#" class="footer-legals js-aviso-popup">{{ 'footer.legalpart2' | translate }}</a> {{ 'footer.legalpart3' | translate }} <a href="#" class="footer-legals js-terminos-popup">{{ 'footer.legalpart4' | translate }}</a>.</span>
           </div>
         </div>
       </div>

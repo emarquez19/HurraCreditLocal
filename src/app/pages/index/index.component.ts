@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 declare const $: any;
 declare const jQuery: any;
@@ -14,7 +15,16 @@ declare var SmoothScroll: any;
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+    constructor(public translate: TranslateService) {
+        // this language will be used as a fallback when a translation isn't found in the current language
+        // translate.setDefaultLang('es');
+        // // the lang to use, if the lang isn't available, it will use the current loader to get them
+        // translate.use('es');
+        translate.addLangs(['es', 'en']);
+        translate.setDefaultLang('es');
+        const browserLang = translate.getBrowserLang();
+        translate.use(browserLang.match(/es|en/) ? browserLang : 'es');
+    }
 
   ngOnInit() {
     // Global var
@@ -93,19 +103,6 @@ export class IndexComponent implements OnInit {
 
 
         /* -----------------------
-        * Parallax footer
-        * --------------------- */
-
-        CRUMINA.parallaxFooter = function () {
-            if ($footer.length && $footer.hasClass('js-fixed-footer')) {
-                $footer.before('<div class="block-footer-height"></div>');
-                $('.block-footer-height').matchHeight({
-                    target: $footer
-                });
-            }
-        };
-
-        /* -----------------------
         * Preloader
         * --------------------- */
 
@@ -153,30 +150,7 @@ export class IndexComponent implements OnInit {
             }
         };
 
-        /* -----------------------
-        * Progress bars Animation
-        * --------------------- */
-        CRUMINA.progresBars = function () {
-            if ($progress_bar.length) {
-                $progress_bar.each(function () {
-                    jQuery(this).waypoint(function () {
-                        $(this.element).find('.count-animate').countTo();
-                        $(this.element).find('.skills-item-meter-active').fadeTo(300, 1).addClass('skills-animate');
-                        this.destroy();
-                    }, {offset: '90%'});
-                });
-            }
-        };
 
-
-
-        /* -----------------------------
-        * Toggle search overlay
-        * ---------------------------*/
-        CRUMINA.toggleSearch = function () {
-            $('.search-popup').toggleClass('open');
-            $('.search-full-screen input').focus();
-        };
 
         /* -----------------------------
         * Embedded Video in pop up
@@ -214,39 +188,6 @@ export class IndexComponent implements OnInit {
             });
         };
 
-        /* -----------------------------
-        * Isotope sorting
-        * ---------------------------*/
-
-        CRUMINA.IsotopeSort = function () {
-            const $container = $('.sorting-container');
-            $container.each(function () {
-                const $current = $(this);
-                const layout = ($current.data('layout').length) ? $current.data('layout') : 'masonry';
-                $current.isotope({
-                    itemSelector: '.sorting-item',
-                    layoutMode: layout,
-                    percentPosition: true
-                });
-
-                $current.imagesLoaded().progress(function () {
-                    $current.isotope('layout');
-                });
-
-                var $sorting_buttons = $current.siblings('.sorting-menu').find('li');
-
-                $sorting_buttons.on('click', function () {
-                    if ($(this).hasClass('active')) return false;
-                    $(this).parent().find('.active').removeClass('active');
-                    $(this).addClass('active');
-                    var filterValue = $(this).data('filter');
-                    if (typeof filterValue != "undefined") {
-                        $current.isotope({filter: filterValue});
-                        return false;
-                    }
-                });
-            });
-        };
 
         /* -----------------------------
         * Sliders and Carousels
@@ -265,13 +206,13 @@ export class IndexComponent implements OnInit {
 
                 let $effect = ($t.data('effect')) ? $t.data('effect') : 'slide',
                     $crossfade = ($t.data('crossfade')) ? $t.data('crossfade') : true,
-                    $loop = ($t.data('loop') == false) ? $t.data('loop') : true,
+                    $loop = ($t.data('loop') === false) ? $t.data('loop') : true,
                     $showItems = ($t.data('show-items')) ? $t.data('show-items') : 1,
                     $scrollItems = ($t.data('scroll-items')) ? $t.data('scroll-items') : 1,
                     $scrollDirection = ($t.data('direction')) ? $t.data('direction') : 'horizontal',
                     $mouseScroll = ($t.data('mouse-scroll')) ? $t.data('mouse-scroll') : false,
                     $autoplay = ($t.data('autoplay')) ? parseInt($t.data('autoplay'), 10) : 0,
-                    $autoheight = ($t.hasClass('auto-height')) ? true: false,
+                    $autoheight = ($t.hasClass('auto-height')) ? true : false,
                     $nospace = ($t.data('nospace')) ? $t.data('nospace') : false,
                     $centeredSlider = ($t.data('centered-slider')) ? $t.data('centered-slider') : false,
                     $stretch = ($t.data('stretch')) ? $t.data('stretch') : 0,
@@ -359,7 +300,6 @@ export class IndexComponent implements OnInit {
                 $(this).addClass('slide-active');
                 mySwiper.update();
                 return false;
-
             });
         };
 
@@ -476,8 +416,6 @@ export class IndexComponent implements OnInit {
             };
         };
 
-
-      
 
 
         /* -----------------------------
@@ -609,20 +547,11 @@ export class IndexComponent implements OnInit {
                 const value = $(this).val().toLowerCase();
                 $('#work-group-search-block [data-work-filter]').filter(function() {
                   $(this).toggle($(this).find('.pricing-title').text().toLowerCase().indexOf(value) > -1);
-                //   if ($(this).find('.pricing-title').text().toLowerCase().indexOf(value) = -1) {
-                //       $('.no-records-filters').show();
-                //   } else {
-                //     $('.no-records-filters').hide();
-                //   }
-                    console.log($(this).find('.pricing-title').text().toLowerCase().indexOf(value));
+
+                    // console.log($(this).find('.pricing-title').text().toLowerCase().indexOf(value));
                 });
             });
 
-
-        //   const scroll  = new SmoothScroll('a[href*="#"]', {
-        //       ignore: '[data-toggle]', // Selector for links to ignore (must be a valid CSS selector)
-        //       offset: 40 // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
-        //   });
 
 
             if ($('#menu-icon-wrapper').length) {
@@ -644,10 +573,10 @@ export class IndexComponent implements OnInit {
         CRUMINA.equalHeight();
         CRUMINA.mediaPopups();
         // CRUMINA.IsotopeSort();
-        CRUMINA.parallaxFooter();
+        // CRUMINA.parallaxFooter();
 
         // Dom mofifications
-        $('select').niceSelect();
+        $('.nice-select-holder select').niceSelect();
 
         CRUMINA.preloader();
         CRUMINA.layerInit();
@@ -655,7 +584,7 @@ export class IndexComponent implements OnInit {
         CRUMINA.countdown();
         // On Scroll animations.
         CRUMINA.counters();
-        CRUMINA.progresBars();
+        // CRUMINA.progresBars();
 
         $(window).on('resize', function(){
             window.requestAnimationFrame( CRUMINA.layerInit);

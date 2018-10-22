@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
 
 declare const $: any;
 declare const jQuery: any;
@@ -15,8 +16,11 @@ declare var Segment: any;
 export class LoginComponent implements OnInit {
 
   constructor(
-    private router: Router
-  ) { }
+    private router: Router,
+    public translate: TranslateService
+  ) {
+    translate.use(translate.currentLang ? translate.currentLang : 'es');
+  }
 
   ngOnInit() {
     // Global var
@@ -94,19 +98,6 @@ export class LoginComponent implements OnInit {
 
 
         /* -----------------------
-        * Parallax footer
-        * --------------------- */
-
-        CRUMINA.parallaxFooter = function () {
-            if ($footer.length && $footer.hasClass('js-fixed-footer')) {
-                $footer.before('<div class="block-footer-height"></div>');
-                $('.block-footer-height').matchHeight({
-                    target: $footer
-                });
-            }
-        };
-
-        /* -----------------------
         * Preloader
         * --------------------- */
 
@@ -117,135 +108,12 @@ export class LoginComponent implements OnInit {
         };
 
 
-        /* -----------------------
-        * COUNTER NUMBERS
-        * --------------------- */
-
-        CRUMINA.counters = function () {
-            if ($counter.length) {
-                $counter.each(function () {
-                    jQuery(this).waypoint(function () {
-                        $(this.element).find('span').countTo();
-                        this.destroy();
-                    }, {offset: '95%'});
-                });
-            }
-        };
-
-        /* -----------------------
-        * COUNTDOWN
-        * --------------------- */
-
-        CRUMINA.countdown = function () {
-            if ($countdown.length) {
-                $countdown.each(function () {
-                    const $countcontainer = $(this);
-                    const $countdate = $countcontainer.data('countdown');
-
-                    $countcontainer.countdown($countdate).on('update.countdown', function(event) {
-                        $countcontainer.html(event.strftime(''
-                            + '<div class="column"><div class="text">DAY%!d</div><div class="timer">%D</div></div><div class="timer">:</div>'
-                            + '<div class="column"><div class="text">HRS</div><div class="timer">%H</div></div><div class="timer">:</div>'
-                            + '<div class="column"><div class="text">MIN</div><div class="timer">%M</div></div><div class="timer">:</div>'
-                            + '<div class="column"><div class="text">SEC</div><div class="timer">%S</div></div>'));
-                        });
-
-                });
-            }
-        };
-
-        /* -----------------------
-        * Progress bars Animation
-        * --------------------- */
-        CRUMINA.progresBars = function () {
-            if ($progress_bar.length) {
-                $progress_bar.each(function () {
-                    jQuery(this).waypoint(function () {
-                        $(this.element).find('.count-animate').countTo();
-                        $(this.element).find('.skills-item-meter-active').fadeTo(300, 1).addClass('skills-animate');
-                        this.destroy();
-                    }, {offset: '90%'});
-                });
-            }
-        };
-
-
-
-        /* -----------------------------
-        * Toggle search overlay
-        * ---------------------------*/
-        CRUMINA.toggleSearch = function () {
-            $('.search-popup').toggleClass('open');
-            $('.search-full-screen input').focus();
-        };
-
-        /* -----------------------------
-        * Embedded Video in pop up
-        * ---------------------------*/
-        CRUMINA.mediaPopups = function () {
-            $('.js-popup-iframe').magnificPopup({
-                disableOn: 700,
-                type: 'iframe',
-                mainClass: 'mfp-fade',
-                removalDelay: 160,
-                preloader: false,
-
-                fixedContentPos: false
-            });
-            $('.js-zoom-image, .link-image').magnificPopup({
-                type: 'image',
-                removalDelay: 500, // delay removal by X to allow out-animation
-                callbacks: {
-                    beforeOpen: function () {
-                        // just a hack that adds mfp-anim class to markup
-                        this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
-                        this.st.mainClass = 'mfp-zoom-in';
-                    }
-                },
-                closeOnContentClick: true,
-                midClick: true
-            });
-        };
         /* -----------------------------
         * Equal height
         * ---------------------------*/
         CRUMINA.equalHeight = function () {
             $('.js-equal-child').find('.theme-module').matchHeight({
                 property: 'min-height'
-            });
-        };
-
-        /* -----------------------------
-        * Isotope sorting
-        * ---------------------------*/
-
-        CRUMINA.IsotopeSort = function () {
-            const $container = $('.sorting-container');
-            $container.each(function () {
-                const $current = $(this);
-                const layout = ($current.data('layout').length) ? $current.data('layout') : 'masonry';
-                $current.isotope({
-                    itemSelector: '.sorting-item',
-                    layoutMode: layout,
-                    percentPosition: true
-                });
-
-                $current.imagesLoaded().progress(function () {
-                    $current.isotope('layout');
-                });
-
-                var $sorting_buttons = $current.siblings('.sorting-menu').find('li');
-
-                $sorting_buttons.on('click', function () {
-                    if ($(this).hasClass('active')) return false;
-                    $(this).parent().find('.active').removeClass('active');
-                    $(this).addClass('active');
-                    var filterValue = $(this).data('filter');
-                    if (typeof filterValue != "undefined") {
-                        $current.isotope({filter: filterValue});
-                        return false;
-                    }
-                });
             });
         };
 
@@ -607,24 +475,9 @@ export class LoginComponent implements OnInit {
                 const value = $(this).val().toLowerCase();
                 $('#work-group-search-block [data-work-filter]').filter(function() {
                   $(this).toggle($(this).find('.pricing-title').text().toLowerCase().indexOf(value) > -1);
-                //   if ($(this).find('.pricing-title').text().toLowerCase().indexOf(value) = -1) {
-                //       $('.no-records-filters').show();
-                //   } else {
-                //     $('.no-records-filters').hide();
-                //   }
-                    console.log($(this).find('.pricing-title').text().toLowerCase().indexOf(value));
+                    // console.log($(this).find('.pricing-title').text().toLowerCase().indexOf(value));
                 });
             });
-
-        /* -----------------------
-        * SmoothScroll
-        * --------------------- */
-
-          // const scroll  = new SmoothScroll('a[href*="#"]', {
-          //     ignore: '[data-toggle]', // Selector for links to ignore (must be a valid CSS selector)
-          //     offset: 40 // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
-          // });
-
 
 
 
@@ -645,20 +498,20 @@ export class LoginComponent implements OnInit {
         CRUMINA.fixedHeader();
         CRUMINA.initSwiper();
         CRUMINA.equalHeight();
-        CRUMINA.mediaPopups();
+        // CRUMINA.mediaPopups();
         // CRUMINA.IsotopeSort();
-        CRUMINA.parallaxFooter();
+        // CRUMINA.parallaxFooter();
 
         // Dom mofifications
-        $('select').niceSelect();
+        $('.nice-select-holder select').niceSelect();
 
         CRUMINA.preloader();
         CRUMINA.layerInit();
 
-        CRUMINA.countdown();
+        // CRUMINA.countdown();
         // On Scroll animations.
-        CRUMINA.counters();
-        CRUMINA.progresBars();
+        // CRUMINA.counters();
+        // CRUMINA.progresBars();
 
         $(window).on('resize', function(){
             window.requestAnimationFrame( CRUMINA.layerInit);

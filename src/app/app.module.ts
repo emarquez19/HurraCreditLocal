@@ -21,10 +21,17 @@ import { NgxMaskModule } from 'ngx-mask';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MatFormFieldModule, MatInputModule, DateAdapter , MAT_DATE_FORMATS} from '@angular/material';
 import { NgxCurrencyModule } from 'ngx-currency';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
 // DateFormat
 import { DateFormat, APP_DATE_FORMATS } from './date-format';
 
-
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -54,7 +61,15 @@ import { DateFormat, APP_DATE_FORMATS } from './date-format';
     MatNativeDateModule,
     MatInputModule,
     MatDatepickerModule,
-    NgxCurrencyModule
+    NgxCurrencyModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+        loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+        }
+    })
   ],
   providers: [{provide: DateAdapter, useClass: DateFormat}, { provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS}, MatNativeDateModule],
   bootstrap: [AppComponent]

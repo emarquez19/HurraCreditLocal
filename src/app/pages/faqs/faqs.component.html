@@ -3,29 +3,31 @@
 
 <!-- Header -->
 <header class="header header--small-lines" id="site-header">
-    <div class="top-bar top-bar-dark">
+  <div class="top-bar top-bar-dark">
       <div class="container">
         <div class="top-bar-contact">
           <div class="contact-item">
-              <a href="tel:3313611437"><i class="fa fa-whatsapp icon-fill-header"></i> (33) 13 611 437</a>
+            <a href="tel:{{ 'topheader.tlfshort' | translate }}"><i class="fa fa-whatsapp icon-fill-header"></i> {{ 'topheader.tlf' | translate }}</a>
           </div>
           <div class="contact-item">
             <svg class="hurra-icon hurra-icon-letter"><use xlink:href="#hurra-icon-letter"></use></svg>
-            <a href="mailto:info@hurra.credit">info@hurra.credit</a>
+            <a href="mailto:{{ 'topheader.email' | translate }}">{{ 'topheader.email' | translate }}</a>
           </div>
         </div>
   
-        
         <div class="contact-item language-switcher pull-right">
-          <!-- <svg class="hurra-icon world hurra-icon-world-map"><use xlink:href="#hurra-icon-world-map"></use></svg> -->
-          <select>
-            <option value="1">Español</option>
-            <option value="2">Ingles</option>
-          </select>
+
+          <div class="nice-select" tabindex="0">
+            <span>{{ 'topheader.selectedlang' | translate }}</span>
+            <ul class="list">
+              <li (click)="translate.use('es')" class="option">{{ 'topheader.esEs' | translate }}</li>
+              <li (click)="translate.use('en')" class="option">{{ 'topheader.enEn' | translate }}</li>
+            </ul>
+          </div>
         </div>
   
         <div class="follow_us mr-20">
-          <span>Siguenos en:</span>
+          <span>{{ 'topheader.follow' | translate }}</span>
           <div class="socials">
             <a href="" class="social__item">
               <i class="fa fa-facebook-square"></i>
@@ -65,83 +67,78 @@
   
             <ul class="primary-menu-menu">
               <li class="menu-item-has-children">
-                <a routerLink="/index" class="smoothscroll">Inicio</a>
+                <a (click)="scrollToElement(startpage)" href="javascript:void(0);">{{ 'nav.home' | translate }}</a>
               </li>
   
               <li class="menu-item-has-mega-menu menu-item-has-children" id="como-funciona">
-                <a class="cursor">Como Funciona</a>
+                <a (click)="scrollToElement(howitworks)" href="javascript:void(0);">{{ 'nav.howitworks' | translate }}</a>
                 <div class="megamenu with-products">
                   <div class="megamenu-row">
   
                     <div class="col6" data-mh="product-item">
                       <div class="product-item text-center">
                         <img src="assets/img/menu.png" alt="step 1">
-                        <h6><strong>1.</strong> Elige la empresa en la que trabajas.</h6>
+                        <h6><strong>1.</strong> {{ 'nav.how1' | translate }}.</h6>
                       </div>
                     </div>
   
                     <div class="col6" data-mh="product-item">
                       <div class="product-item text-center">
                         <img src="assets/img/resume.png" alt="step 2">
-                        <h6><strong>2.</strong> Llenas una simple solicitud.</h6>
+                        <h6><strong>2.</strong> {{ 'nav.how2' | translate }}.</h6>
                       </div>
                     </div>
   
                     <div class="col6" data-mh="product-item">
                       <div class="product-item text-center">
                         <img src="assets/img/email.png" alt="step 3">
-                        <h6><strong>3.</strong> Te enviamos un correo con tu NIP.</h6>
+                        <h6><strong>3.</strong> {{ 'nav.how3' | translate }}.</h6>
                       </div>
                     </div>
   
                     <div class="col6" data-mh="product-item">
                       <div class="product-item text-center">
                         <img src="assets/img/checked.png" alt="step 4">
-                        <h6><strong>4.</strong> Aceptas que te depositemos el préstamo.</h6>
+                        <h6><strong>4.</strong> {{ 'nav.how4' | translate }}.</h6>
                       </div>
                     </div>
   
                     <div class="col6" data-mh="product-item">
                       <div class="product-item text-center">
                         <img src="assets/img/pay.png" alt="step 5">
-                        <h6><strong>5.</strong> Hacemos el deposito a tu cuenta.</h6>
+                        <h6><strong>5.</strong> {{ 'nav.how5' | translate }}.</h6>
                       </div>
                     </div>
   
                     <div class="col6" data-mh="product-item">
                       <div class="product-item text-center">
                         <img src="assets/img/small-calendar.png" alt="step 6">
-                        <h6><strong>6.</strong> Te descontamos en automático de tu cuenta.</h6>
+                        <h6><strong>6.</strong> {{ 'nav.how6' | translate }}.</h6>
                       </div>
                     </div>
   
                   </div>
                 </div>
               </li>
-  
-              <li class="menu-item-has-children">
-                  <a (click)="scrollToElement(contactus)" href="javascript:void(0);">Contacto</a>
-              </li>
-  
+
               <li class="lang-mobile-menu">
-                <!-- <a href="#"><i class="fa fa-cog"></i> Idioma</a> -->
-                <a href="#">Idioma</a>
+                <a href="javascript:void(0);">{{ 'topheader.selectedlang' | translate }}</a>
                 <ul class="sub-menu">
                   <li>
-                    <a href="#">
-                      <img src="assets/img/mexico.svg" alt="Esp">&nbsp;<span>Español México</span>
+                    <a href="javascript:void(0);" (click)="translate.use('es')">
+                      <img src="assets/img/mexico.svg" alt="Esp">&nbsp;<span>{{ 'topheader.esEs' | translate }}</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <img src="assets/img/united-states.svg" alt="Eng">&nbsp;<span>Ingles USA</span>
+                    <a href="javascript:void(0);" (click)="translate.use('en')">
+                      <img src="assets/img/united-states.svg" alt="Eng">&nbsp;<span>{{ 'topheader.enEn' | translate }}</span>
                     </a>
                   </li>
                 </ul>
               </li>
   
               <li class="menu-item-has-children">
-                <a routerLink="/login">Mi Cuenta</a>
+                <a routerLink="/login">{{ 'nav.login' | translate }}</a>
               </li>
   
             </ul>
@@ -168,11 +165,11 @@
           </div>
           <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
             <div class="crumina-module crumina-heading">
-              <h2 class="heading-title"><span class="c-primary">¿Dudas?</span> Quizás en nuestras preguntas frecuentes encuentres una respuesta.</h2>
+              <h2 class="heading-title" [innerHTML]="'faqs.title' | translate"></h2>
             </div>
           </div>
   
-                  <div class="clearfix mb-20 mt-20"></div>
+          <div class="clearfix mb-20 mt-20"></div>
                   
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <ul class="crumina-module crumina-accordion" id="accordion">
@@ -183,12 +180,12 @@
                       <svg class="hurra-icon hurra-icon-add"><use xlink:href="#hurra-icon-add"></use></svg>
                       <svg class="hurra-icon active hurra-icon-minus"><use xlink:href="#hurra-icon-minus"></use></svg>
                     </span>
-                    <span class="ovh title">¿Cuál es el horario de Hurra Credit?</span>
+                    <span class="ovh title">{{ 'faqs.item1' | translate }}</span>
                   </a>
                 </div>
                 <div id="toggleSample" class="panel-collapse collapse" aria-expanded="false" role="tree">
                   <div class="panel-info">
-                    Nuestro horario de oficina es de 9:00 am a 6:00 pm (Lunes a Viernes).
+                      {{ 'faqs.context1' | translate }}
                   </div>
                 </div>
               </li>
@@ -199,12 +196,12 @@
                       <svg class="hurra-icon hurra-icon-add"><use xlink:href="#hurra-icon-add"></use></svg>
                       <svg class="hurra-icon active hurra-icon-minus"><use xlink:href="#hurra-icon-minus"></use></svg>
                     </span>
-                    <span class="ovh title">¿En que horario puedo tramitar mi crédito?</span>
+                    <span class="ovh title">{{ 'faqs.item2' | translate }}</span>
                   </a>
                 </div>
                 <div id="toggleOne" class="panel-collapse collapse" aria-expanded="false" role="tree">
                   <div class="panel-info">
-                    A través de la página, puede solicitarse las 24 horas del día, los 7 días de la semana.
+                      {{ 'faqs.context2' | translate }}
                   </div>
                 </div>
               </li>
@@ -215,12 +212,12 @@
                       <svg class="hurra-icon hurra-icon-add"><use xlink:href="#hurra-icon-add"></use></svg>
                       <svg class="hurra-icon active hurra-icon-minus"><use xlink:href="#hurra-icon-minus"></use></svg>
                     </span>
-                    <span class="ovh title">¿Cómo puedo contactarlos?</span>
+                    <span class="ovh title">{{ 'faqs.item3' | translate }}</span>
                   </a>
                 </div>
                 <div id="toggleTwo" class="panel-collapse collapse" aria-expanded="false" role="tree">
                   <div class="panel-info">
-                    Lo puedes hacer vía correo contacto@hurra.mx   o desde el apartado "Contactanos" que se encuentra ubicado en la parte inferior de la pagina.
+                      {{ 'faqs.context3' | translate }}
                   </div>
                 </div>
               </li>
@@ -231,12 +228,12 @@
                       <svg class="hurra-icon hurra-icon-add"><use xlink:href="#hurra-icon-add"></use></svg>
                       <svg class="hurra-icon active hurra-icon-minus"><use xlink:href="#hurra-icon-minus"></use></svg>
                     </span>
-                    <span class="ovh title">¿Cuántos prestamos puedo solicitar?</span>
+                    <span class="ovh title">{{ 'faqs.item4' | translate }}</span>
                   </a>
                 </div>
                 <div id="toggleThree" class="panel-collapse collapse" aria-expanded="false" role="tree">
                   <div class="panel-info">
-                    Depende de tu capacidad de pago y/o de las condiciones pactadas con tu empresa.
+                      {{ 'faqs.context4' | translate }}
                   </div>
                 </div>
               </li>
@@ -247,12 +244,12 @@
                       <svg class="hurra-icon hurra-icon-add"><use xlink:href="#hurra-icon-add"></use></svg>
                       <svg class="hurra-icon active hurra-icon-minus"><use xlink:href="#hurra-icon-minus"></use></svg>
                     </span>
-                    <span class="ovh title">¿Cuánto tiempo tengo que esperar desde que liquide mi préstamo para solicitar otro?</span>
+                    <span class="ovh title">{{ 'faqs.item5' | translate }}</span>
                   </a>
                 </div>
                 <div id="toggleFour" class="panel-collapse collapse" aria-expanded="false" role="tree">
                   <div class="panel-info">
-                    En cuanto se tenga reflejado tu último pago y no se presenten adeudos.
+                      {{ 'faqs.context5' | translate }}
                   </div>
                 </div>
               </li>
@@ -263,12 +260,12 @@
                       <svg class="hurra-icon hurra-icon-add"><use xlink:href="#hurra-icon-add"></use></svg>
                       <svg class="hurra-icon active hurra-icon-minus"><use xlink:href="#hurra-icon-minus"></use></svg>
                     </span>
-                    <span class="ovh title">¿Que es la clabe interbancaria?</span>
+                    <span class="ovh title">{{ 'faqs.item6' | translate }}</span>
                   </a>
                 </div>
                 <div id="toggleEight" class="panel-collapse collapse" aria-expanded="false" role="tree">
                   <div class="panel-info">
-                    Es un numero de 18 dígitos que te permite realizar transferencias entre diferentes bancos de manera rápida y segura. La puedes solicitar en tu banco y/o cajeros automáticos.
+                      {{ 'faqs.context6' | translate }}
                   </div>
                 </div>
               </li>
@@ -285,13 +282,13 @@
                                 <svg class="hurra-icon hurra-icon-add"><use xlink:href="#hurra-icon-add"></use></svg>
                                 <svg class="hurra-icon active hurra-icon-minus"><use xlink:href="#hurra-icon-minus"></use></svg>
                             </span>
-                            <span class="ovh title">¿Es posible cambiar el monto por el cual solicite el préstamo?</span>
+                            <span class="ovh title">{{ 'faqs.item7' | translate }}</span>
                         </a>
                     </div>
 
                     <div id="toggleFive" class="panel-collapse collapse" aria-expanded="false" role="tree">
                         <div class="panel-info">
-                            Es posible, mientras no se haya firmado el contrato puedes realizar las modificaciones que requieras, si ya enviaste la solicitud sera necesario que envíes un correo a contacto@hurra.mx.
+                            {{ 'faqs.context7' | translate }}
                         </div>
                     </div>
                 </li>
@@ -303,13 +300,13 @@
                                 <svg class="hurra-icon hurra-icon-add"><use xlink:href="#hurra-icon-add"></use></svg>
                                 <svg class="hurra-icon active hurra-icon-minus"><use xlink:href="#hurra-icon-minus"></use></svg>
                             </span>
-                            <span class="ovh title">¿Comó le puedo hacer para liquidar mi préstamo antes de terminar mi plazo?</span>
+                            <span class="ovh title">{{ 'faqs.item8' | translate }}</span>
                         </a>
                     </div>
 
                     <div id="toggleSix" class="panel-collapse collapse" aria-expanded="false" role="tree">
                         <div class="panel-info">
-                            Contáctanos al correo:  contacto@hurra.mx o al teléfono: (0133) 23 05 66 02.
+                            {{ 'faqs.context8' | translate }}
                         </div>
                     </div>
                 </li>
@@ -321,13 +318,13 @@
                                 <svg class="hurra-icon hurra-icon-add"><use xlink:href="#hurra-icon-add"></use></svg>
                                 <svg class="hurra-icon active hurra-icon-minus"><use xlink:href="#hurra-icon-minus"></use></svg>
                             </span>
-                            <span class="ovh title">En caso de que no me llegue mi contrato a mi correo. ¿Qué hago?</span>
+                            <span class="ovh title">{{ 'faqs.item9' | translate }}</span>
                         </a>
                     </div>
 
                     <div id="toggleSeven" class="panel-collapse collapse" aria-expanded="false" role="tree">
                         <div class="panel-info">
-                            Contáctanos al correo:  contacto@hurra.mx  o al teléfono: (0133) 23 05 66 02.
+                            {{ 'faqs.context9' | translate }}
                         </div>
                     </div>
                 </li>
@@ -339,13 +336,13 @@
                                 <svg class="hurra-icon hurra-icon-add"><use xlink:href="#hurra-icon-add"></use></svg>
                                 <svg class="hurra-icon active hurra-icon-minus"><use xlink:href="#hurra-icon-minus"></use></svg>
                             </span>
-                            <span class="ovh title">¿Qué pasa si no envío mi INE y comprobante de domicilio?</span>
+                            <span class="ovh title">{{ 'faqs.item10' | translate }}</span>
                         </a>
                     </div>
 
                     <div id="toggleNine" class="panel-collapse collapse" aria-expanded="false" role="tree">
                         <div class="panel-info">
-                            Es requerida esta documentación para completar tu expediente, de lo contrario no podremos realizar la transferencia a tu cuenta.
+                            {{ 'faqs.context10' | translate }}
                         </div>
                     </div>
                 </li>
@@ -356,9 +353,8 @@
     </section>
     <!-- ... How it works -->
   
-    <!-- Counters -->
-  
-    <section class="bg-secondary-color background-contain bg-10">
+  <!-- Counters -->
+  <section class="bg-secondary-color background-contain bg-10">
       <div class="container">
         <div class="row">
           <div class="counters">
@@ -366,15 +362,15 @@
               <img src="assets/img/logo-v-250.png" alt="hurra credit">
             </div>
             <div class="col-lg-4 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-              <h5 class="c-white">Servicio de Calidad</h5>
-              <p class="c-semitransparent-white">Ofreciendo a nuestros clientes una alternativa de financiamiento fácil, rápida y responsable al momento de cubrir imprevistos.</p>
+              <h5 class="c-white">{{ 'counters.title' | translate }}</h5>
+              <p class="c-semitransparent-white">{{ 'counters.subtitle' | translate }}</p>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
               <div class="crumina-module crumina-counter-item">
                 <div class="counter-numbers counter c-yellow text-center">
                   +<span data-speed="500" data-refresh-interval="3" data-to="1000" data-from="0">1000</span>
                 </div>
-                <h5 class="counter-title text-center">Créditos Otorgados</h5>
+                <h5 class="counter-title text-center">{{ 'counters.tag1' | translate }}</h5>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
@@ -382,7 +378,7 @@
                 <div class="counter-numbers counter c-yellow text-center">
                   +<span data-speed="500" data-refresh-interval="3" data-to="250" data-from="2">250</span>
                 </div>
-                <h5 class="counter-title text-center">Usuarios Activos</h5>
+                <h5 class="counter-title text-center">{{ 'counters.tag2' | translate }}</h5>
               </div>
             </div>
           </div>
@@ -393,70 +389,70 @@
   
     <!-- Subscribe Form -->
     <section class="bg-primary-color background-contain bg-14 crumina-module crumina-module-subscribe-form" #contactus>
-          <div class="container">
-              <div class="row">
-                  <div class="subscribe-form">
-                      <div class="subscribe-main-content">
-                          <img class="subscribe-img" src="assets/img/subscribe-img.png" alt="image">
+      <div class="container">
+        <div class="row">
+          <div class="subscribe-form">
+            <div class="subscribe-main-content">
+              <img class="subscribe-img" src="assets/img/subscribe-img.png" alt="image">
   
-                          <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
-                              <div class="crumina-module crumina-heading">
-                                  <h2 class="heading-title">¿Dudas? Contáctanos</h2>
-                                  <div class="heading-text">Para nosotros será un placer atender tus dudas, así que no dudes en contactarnos.
-                                  </div>
-                              </div>
+              <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+                <div class="crumina-module crumina-heading">
+                  <h2 class="heading-title">{{ 'contact.title' | translate }}</h2>
+                  <div class="heading-text">{{ 'contact.subtitle' | translate }}</div>
+                </div>
   
-                              <form class="contact-form items-with-border" method="post">
-                                  <div class="row">
-                                      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                          <input name="name" placeholder="Nombre Completo" type="text">
-                                      </div>
-                                      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                          <select>
-                                              <option data-display="¿Dónde trabajas?">¿Dónde trabajas?</option>
-                                              <option value="1">Auto West</option>
-                                              <option value="2">pmroca</option>
-                                              <option value="3">en-trega</option>
-                                          </select>
-                                      </div>
-                                  </div>
-                                  <div class="row">
-                                      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                          <input name="mail" placeholder="Correo Electrónico" type="email">
-                                      </div>
-                                      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                          <input name="tlf" placeholder="Teléfono" type="number">
-                                      </div>
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <textarea name="message" class="" required="" placeholder="Tu Mensaje" style="height: 140px;"></textarea>
-                                      </div>
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <a href="#" class="btn btn--orange btn--with-shadow js-message-popup cd-nav-trigger">
-                                              Enviar Mensaje
-                                          </a>
-                                      </div>
-                                  </div>
-                              </form>
-                          </div>
-                          <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
-                              <div class="heading-text">
-                                  <i class="fa fa-map-marker"></i> Ostia 2750 Int. 6, Lomas de Guevara, Guadalajara, Jalisco, C.P. 44657.
-                              </div>
-                              <div class="heading-text">
-                                      <a href="tel:01332305660"><i class="fa fa-phone"></i> (01) 33 2305 6602.</a>
-                              </div>
-                              <div class="heading-text">
-                                  <a href="tel:3313611437"><i class="fa fa-whatsapp"></i> (33) 13 611 437.</a>
-                              </div>
-                              <div class="heading-text">
-                                  <a href="mailto:info@hurra.credit"><i class="fa fa-envelope-o"></i> info@hurra.credit</a>
-                              </div>
-                          </div>
-                      </div>
-                      <!-- <div class="subscribe-layer"></div> -->
+                <form class="contact-form items-with-border" method="post">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                      <input name="name" placeholder="{{ 'contact.form1' | translate }}" type="text">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                      <span class="hide span-translate">{{ 'contact.form2' | translate }}</span>
+                      <select>
+                        <option value="0" selected disabled>{{ 'contact.form2' | translate }}</option>
+                        <option value="1">Auto West</option>
+                        <option value="2">pmroca</option>
+                        <option value="3">en-trega</option>
+                      </select>
+                    </div>
                   </div>
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                      <input name="mail" placeholder="{{ 'contact.form3' | translate }}" type="email">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                      <input name="tlf" placeholder="{{ 'contact.form4' | translate }}" type="text" mask="(00) 0000-0000" prefix="+52">
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <textarea name="message" class="" required="" placeholder="{{ 'contact.form5' | translate }}" style="height: 140px;"></textarea>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <a href="#" class="btn btn--orange btn--with-shadow cd-nav-trigger">
+                          {{ 'contact.button' | translate }}
+                      </a>
+                    </div>
+                  </div>
+                </form>
               </div>
+              <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                <div class="heading-text">
+                  <i class="fa fa-map-marker"></i> {{ 'contact.address' | translate }}
+                </div>
+                <div class="heading-text">
+                    <a href="tel:{{ 'contact.phoneank' | translate }}"><i class="fa fa-phone"></i> {{ 'contact.phone' | translate }}.</a>
+                </div>
+                <div class="heading-text">
+                    <a href="tel:{{ 'contact.whatsappank' | translate }}"><i class="fa fa-whatsapp"></i> {{ 'contact.whatsapp' | translate }}.</a>
+                </div>
+                <div class="heading-text">
+                  <a href="mailto:{{ 'contact.email' | translate }}"><i class="fa fa-envelope-o"></i> {{ 'contact.email' | translate }}</a>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="subscribe-layer"></div> -->
           </div>
+        </div>
+      </div>
     </section>
     <!-- End Subscribe Form -->
   
@@ -476,13 +472,8 @@
               </a>
             </div>
   
-            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem
-              consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
-              anteposuerit litterarum formas humanitatis per. Investigationes demonstraverunt lectores
-              legere me lius quod ii legunt saepius.
-            </p>
-            
-            <!-- <a href="02_company.html" class="learn-more">Learn more about hurra</a> -->
+            <p class="declaration">{{ 'footer.context' | translate }}</p>
+
           </div>
   
         </div>
@@ -490,34 +481,34 @@
         <div class="col-lg-3 col-md-3 col-sm-12 col-sm-offset-0 col-xs-12">
           <div class="widget w-list">
   
-            <h5 class="widget-title">Enlaces de Interés</h5>
+            <h5 class="widget-title">{{ 'footer.titlesection1' | translate }}</h5>
             <ul class="list list--primary">
               <li>
-                <a routerLink="/index">Inicio</a>
+                <a routerLink="/index">{{ 'footer.home' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a routerLink="/index">Como funciona</a>
+                <a routerLink="/index">{{ 'footer.howitworks' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a routerLink="/index">Nosotros</a>
+                <a routerLink="/index">{{ 'footer.about' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a routerLink="/index">Empresas</a>
+                <a routerLink="/index">{{ 'footer.workgroup' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a (click)="scrollToElement(contactus)" href="javascript:void(0);">Contacto</a>
+                <a (click)="scrollToElement(contactus)" href="javascript:void(0);">{{ 'footer.contact' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a routerLink="/login">Mi Cuenta</a>
+                <a routerLink="/login">{{ 'footer.account' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a (click)="scrollToElement(startpage)" href="javascript:void(0);">Preguntas Frecuentes</a>
+                <a (click)="scrollToElement(startpage)" href="javascript:void(0);">{{ 'footer.faqs' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
             </ul>
@@ -527,10 +518,8 @@
         <div class="col-lg-4 col-md-4 col-sm-12 col-sm-offset-0 col-xs-12">
           <div class="widget w-contacts">
   
-            <h5 class="widget-title">Importante</h5>
-            <!-- <a href="#" class="btn btn--green full-width btn--with-shadow js-message-popup cd-nav-trigger">
-              Send a Message
-            </a> -->
+            <h5 class="widget-title">{{ 'footer.titlesection2' | translate }}</h5>
+
             <div class="contact-item display-flex mt-minus-20">
               <img src="assets/img/ssl-logo.png" alt="ssl">
             </div>
@@ -540,8 +529,8 @@
           </div>
           <div class="widget w-follow mt-40">
             <ul>
-              <li style="color: orange; width: 100%">Siguenos en nuestras redes sociales
-  
+              <li style="color: orange; width: 100%">
+                  {{ 'footer.follow' | translate }}
               </li>
               <li>
                 <a href="#" class="c-white">
@@ -558,18 +547,18 @@
   
     </div>
   
-      <div class="sub-footer">
+    <div class="sub-footer">
       <a class="back-to-top" href="#">
         <svg class="hurra-icon hurra-icon-arrow-top"><use xlink:href="#hurra-icon-arrow-top"></use></svg>
       </a>
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <span>
-                      Copyright © 2018 <a routerLink="/index" class="sub-footer__link">HURRA</a>
-                  </span>
+              <span>
+                  Copyright © 2018 <a routerLink="/index" class="sub-footer__link">HURRA</a>
+              </span>
   
-                  <span>Todos los derechos reservados. Consulta nuestro <a href="#" class="footer-legals js-aviso-popup">aviso de privacidad</a> y nuestros <a href="#" class="footer-legals js-terminos-popup">términos y condiciones</a>.</span>
+              <span>{{ 'footer.legalpart1' | translate }} <a href="#" class="footer-legals js-aviso-popup">{{ 'footer.legalpart2' | translate }}</a> {{ 'footer.legalpart3' | translate }} <a href="#" class="footer-legals js-terminos-popup">{{ 'footer.legalpart4' | translate }}</a>.</span>
           </div>
         </div>
       </div>
