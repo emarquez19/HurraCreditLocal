@@ -1,3 +1,6 @@
+<!-- Preloader -->
+<app-loader></app-loader>
+
 <!--Navbar-->
 <app-navbar></app-navbar>
 
@@ -7,8 +10,8 @@
   <div class="crumina-stunning-header stunning-bg-5 stunning-header--content-center stunning-header--bg-photo custom-color c-white fill-white">
     <div class="container">
       <div class="stunning-header-content">
-        <h2 class="h1 stunning-header-title mt-40">¡Hola Jesus!</h2><br>
-        <h4 class="h4 stunning-header-title" style="margin-top: 0px!important;">¿Listo para iniciar tu solicitud?</h4>
+        <h2 class="h1 stunning-header-title mt-40">¡{{ 'workflow.title' | translate }} Jesus!</h2><br>
+        <h4 class="h4 stunning-header-title" style="margin-top: 0px!important;">{{ 'workflow.subtitle' | translate }}</h4>
         <div class="inline-items mb-70 mt-30">
           <div class="author-block inline-items">
             <div class="author-avatar">
@@ -21,7 +24,7 @@
           </div>
 
           <a href="/canceled" class="btn btn--large btn--red btn--with-shadow f-right">
-            Cancelar Solicitud
+            {{ 'workflow.buttoncancel' | translate }}
           </a>
         </div>
       </div>
@@ -40,37 +43,37 @@
             <ul class="course-details-control" role="tablist">
 
               <li role="presentation" class="tab-control active">
-                <a href="#personal" role="tab" data-toggle="tab" class="control-item">
+                <a href="#personal" role="tab" data-toggle="tab" class="control-item personal-controltab">
                   <img src="assets/img/personal.png" alt="icon">
-                  <span>Personal</span>
+                  <span>{{ 'workflow.personal' | translate }}</span>
                 </a>
               </li>
 
               <li role="presentation" class="tab-control completed-tab">
-                <a href="#work" role="tab" data-toggle="tab" class="control-item">
+                <a href="#work" role="tab" data-toggle="tab" class="control-item work-controltab">
                   <img src="assets/img/work.png" alt="icon">
-                  <span>Empleo</span>
+                  <span>{{ 'workflow.work' | translate }}</span>
                 </a>
               </li>
 
               <li role="presentation" class="tab-control">
-                <a href="#home" role="tab" data-toggle="tab" class="control-item">
+                <a href="#home" role="tab" data-toggle="tab" class="control-item home-controltab">
                   <img src="assets/img/home.png" alt="icon">
-                  <span>Domicilio</span>
+                  <span>{{ 'workflow.home' | translate }}</span>
                 </a>
               </li>
 
               <li role="presentation" class="tab-control">
                 <a href="#credit" role="tab" data-toggle="tab" class="control-item credit-controltab">
                   <img src="assets/img/credit.png" alt="icon">
-                  <span>Crédito</span>
+                  <span>{{ 'workflow.credit' | translate }}</span>
                 </a>
               </li>
 
               <li role="presentation" class="tab-control">
-                <a href="#resolution" role="tab" data-toggle="tab" class="control-item">
+                <a href="#resolution" role="tab" data-toggle="tab" class="control-item resolution-controltab">
                   <img src="assets/img/resolution.png" alt="icon">
-                  <span>Resolución</span>
+                  <span>{{ 'workflow.resolution' | translate }}</span>
                 </a>
               </li>
 
@@ -82,51 +85,48 @@
               <div role="tabpanel" class="tab-pane fade in active" id="personal">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
-                    <h3>Datos personales</h3>
-                    <p class="weight-bold mb-30">
-                      Ayudanos a complementar la información de tu expediente.<br>
-                      <small>¡Saber más acerca de nuestros clientes nos permite dar opciones de crédito más personalizadas!</small>
-                    </p>
+                    <h3>{{ 'workflow.step1title' | translate }}</h3>
+                    <p class="weight-bold mb-30" [innerHTML]="'workflow.step1subtitle' | translate"></p>
                     
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> RFC</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step1formlabel1' | translate }}</h6>
                         <div class="mb-10">
-                            <input placeholder="Capturalo para autocompletar tus datos." type="text" required minlength="12" maxlength="13">
+                            <input placeholder="{{ 'workflow.step1form1' | translate }}" type="text" required minlength="12" maxlength="13">
                             <div class="form-error-msj animated infinite slower-more shake"><i class="fa fa-exclamation-circle"></i> El RFC es un campo requerido</div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Primer nombre</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step1formlabel2' | translate }}</h6>
                         <div>
-                            <input placeholder="¿Cómo te llamas?" type="text" mask="SSSSSSSSSSSSSSSSSSSS">
+                            <input placeholder="{{ 'workflow.step1form2' | translate }}" type="text" mask="SSSSSSSSSSSSSSSSSSSS">
                         </div>
                     </div>
 
                     <div class="md-separator"></div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6>Segundo nombre</h6>
+                        <h6>{{ 'workflow.step1formlabel3' | translate }}</h6>
                         <div class="form-group">
-                            <input placeholder="¿Cómo te llamas?" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
+                            <input placeholder="{{ 'workflow.step1form3' | translate }}" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                         </div>
                     </div>
 
                     <div class="lg-separator"></div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Primer apellido</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step1formlabel4' | translate }}</h6>
                         <div class="form-group">
-                            <input placeholder="¿Cómo te apellidas?" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
+                            <input placeholder="{{ 'workflow.step1form4' | translate }}" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6>Segundo apellido</h6>
+                        <h6>{{ 'workflow.step1formlabel5' | translate }}</h6>
                         <div class="form-group">
-                            <input placeholder="¿Cómo te apellidas?" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
+                            <input placeholder="{{ 'workflow.step1form5' | translate }}" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Fecha de nacimiento</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step1formlabel6' | translate }}</h6>
                         <div class="form-group">
                             <!-- <input placeholder="¿Cuándo naciste?" type="text" mask="00/00/0000"> -->
                             <mat-datepicker-toggle matSuffix [for]="calBirthDay"></mat-datepicker-toggle>
@@ -135,10 +135,10 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Estado de nacimiento</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step1formlabel7' | translate }}</h6>
                         <div class="form-group">
                             <select>
-                              <option data-display="¿Dónde naciste?">¿Dónde naciste?</option>
+                              <option value="0" selected disabled>{{ 'workflow.step1form7' | translate }}</option>
                               <option value="1">Jalisco</option>
                               <option value="2">Nayarit</option>
                               <option value="3">Sinaloa</option>
@@ -146,36 +146,36 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Genero</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step1formlabel8' | translate }}</h6>
                         <div class="form-group">
                             <select>
-                              <option data-display="¿Dónde naciste?">Seleccione...</option>
+                              <option value="0" selected disabled>{{ 'workflow.step1form8' | translate }}</option>
                               <option value="1">Hombre</option>
                               <option value="2">Mujer</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Estado Civil</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step1formlabel9' | translate }}</h6>
                         <div class="form-group">
                             <select>
-                              <option data-display="Seleccione...">Seleccione</option>
-                              <option value="1">Hombre</option>
-                              <option value="2">Mujer</option>
+                              <option value="0" selected disabled>{{ 'workflow.step1form9' | translate }}</option>
+                              <option value="1">Casado</option>
+                              <option value="2">Soltero</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Cantidad dependientes</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step1formlabel10' | translate }}</h6>
                         <div class="form-group">
-                            <input placeholder="¿Cuantos depende de usted?" type="text" mask="9{2}">
+                            <input placeholder="{{ 'workflow.step1form10' | translate }}" type="text" mask="9{2}">
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Nivel de estudio</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step1formlabel11' | translate }}</h6>
                         <div class="form-group">
                             <select>
-                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="0" selected disabled>{{ 'workflow.step1form11' | translate }}</option>
                               <option value="1">Universidad</option>
                               <option value="2">Preparatoria</option>
                               <option value="2">Primaria</option>
@@ -183,16 +183,16 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Teléfono celular</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step1formlabel12' | translate }}</h6>
                         <div class="form-group">
-                            <input placeholder="¡Confirmaremos este teléfono!" type="text" mask="(00) 0000-0000" prefix="+52">
+                            <input placeholder="{{ 'workflow.step1form12' | translate }}" type="text" mask="(00) 0000-0000" prefix="+52">
                         </div>
                     </div>
                     <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
                       <div class="btn-slider-wrap pt80">
 
-                        <button class="btn-next btn--style" type="submit">
-                          <span>Siguiente</span>
+                        <button class="btn-next btn--style btn-next-step2" (click)="goStep2()">
+                          <span>{{ 'workflow.step1next' | translate }}</span>
                           <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                           <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
                         </button>
@@ -207,24 +207,21 @@
               <div role="tabpanel" class="tab-pane fade" id="work">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h3>Datos de tu Empleo</h3>
-                    <p class="weight-bold mb-30">
-                      Ayudanos a complementar la información de tu expediente.<br>
-                      <small>¡Saber más acerca de nuestros clientes nos permite dar opciones de crédito más personalizadas!</small>
-                    </p>
+                    <h3>{{ 'workflow.step2title' | translate }}</h3>
+                    <p class="weight-bold mb-30" [innerHTML]="'workflow.step2subtitle' | translate"></p>
                     
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Lugar de trabajo</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step2formlabel0' | translate }}</h6>
                         <div class="mb-10 form-group">
-                            <input placeholder="¿Dónde trabajas?" type="text">
+                            <input placeholder="{{ 'workflow.step2form0' | translate }}" type="text">
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6>¿Cada cuanto te pagan?</h6>
+                        <h6>{{ 'workflow.step2formlabel1' | translate }}</h6>
                         <div class="form-group">
                             <select>
-                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="0" selected disabled>{{ 'workflow.step2form1' | translate }}</option>
                               <option value="1">Diario</option>
                               <option value="2">Semanal</option>
                               <option value="3">Quincenal</option>
@@ -236,19 +233,19 @@
                     <div class="md-separator"></div>
                     
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Sueldo mensual</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step2formlabel2' | translate }}</h6>
                         <div class="form-group">
-                            <input placeholder="¿Cuál es tu sueldo?" class="text-left" currencyMask [(ngModel)]="sueldoMensual" [options]="{ prefix: '$ ', thousands: ',', decimal: '.' }" type="text">
+                            <input placeholder="{{ 'workflow.step2form2' | translate }}" class="text-left" currencyMask [(ngModel)]="sueldoMensual" [options]="{ prefix: '$ ', thousands: ',', decimal: '.' }" type="text">
                         </div>
                     </div>
 
                     <div class="lg-separator"></div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                      <h6>Tipo de contratación</h6>
+                      <h6>{{ 'workflow.step2formlabel3' | translate }}</h6>
                         <div class="form-group">
                             <select>
-                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="0" selected disabled>{{ 'workflow.step2form3' | translate }}</option>
                               <option value="1">Indefinida</option>
                               <option value="2">1 año</option>
                               <option value="3">2 años</option>
@@ -257,7 +254,7 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Fecha inicio laboral</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step2formlabel4' | translate }}</h6>
                         <div class="form-group">
                             <mat-datepicker-toggle matSuffix [for]="calStartWorking"></mat-datepicker-toggle>
                             <mat-datepicker #calStartWorking></mat-datepicker>
@@ -266,9 +263,9 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Puesto</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step2formlabel5' | translate }}</h6>
                         <div class="form-group">
-                            <input placeholder="¿Cúal es tu puesto?" type="text">
+                            <input placeholder="{{ 'workflow.step2form5' | translate }}" type="text">
                         </div>
                     </div>
 
@@ -276,10 +273,10 @@
                     <div class="md-separator"></div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Tipo de trabajo</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step2formlabel6' | translate }}</h6>
                         <div class="form-group">
                             <select>
-                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="0" selected disabled>{{ 'workflow.step2form6' | translate }}</option>
                               <option value="1">lorem ipsum</option>
                               <option value="2">lorem ipsum</option>
                               <option value="3">lorem ipsum</option>
@@ -289,30 +286,30 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Teléfono del trabajo</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step2formlabel7' | translate }}</h6>
                         <div class="form-group">
-                            <input placeholder="¿Cúal es tu teléfono?" type="text" mask="(00) 0000-0000" prefix="+52">
+                            <input placeholder="{{ 'workflow.step2form7' | translate }}" type="text" mask="(00) 0000-0000" prefix="+52">
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> ¿Cúanto gastas al mes?</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step2formlabel8' | translate }}</h6>
                         <div class="form-group">
-                            <input placeholder="¿Cúanto gastas?" class="text-left" currencyMask [(ngModel)]="gastosPorMes" [options]="{ prefix: '$ ', thousands: ',', decimal: '.' }" type="text">
+                            <input placeholder="{{ 'workflow.step2form8' | translate }}" class="text-left" currencyMask [(ngModel)]="gastosPorMes" [options]="{ prefix: '$ ', thousands: ',', decimal: '.' }" type="text">
                         </div>
                     </div>
 
                     <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
                       <div class="btn-slider-wrap pt80">
 
-                        <button class="btn-next btn--style" type="submit">
-                          <span>Anterior</span>
-                          <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
-                          <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
+                        <button class="btn-next btn--style btn-prev-step1" (click)="goBackStep1()">
+                            <svg class="hurra-icon icon-hover hurra-icon-arrow-left-1"><use xlink:href="#hurra-icon-arrow-left-1"></use></svg>
+                            <svg class="hurra-icon hurra-icon-arrow-left1"><use xlink:href="#hurra-icon-arrow-left1"></use></svg>
+                            <span>{{ 'workflow.step2prev' | translate }}</span>
                         </button>
 
-                        <button class="btn-next btn--style" type="submit">
-                          <span>Siguiente</span>
+                        <button class="btn-next btn--style btn-next-step3" (click)="goStep3()">
+                          <span>{{ 'workflow.step2next' | translate }}</span>
                           <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                           <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
                         </button>
@@ -328,24 +325,21 @@
               <div role="tabpanel" class="tab-pane fade" id="home">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h3>Datos de tu Domicilio</h3>
-                    <p class="weight-bold mb-30">
-                      Ayudanos a complementar la información de tu expediente.<br>
-                      <small>¡Saber más acerca de nuestros clientes nos permite dar opciones de crédito más personalizadas!</small>
-                    </p>
+                    <h3>{{ 'workflow.step3title' | translate }}</h3>
+                    <p class="weight-bold mb-30" [innerHTML]="'workflow.step3subtitle' | translate"></p>
                     
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Código postal</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step3formlabel1' | translate }}</h6>
                         <div class="mb-10 form-group">
-                            <input placeholder="Código postal" type="text" mask="00000" maxlength="5" minlength="5">
+                            <input placeholder="{{ 'workflow.step3form1' | translate }}" type="text" mask="00000" maxlength="5" minlength="5">
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Estado</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step3formlabel2' | translate }}</h6>
                         <div class="form-group">
                             <select>
-                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="0" selected disabled>{{ 'workflow.step3form2' | translate }}</option>
                               <option value="1">Jalisco</option>
                               <option value="2">Nayarit</option>
                             </select>
@@ -355,10 +349,10 @@
                     <div class="md-separator"></div>
                     
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Ciudad</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step3formlabel3' | translate }}</h6>
                         <div class="form-group">
                             <select>
-                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="0" selected disabled>{{ 'workflow.step3form3' | translate }}</option>
                               <option value="1">Guadalajara</option>
                               <option value="2">Zapopan</option>
                             </select>
@@ -368,10 +362,10 @@
                     <div class="lg-separator"></div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                      <h6><span class="fa fa-asterisk c-red"></span> Municipio / Delegación</h6>
+                      <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step3formlabel4' | translate }}</h6>
                         <div class="form-group">
                             <select>
-                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="0" selected disabled>{{ 'workflow.step3form4' | translate }}</option>
                               <option value="1">Guadalajara</option>
                               <option value="2">Zapopan</option>
                             </select>
@@ -379,10 +373,10 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                      <h6><span class="fa fa-asterisk c-red"></span> Colonia</h6>
+                      <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step3formlabel5' | translate }}</h6>
                         <div class="form-group">
                             <select>
-                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="0" selected disabled>{{ 'workflow.step3form5' | translate }}</option>
                               <option value="1">La giralda</option>
                               <option value="2">Ciudad del sol</option>
                               <option value="2">Chapalita</option>
@@ -391,35 +385,35 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Calle</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step3formlabel6' | translate }}</h6>
                         <div class="form-group">
-                            <input placeholder="¿En qué calle vives?" type="text">
+                            <input placeholder="{{ 'workflow.step3form6' | translate }}" type="text">
                         </div>
                     </div>
 
                     <div class="lg-separator"></div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Número exterior</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step3formlabel7' | translate }}</h6>
                         <div class="form-group">
-                            <input placeholder="¿Qué exterior tienes?" type="text" mask="0000000">
+                            <input placeholder="{{ 'workflow.step3form7' | translate }}" type="text" mask="0000000">
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <h6>Número interior</h6>
+                        <h6>{{ 'workflow.step3formlabel8' | translate }}</h6>
                         <div class="form-group">
-                            <input placeholder="¿Qué interior tienes?" type="text" mask="0000000">
+                            <input placeholder="{{ 'workflow.step3form8' | translate }}" type="text" mask="0000000">
                         </div>
                     </div>
 
                     <div class="md-separator"></div>
 
                     <div class="col-lg-4 col-md-4 col-sm-12">
-                      <h6><span class="fa fa-asterisk c-red"></span> Tipo de Vivienda</h6>
+                      <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step3formlabel9' | translate }}</h6>
                         <div class="form-group">
                             <select>
-                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="0" selected disabled>{{ 'workflow.step3form9' | translate }}</option>
                               <option value="1">Rentada</option>
                               <option value="2">Propia</option>
                             </select>
@@ -427,17 +421,17 @@
                     </div>
 
                     <div class="col-lg-8 col-md-8 col-sm-12">
-                        <h6><span class="fa fa-asterisk c-red"></span> Otras señas</h6>
+                        <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step3formlabel10' | translate }}</h6>
                         <div class="form-group">
-                            <input placeholder="Otras señas" type="text">
+                            <input placeholder="{{ 'workflow.step3form10' | translate }}" type="text">
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                      <h6><span class="fa fa-asterisk c-red"></span> ¿Desde cuándo vives aquí?</h6>
+                      <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step3formlabel11' | translate }}</h6>
                         <div class="form-group">
                             <select>
-                              <option data-display="Seleccione...">Seleccione...</option>
+                              <option value="0" selected disabled>{{ 'workflow.step3form11' | translate }}</option>
                               <option value="1">1 año</option>
                               <option value="2">2 años</option>
                               <option value="3">3 años</option>
@@ -448,14 +442,14 @@
                     <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
                       <div class="btn-slider-wrap pt80">
 
-                          <button class="btn-next btn--style" type="submit">
-                            <span>Anterior</span>
-                            <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
-                            <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
+                          <button class="btn-next btn--style btn-prev-step2" (click)="goBackStep2()">
+                            <svg class="hurra-icon icon-hover hurra-icon-arrow-left-1"><use xlink:href="#hurra-icon-arrow-left-1"></use></svg>
+                            <svg class="hurra-icon hurra-icon-arrow-left1"><use xlink:href="#hurra-icon-arrow-left1"></use></svg>
+                            <span>{{ 'workflow.step3prev' | translate }}</span>
                           </button>
-    
-                          <button class="btn-next btn--style" type="submit">
-                            <span>Siguiente</span>
+  
+                          <button class="btn-next btn--style btn-next-step4" (click)="goStep4()">
+                            <span>{{ 'workflow.step3next' | translate }}</span>
                             <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                             <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
                           </button>
@@ -471,9 +465,9 @@
               <div role="tabpanel" class="tab-pane fade visibleOnStart" id="credit">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h3 class="text-center">Selecciona el monto de tu crédito</h3>
+                    <h3 class="text-center">{{ 'workflow.step4title' | translate }}</h3>
                     <p class="weight-bold mb-30 text-center">
-                      Desliza la barra de izquierda a derecha para seleccionar el monto del crédito que deseas solicitar.
+                        {{ 'workflow.step4subtitle' | translate }}
                     </p>
 
                     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 text-center" id="credit-slider-block">
@@ -487,20 +481,20 @@
                       <div class="row">
                         <div class="pricing-tables-wrap bg-light">
                           <p class="weight-bold mb-30 text-center">
-                            Selecciona tu forma de financiamiento
+                              {{ 'workflow.step4aftertitletext' | translate }}
                           </p>
                           <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 no-padding" data-mh="pricing-item">
                             <div class="crumina-module crumina-pricing-tables-item pricing-tables-item-solid bg-light">
                               <div class="bg-layer full-block"></div>
                               <div class="main-pricing-content">
-                                <span class="selectect-mark animated infinite pulse">¡Seleccionado!</span>
-                                <h5 class="pricing-title c-primary">Paga</h5>
+                                <span class="selectect-mark animated infinite pulse">{{ 'workflow.step4selectedplan' | translate }}</span>
+                                <h5 class="pricing-title c-primary">{{ 'workflow.step4pay' | translate }}</h5>
                                 <h2 class="h1 rate">$<span class="price">646</span>.09</h2>
-                                <h6 class="period">Cada Quincena</h6>
-                                <p class="pricing-description">durante un plazo de:</p>
+                                <h6 class="period">{{ 'workflow.step4period' | translate }}</h6>
+                                <p class="pricing-description">{{ 'workflow.step4periodlapse' | translate }}</p>
                               </div>
                               <a href="javascript:void(0);" (click)="selectThisPlan($event)" class="btn btn--green btn--with-shadow btn-thin btn-credit-plans">
-                                6 Meses
+                                6 {{ 'workflow.step4months' | translate }}
                               </a>
                             </div>
                           </div>
@@ -509,14 +503,14 @@
                             <div class="crumina-module crumina-pricing-tables-item pricing-tables-item-solid bg-light">
                               <div class="bg-layer full-block"></div>
                               <div class="main-pricing-content">
-                                <span class="selectect-mark animated infinite pulse">¡Seleccionado!</span>
-                                <h5 class="pricing-title c-primary">Paga</h5>
+                                <span class="selectect-mark animated infinite pulse">{{ 'workflow.step4selectedplan' | translate }}</span>
+                                <h5 class="pricing-title c-primary">{{ 'workflow.step4pay' | translate }}</h5>
                                 <h2 class="h1 rate">$<span class="price">498</span>.60</h2>
-                                <h6 class="period">Cada Quincena</h6>
-                                <p class="pricing-description">durante un plazo de:</p>
+                                <h6 class="period">{{ 'workflow.step4period' | translate }}</h6>
+                                <p class="pricing-description">{{ 'workflow.step4periodlapse' | translate }}</p>
                               </div>
                               <a href="javascript:void(0);" (click)="selectThisPlan($event)" class="btn btn--green btn--with-shadow btn-thin btn-credit-plans">
-                                8 Meses
+                                8 {{ 'workflow.step4months' | translate }}
                               </a>
                             </div>
                           </div>
@@ -525,14 +519,14 @@
                             <div class="crumina-module crumina-pricing-tables-item pricing-tables-item-solid bg-light">
                               <div class="bg-layer full-block"></div>
                               <div class="main-pricing-content">
-                                <span class="selectect-mark animated infinite pulse">¡Seleccionado!</span>
-                                <h5 class="pricing-title c-primary">Paga</h5>
+                                <span class="selectect-mark animated infinite pulse">{{ 'workflow.step4selectedplan' | translate }}</span>
+                                <h5 class="pricing-title c-primary">{{ 'workflow.step4pay' | translate }}</h5>
                                 <h2 class="h1 rate">$<span class="price">351</span>.62</h2>
-                                <h6 class="period">Cada Quincena</h6>
-                                <p class="pricing-description">durante un plazo de:</p>
+                                <h6 class="period">{{ 'workflow.step4period' | translate }}</h6>
+                                <p class="pricing-description">{{ 'workflow.step4periodlapse' | translate }}</p>
                               </div>
                               <a href="javascript:void(0);" (click)="selectThisPlan($event)" class="btn btn--green btn--with-shadow btn-thin btn-credit-plans">
-                                12 Meses
+                                12 {{ 'workflow.step4months' | translate }}
                               </a>
                             </div>
                           </div>
@@ -541,14 +535,14 @@
                             <div class="crumina-module crumina-pricing-tables-item pricing-tables-item-solid bg-light">
                               <div class="bg-layer full-block"></div>
                               <div class="main-pricing-content">
-                                <span class="selectect-mark animated infinite pulse">¡Seleccionado!</span>
-                                <h5 class="pricing-title c-primary">Paga</h5>
+                                <span class="selectect-mark animated infinite pulse">{{ 'workflow.step4selectedplan' | translate }}</span>
+                                <h5 class="pricing-title c-primary">{{ 'workflow.step4pay' | translate }}</h5>
                                 <h2 class="h1 rate">$<span class="price">160</span>.32</h2>
-                                <h6 class="period">Cada Quincena</h6>
-                                <p class="pricing-description">durante un plazo de:</p>
+                                <h6 class="period">{{ 'workflow.step4period' | translate }}</h6>
+                                <p class="pricing-description">{{ 'workflow.step4periodlapse' | translate }}</p>
                               </div>
                               <a href="javascript:void(0);" (click)="selectThisPlan($event)" class="btn btn--green btn--with-shadow btn-thin btn-credit-plans">
-                                36 Meses
+                                36 {{ 'workflow.step4months' | translate }}
                               </a>
                             </div>
                           </div>
@@ -560,14 +554,14 @@
                     <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
                       <div class="btn-slider-wrap pt80">
 
-                          <button class="btn-next btn--style" type="submit">
-                            <span>Anterior</span>
-                            <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
-                            <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
+                          <button class="btn-next btn--style btn-prev-step3" (click)="goBackStep3()">
+                            <svg class="hurra-icon icon-hover hurra-icon-arrow-left-1"><use xlink:href="#hurra-icon-arrow-left-1"></use></svg>
+                            <svg class="hurra-icon hurra-icon-arrow-left1"><use xlink:href="#hurra-icon-arrow-left1"></use></svg>
+                            <span>{{ 'workflow.step4prev' | translate }}</span>
                           </button>
-    
-                          <button class="btn-next btn--style" type="submit">
-                            <span>Siguiente</span>
+  
+                          <button class="btn-next btn--style btn-next-step5" (click)="goStep5()">
+                            <span>{{ 'workflow.step4next' | translate }}</span>
                             <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                             <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
                           </button>
@@ -736,15 +730,16 @@
                       <div class="confetti-1"></div>
                       <div class="confetti-0"></div>
                     </div>
-                    <h2 class="text-center">¡Felicidades!</h2>
-                    <p class="weight-bold text-center"><b>Tu crédito ha sido aprobado.</b><br>Ahora solo debes confirmar los datos para el depósito y ayudarnos a completar una simple encuesta.</p>
+                    <h2 class="text-center">{{ 'workflow.step5title' | translate }}</h2>
+                    <p class="weight-bold text-center" [innerHTML]="'workflow.step5subtitle' | translate"></p>
+
                     <img src="assets/img/hand.gif" alt="exito" class="success-gif">
                   </div>
                   <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
                       <div class="btn-slider-wrap pt80">
 
-                        <button class="btn-next btn--style js-finalstep-popup"  type="submit">
-                          <span>Aceptar</span>
+                        <button class="btn-next btn--style js-finalstep-popup">
+                          <span>{{ 'workflow.step5btnacept' | translate }}</span>
                           <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                           <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
                         </button>
@@ -777,7 +772,7 @@
   </a>
 
   <div class="modalbody-popup" id="body-finalstep-1">
-    <h4 class="text-center">¡Ya casi terminamos!</h4>
+    <h4 class="text-center">{{ 'workflow.step5btnacept' | translate }}</h4>
 
       <div class="row">
 
@@ -791,17 +786,17 @@
                     <svg class="hurra-icon hurra-icon-add"><use xlink:href="#hurra-icon-add"></use></svg>
                     <svg class="hurra-icon active hurra-icon-minus"><use xlink:href="#hurra-icon-minus"></use></svg>
                   </span>
-                  <span class="ovh title">Datos Bancarios</span>
+                  <span class="ovh title">{{ 'workflow.step5aitem1' | translate }}</span>
                 </a>
               </div>
               <div id="toggleSample" class="panel-collapse collapse" aria-expanded="false" role="tree">
                 <div class="panel-info">
                   <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                      <h6><span class="fa fa-asterisk c-red"></span> Banco</h6>
+                      <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step5abanco' | translate }}</h6>
                       <div class="form-group">
                           <select>
-                            <option data-display="Seleccione...">Seleccione...</option>
+                            <option value="0" selected disabled>{{ 'workflow.step5abancocontext' | translate }}</option>
                             <option value="3">Banamex</option>
                             <option value="1">Banorte</option>
                             <option value="2">Santander</option>
@@ -809,9 +804,9 @@
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                      <h6><span class="fa fa-asterisk c-red"></span> CLABE</h6>
+                      <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step5aclabe' | translate }}</h6>
                       <div class="form-group">
-                          <input placeholder="18 digitos" type="text" mask="000000000000000000" minlength="18" maxlength="18">
+                          <input placeholder="{{ 'workflow.step5aclabecontext' | translate }}" type="text" mask="000000000000000000" minlength="18" maxlength="18">
                       </div>
                     </div>
                   </div>
@@ -826,34 +821,34 @@
                     <svg class="hurra-icon hurra-icon-add"><use xlink:href="#hurra-icon-add"></use></svg>
                     <svg class="hurra-icon active hurra-icon-minus"><use xlink:href="#hurra-icon-minus"></use></svg>
                   </span>
-                  <span class="ovh title">Referencia Personal</span>
+                  <span class="ovh title">{{ 'workflow.step5aitem2' | translate }}</span>
                 </a>
               </div>
               <div id="toggleOne" class="panel-collapse collapse" aria-expanded="false" role="tree">
                 <div class="panel-info">
                   <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                      <h6><span class="fa fa-asterisk c-red"></span> Teléfono</h6>
+                      <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step5atlf' | translate }}</h6>
                       <div class="form-group">
-                          <input placeholder="¿Cuál es su teléfono?" type="text" mask="(00) 0000-0000" prefix="+52">
+                          <input placeholder="{{ 'workflow.step5atlfcontext' | translate }}" type="text" mask="(00) 0000-0000" prefix="+52">
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                      <h6><span class="fa fa-asterisk c-red"></span> Nombres</h6>
+                      <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step5anombres' | translate }}</h6>
                       <div class="form-group">
-                          <input placeholder="¿Cómo se llamas?" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
+                          <input placeholder="{{ 'workflow.step5anombresocontext' | translate }}" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                      <h6><span class="fa fa-asterisk c-red"></span> Apellido Paterno</h6>
+                      <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step5aapellidopaterno' | translate }}</h6>
                       <div class="form-group">
-                          <input placeholder="Apellid paterno" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
+                          <input placeholder="{{ 'workflow.step5aapellidopaternocontext' | translate }}" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                      <h6><span class="fa fa-asterisk c-red"></span> Apellido Materno</h6>
+                      <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step5aapellidomaterno' | translate }}</h6>
                       <div class="form-group">
-                          <input placeholder="Apellido materno" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
+                          <input placeholder="{{ 'workflow.step5aapellidomaternocontext' | translate }}" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                       </div>
                     </div>
                   </div>
@@ -868,35 +863,35 @@
                     <svg class="hurra-icon hurra-icon-add"><use xlink:href="#hurra-icon-add"></use></svg>
                     <svg class="hurra-icon active hurra-icon-minus"><use xlink:href="#hurra-icon-minus"></use></svg>
                   </span>
-                  <span class="ovh title">Referencia Laboral</span>
+                  <span class="ovh title">{{ 'workflow.step5aitem3' | translate }}</span>
                 </a>
               </div>
               <div id="toggleTwo" class="panel-collapse collapse" aria-expanded="false" role="tree">
                 <div class="panel-info">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h6><span class="fa fa-asterisk c-red"></span> Teléfono</h6>
+                    <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step5atlf' | translate }}</h6>
                     <div class="form-group">
-                        <input placeholder="¿Cuál es su teléfono?" type="text" mask="(00) 0000-0000" prefix="+52">
+                        <input placeholder="{{ 'workflow.step5atlfcontext' | translate }}" type="text" mask="(00) 0000-0000" prefix="+52">
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h6><span class="fa fa-asterisk c-red"></span> Nombres</h6>
+                    <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step5anombres' | translate }}</h6>
                     <div class="form-group">
-                        <input placeholder="¿Cómo se llamas?" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
+                        <input placeholder="{{ 'workflow.step5anombresocontext' | translate }}" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h6><span class="fa fa-asterisk c-red"></span> Apellido Paterno</h6>
-                    <div class="form-group">
-                        <input placeholder="Apellido paterno" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
-                    </div>
+                      <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step5aapellidopaterno' | translate }}</h6>
+                      <div class="form-group">
+                          <input placeholder="{{ 'workflow.step5aapellidopaternocontext' | translate }}" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
+                      </div>
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h6><span class="fa fa-asterisk c-red"></span> Apellido Materno</h6>
-                    <div class="form-group">
-                        <input placeholder="Apellido materno" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
-                    </div>
+                      <h6><span class="fa fa-asterisk c-red"></span> {{ 'workflow.step5aapellidomaterno' | translate }}</h6>
+                      <div class="form-group">
+                          <input placeholder="{{ 'workflow.step5aapellidomaternocontext' | translate }}" type="text" mask="SSSSSSSSSSSSSSSSSSSSSSSSS">
+                      </div>
                   </div>
                   </div>
                 </div>
@@ -910,7 +905,7 @@
             <div class="btn-slider-wrap pt80">
 
               <button class="btn-next btn--style" (click)="goFinalStep2()">
-                <span>Continuar</span>
+                <span>{{ 'workflow.step5abtncontinue' | translate }}</span>
                 <svg class="hurra-icon icon-hover hurra-icon-arrow-right-1"><use xlink:href="#hurra-icon-arrow-right-1"></use></svg>
                 <svg class="hurra-icon hurra-icon-arrow-right1"><use xlink:href="#hurra-icon-arrow-right1"></use></svg>
               </button>
@@ -921,7 +916,7 @@
   </div>
 
   <div class="modalbody-popup hide" id="body-finalstep-2">
-    <h4 class="text-center" id="text-modal-finalstep-title">¡Solo unas preguntas más!</h4>
+    <h4 class="text-center" id="text-modal-finalstep-title">{{ 'workflow.step5btitle' | translate }}</h4>
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
@@ -931,17 +926,17 @@
               <div class="slider-item">
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
                   <p>
-                    ¿Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum?
+                      {{ 'workflow.step5bquestion' | translate }}
                   </p>
-                  <select>
-                    <option data-display="Seleccione...">Seleccione...</option>
+                  <select class="text-center">
+                    <option value="0" selected disabled>{{ 'workflow.step5bseleccione' | translate }}</option>
                     <option value="0">Si</option>
                     <option value="1">No</option>
                   </select>
                 </div>
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center mt-20 mb-20">
                   <div class="btn-slider-wrap">
-                      <a href="javascript:void(0)" class="blog-slider__button btn-question-next">Siguiente Pregunta</a>
+                      <a href="javascript:void(0)" class="blog-slider__button btn-question-next">{{ 'workflow.step5bbtnnexquestion' | translate }}</a>
                   </div>
                 </div>
               </div>
@@ -949,44 +944,44 @@
               <div class="slider-item">
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
                   <p>
-                    ¿Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum?
+                      {{ 'workflow.step5bquestion' | translate }}
                   </p>
-                  <select>
-                    <option data-display="Seleccione...">Seleccione...</option>
+                  <select class="text-center">
+                    <option value="0" selected disabled>{{ 'workflow.step5bseleccione' | translate }}</option>
                     <option value="0">Si</option>
                     <option value="1">No</option>
                   </select>
                 </div>
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center mt-20 mb-20">
                   <div class="btn-slider-wrap">
-                      <a href="javascript:void(0)" class="blog-slider__button btn-question-next">Siguiente Pregunta</a>
+                      <a href="javascript:void(0)" class="blog-slider__button btn-question-next">{{ 'workflow.step5bbtnnexquestion' | translate }}</a>
                   </div>
                 </div>
               </div>
 
               <div class="slider-item">
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
-                  <p>
-                    ¿Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum?
-                  </p>
-                  <select>
-                    <option data-display="Seleccione...">Seleccione...</option>
+                    <p>
+                        {{ 'workflow.step5bquestion' | translate }}
+                    </p>
+                    <select class="text-center">
+                    <option value="0" selected disabled>{{ 'workflow.step5bseleccione' | translate }}</option>
                     <option value="0">Si</option>
                     <option value="1">No</option>
                   </select>
                 </div>
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center mt-20 mb-20">
                   <div class="btn-slider-wrap">
-                      <a href="javascript:void(0)" class="blog-slider__button btn-question-next">Siguiente Pregunta</a>
+                      <a href="javascript:void(0)" class="blog-slider__button btn-question-next">{{ 'workflow.step5bbtnnexquestion' | translate }}</a>
                   </div>
                 </div>
               </div>
 
               <div class="slider-item document-item-slider-prevent">
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
-                  <h5 class="fw-300">Sube tu Selfie</h5>
+                  <h5 class="fw-300">{{ 'workflow.step5bselfie' | translate }}</h5>
                   <p>
-                      Da clic en la imagen para subir el documento solicitado según la descripción.
+                      {{ 'workflow.step5bdocdescription' | translate }}
                   </p>
                   <label for="selfie">
                       <img src="assets/img/selfie.jpg" alt="selfie" class="img-upload-documents">
@@ -995,16 +990,16 @@
                 </div>
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center mt-20 mb-20">
                   <div class="btn-slider-wrap">
-                      <a href="javascript:void(0)" class="blog-slider__button btn-question-next">Siguiente Documento</a>
+                      <a href="javascript:void(0)" class="blog-slider__button btn-question-next">{{ 'workflow.step5bbtnnexdoc' | translate }}</a>
                   </div>
                 </div>
               </div>
 
               <div class="slider-item document-item-slider-prevent">
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
-                  <h5 class="fw-300">Sube el frontal de tu INE/IFE</h5>
+                  <h5 class="fw-300">{{ 'workflow.step5bidfront' | translate }}</h5>
                   <p>
-                      Da clic en la imagen para subir el documento solicitado según la descripción.
+                      {{ 'workflow.step5bdocdescription' | translate }}
                   </p>
                   <label for="ine-frontal">
                       <img src="assets/img/ine-frontal.jpg" alt="selfie" class="img-upload-documents">
@@ -1013,16 +1008,16 @@
                 </div>
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center mt-20 mb-20">
                   <div class="btn-slider-wrap">
-                      <a href="javascript:void(0)" class="blog-slider__button btn-question-next">Siguiente Documento</a>
+                      <a href="javascript:void(0)" class="blog-slider__button btn-question-next">{{ 'workflow.step5bbtnnexdoc' | translate }}</a>
                   </div>
                 </div>
               </div>
 
               <div class="slider-item document-item-slider-prevent">
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
-                  <h5 class="fw-300">Sube el reverso de tu INE/IFE</h5>
+                  <h5 class="fw-300">{{ 'workflow.step5bidback' | translate }}</h5>
                   <p>
-                      Da clic en la imagen para subir el documento solicitado según la descripción.
+                      {{ 'workflow.step5bdocdescription' | translate }}
                   </p>
                   <label for="ine-reverso">
                       <img src="assets/img/ine-reverso.jpg" alt="selfie" class="img-upload-documents">
@@ -1031,16 +1026,16 @@
                 </div>
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center mt-20 mb-20">
                   <div class="btn-slider-wrap">
-                      <a href="javascript:void(0)" class="blog-slider__button btn-question-next">Siguiente Documento</a>
+                      <a href="javascript:void(0)" class="blog-slider__button btn-question-next">{{ 'workflow.step5bbtnnexdoc' | translate }}</a>
                   </div>
                 </div>
               </div>
 
               <div class="slider-item document-item-slider-prevent">
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
-                  <h5 class="fw-300">Sube un comprobante de domicilio</h5>
+                  <h5 class="fw-300">{{ 'workflow.step5bidhome' | translate }}</h5>
                   <p>
-                      Da clic en la imagen para subir el documento solicitado según la descripción.
+                      {{ 'workflow.step5bdocdescription' | translate }}
                   </p>
                   <label for="cdomicilio">
                       <img src="assets/img/domicilio.jpg" alt="selfie" class="img-upload-documents">
@@ -1049,21 +1044,21 @@
                 </div>
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center mt-20 mb-20">
                   <div class="btn-slider-wrap">
-                      <a href="javascript:void(0)" class="blog-slider__button btn-question-next">Siguiente Documento</a>
+                      <a href="javascript:void(0)" class="blog-slider__button btn-question-next">{{ 'workflow.step5bbtnnexdoc' | translate }}</a>
                   </div>
                 </div>
               </div>
 
               <div class="slider-item">
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center">
-                  <h5 class="fw-300">Has finalizado correctamente tu solicitud</h5>
+                  <h5 class="fw-300">{{ 'workflow.step5bendmsj' | translate }}</h5>
                   <p>
-                      En unos minutos ¡recibirás tu crédito Hurra! Muchas gracias por preferirnos y ser parte de nuestros clientes.
+                      {{ 'workflow.step5bendmsjsub' | translate }}
                   </p>
                 </div>
                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 text-center mt-20 mb-20">
                   <div class="btn-slider-wrap">
-                      <a href="javascript:void(0)" routerLink="/index" class="blog-slider__button">Finalizar Proceso</a>
+                      <a href="javascript:void(0)" (click)="makeBodyScrollable()" routerLink="/index" class="blog-slider__button">{{ 'workflow.step5bend' | translate }}</a>
                   </div>
                 </div>
               </div>

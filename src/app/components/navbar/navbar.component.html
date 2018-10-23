@@ -1,42 +1,44 @@
 <!-- Header -->
 <header class="header header--small-lines" id="site-header">
-  <div class="top-bar top-bar-dark">
-    <div class="container">
-      <div class="top-bar-contact">
-        <div class="contact-item">
-            <a href="tel:3313611437"><i class="fa fa-whatsapp icon-fill-header"></i> (33) 13 611 437</a>
+    <div class="top-bar top-bar-dark">
+      <div class="container">
+        <div class="top-bar-contact">
+          <div class="contact-item">
+            <a href="tel:{{ 'topheader.tlfshort' | translate }}"><i class="fa fa-whatsapp icon-fill-header"></i> {{ 'topheader.tlf' | translate }}</a>
+          </div>
+          <div class="contact-item">
+            <svg class="hurra-icon hurra-icon-letter"><use xlink:href="#hurra-icon-letter"></use></svg>
+            <a href="mailto:{{ 'topheader.email' | translate }}">{{ 'topheader.email' | translate }}</a>
+          </div>
         </div>
-        <div class="contact-item">
-          <svg class="hurra-icon hurra-icon-letter"><use xlink:href="#hurra-icon-letter"></use></svg>
-          <a href="mailto:info@hurra.credit">info@hurra.credit</a>
-        </div>
-      </div>
 
-      
-      <div class="contact-item language-switcher pull-right">
-        <!-- <svg class="hurra-icon world hurra-icon-world-map"><use xlink:href="#hurra-icon-world-map"></use></svg> -->
-        <select>
-          <option value="1">Español</option>
-          <option value="2">Ingles</option>
-        </select>
-      </div>
+        <div class="contact-item language-switcher pull-right">
 
-      <div class="follow_us mr-20">
-        <span>Siguenos en:</span>
-        <div class="socials">
-          <a href="" class="social__item">
-            <i class="fa fa-facebook-square"></i>
-          </a>
-          <a href="" class="social__item">
-            <i class="fa fa-linkedin-square"></i>
-          </a>
+          <div class="nice-select" tabindex="0">
+            <span>{{ 'topheader.selectedlang' | translate }}</span>
+            <ul class="list">
+              <li (click)="translate.use('es')" class="option">{{ 'topheader.esEs' | translate }}</li>
+              <li (click)="translate.use('en')" class="option">{{ 'topheader.enEn' | translate }}</li>
+            </ul>
+          </div>
         </div>
+
+        <div class="follow_us mr-20">
+          <span>{{ 'topheader.follow' | translate }}</span>
+          <div class="socials">
+            <a href="" class="social__item">
+              <i class="fa fa-facebook-square"></i>
+            </a>
+            <a href="" class="social__item">
+              <i class="fa fa-linkedin-square"></i>
+            </a>
+          </div>
+        </div>
+        <a href="#" class="top-bar-close" id="top-bar-close-js">
+          <svg class="hurra-icon hurra-icon-cancel-1"><use xlink:href="#hurra-icon-cancel-1"></use></svg>
+        </a>
       </div>
-      <a href="#" class="top-bar-close" id="top-bar-close-js">
-        <svg class="hurra-icon hurra-icon-cancel-1"><use xlink:href="#hurra-icon-cancel-1"></use></svg>
-      </a>
     </div>
-  </div>
 
   <div class="container">
 
@@ -62,24 +64,23 @@
 
           <ul class="primary-menu-menu">
             <li class="menu-item-has-children">
-              <a routerLink="/logout">Salir de mi cuenta</a>
+              <a routerLink="/login">{{ 'nav.logout' | translate }}</a>
             </li>
             <li class="lang-mobile-menu">
-              <!-- <a href="#"><i class="fa fa-cog"></i> Idioma</a> -->
-              <a href="#">Idioma</a>
-              <ul class="sub-menu">
-                <li>
-                  <a href="#">
-                    <img src="assets/img/mexico.svg" alt="Esp">&nbsp;<span>Español México</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="assets/img/united-states.svg" alt="Eng">&nbsp;<span>Ingles USA</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
+                <a href="javascript:void(0);">{{ 'topheader.selectedlang' | translate }}</a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="javascript:void(0);" (click)="translate.use('es')">
+                      <img src="assets/img/mexico.svg" alt="Esp">&nbsp;<span>{{ 'topheader.esEs' | translate }}</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);" (click)="translate.use('en')">
+                      <img src="assets/img/united-states.svg" alt="Eng">&nbsp;<span>{{ 'topheader.enEn' | translate }}</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
 
           </ul>
 

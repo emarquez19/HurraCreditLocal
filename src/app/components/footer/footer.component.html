@@ -12,13 +12,7 @@
                 </a>
               </div>
     
-              <p>Claritas est etiam processus dynamicus, qui sequitur mutationem
-                consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
-                anteposuerit litterarum formas humanitatis per. Investigationes demonstraverunt lectores
-                legere me lius quod ii legunt saepius.
-              </p>
-              
-              <!-- <a href="02_company.html" class="learn-more">Learn more about hurra</a> -->
+              <p class="declaration">{{ 'footer.context' | translate }}</p>
             </div>
     
           </div>
@@ -26,34 +20,34 @@
           <div class="col-lg-3 col-md-3 col-sm-12 col-sm-offset-0 col-xs-12">
             <div class="widget w-list">
     
-              <h5 class="widget-title">Enlaces de Interés</h5>
+              <h5 class="widget-title">{{ 'footer.titlesection1' | translate }}</h5>
               <ul class="list list--primary">
                 <li>
-                  <a routerLink="/index">Inicio</a>
+                  <a routerLink="/index">{{ 'footer.home' | translate }}</a>
                   <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
                 </li>
                 <li>
-                  <a routerLink="/index">Como funciona</a>
+                  <a routerLink="/index">{{ 'footer.howitworks' | translate }}</a>
                   <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
                 </li>
                 <li>
-                  <a routerLink="/index">Nosotros</a>
+                  <a routerLink="/index">{{ 'footer.about' | translate }}</a>
                   <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
                 </li>
                 <li>
-                  <a routerLink="/index">Empresas</a>
+                  <a routerLink="/index">{{ 'footer.workgroup' | translate }}</a>
                   <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
                 </li>
                 <li>
-                  <a (click)="scrollToElement(contactus)" href="javascript:void(0);">Contacto</a>
+                  <a (click)="scrollToElement(contactus)" href="javascript:void(0);">{{ 'footer.contact' | translate }}</a>
                   <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
                 </li>
                 <li>
-                  <a routerLink="/login">Mi Cuenta</a>
+                  <a routerLink="/login">{{ 'footer.account' | translate }}</a>
                   <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
                 </li>
                 <li>
-                  <a routerLink="/faqs">Preguntas Frecuentes</a>
+                  <a routerLink="/faqs">{{ 'footer.faqs' | translate }}</a>
                   <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
                 </li>
               </ul>
@@ -63,10 +57,8 @@
           <div class="col-lg-4 col-md-4 col-sm-12 col-sm-offset-0 col-xs-12">
             <div class="widget w-contacts">
     
-              <h5 class="widget-title">Importante</h5>
-              <!-- <a href="#" class="btn btn--green full-width btn--with-shadow js-message-popup cd-nav-trigger">
-                Send a Message
-              </a> -->
+              <h5 class="widget-title">{{ 'footer.titlesection2' | translate }}</h5>
+
               <div class="contact-item display-flex mt-minus-20">
                 <img src="assets/img/ssl-logo.png" alt="ssl">
               </div>
@@ -76,8 +68,8 @@
             </div>
             <div class="widget w-follow mt-40">
               <ul>
-                <li style="color: orange; width: 100%">Siguenos en nuestras redes sociales
-    
+                <li style="color: orange; width: 100%">
+                    {{ 'footer.follow' | translate }}
                 </li>
                 <li>
                   <a href="#" class="c-white">
@@ -100,13 +92,13 @@
         </a>
         <div class="container">
           <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <span>
-                    Copyright © 2018 <a routerLink="/index" class="sub-footer__link">HURRA</a>
-                </span>
-  
-                <span>Todos los derechos reservados. Consulta nuestro <a href="#" class="footer-legals js-aviso-popup">aviso de privacidad</a> y nuestros <a href="#" class="footer-legals js-terminos-popup">términos y condiciones</a>.</span>
-            </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <span>
+                      Copyright © 2018 <a routerLink="/index" class="sub-footer__link">HURRA</a>
+                  </span>
+      
+                  <span>{{ 'footer.legalpart1' | translate }} <a href="#" class="footer-legals js-aviso-popup">{{ 'footer.legalpart2' | translate }}</a> {{ 'footer.legalpart3' | translate }} <a href="#" class="footer-legals js-terminos-popup">{{ 'footer.legalpart4' | translate }}</a>.</span>
+              </div>
           </div>
         </div>
       </div>

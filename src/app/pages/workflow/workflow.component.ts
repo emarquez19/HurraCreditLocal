@@ -131,86 +131,6 @@ export class WorkflowComponent implements OnInit {
             return false;
         };
 
-
-        /* -----------------------
-        * COUNTER NUMBERS
-        * --------------------- */
-
-        CRUMINA.counters = function () {
-            if ($counter.length) {
-                $counter.each(function () {
-                    jQuery(this).waypoint(function () {
-                        $(this.element).find('span').countTo();
-                        this.destroy();
-                    }, {offset: '95%'});
-                });
-            }
-        };
-
-        /* -----------------------
-        * COUNTDOWN
-        * --------------------- */
-
-        CRUMINA.countdown = function () {
-            if ($countdown.length) {
-                $countdown.each(function () {
-                    const $countcontainer = $(this);
-                    const $countdate = $countcontainer.data('countdown');
-
-                    $countcontainer.countdown($countdate).on('update.countdown', function(event) {
-                        $countcontainer.html(event.strftime(''
-                            + '<div class="column"><div class="text">DAY%!d</div><div class="timer">%D</div></div><div class="timer">:</div>'
-                            + '<div class="column"><div class="text">HRS</div><div class="timer">%H</div></div><div class="timer">:</div>'
-                            + '<div class="column"><div class="text">MIN</div><div class="timer">%M</div></div><div class="timer">:</div>'
-                            + '<div class="column"><div class="text">SEC</div><div class="timer">%S</div></div>'));
-                        });
-
-                });
-            }
-        };
-
-        /* -----------------------
-        * Progress bars Animation
-        * --------------------- */
-        CRUMINA.progresBars = function () {
-            if ($progress_bar.length) {
-                $progress_bar.each(function () {
-                    jQuery(this).waypoint(function () {
-                        $(this.element).find('.count-animate').countTo();
-                        $(this.element).find('.skills-item-meter-active').fadeTo(300, 1).addClass('skills-animate');
-                        this.destroy();
-                    }, {offset: '90%'});
-                });
-            }
-        };
-
-        /* -----------------------------
-        * Embedded Video in pop up
-        * ---------------------------*/
-        CRUMINA.mediaPopups = function () {
-            $('.js-popup-iframe').magnificPopup({
-                disableOn: 700,
-                type: 'iframe',
-                mainClass: 'mfp-fade',
-                removalDelay: 160,
-                preloader: false,
-
-                fixedContentPos: false
-            });
-            $('.js-zoom-image, .link-image').magnificPopup({
-                type: 'image',
-                removalDelay: 500, // delay removal by X to allow out-animation
-                callbacks: {
-                    beforeOpen: function () {
-                        // just a hack that adds mfp-anim class to markup
-                        this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
-                        this.st.mainClass = 'mfp-zoom-in';
-                    }
-                },
-                closeOnContentClick: true,
-                midClick: true
-            });
-        };
         /* -----------------------------
         * Equal height
         * ---------------------------*/
@@ -604,7 +524,6 @@ export class WorkflowComponent implements OnInit {
         CRUMINA.fixedHeader();
         CRUMINA.initSwiper();
         CRUMINA.equalHeight();
-        CRUMINA.mediaPopups();
 
         // Dom mofifications
         $('.nice-select-holder select').niceSelect();
@@ -612,10 +531,6 @@ export class WorkflowComponent implements OnInit {
         CRUMINA.preloader();
         CRUMINA.layerInit();
 
-        CRUMINA.countdown();
-        // On Scroll animations.
-        CRUMINA.counters();
-        CRUMINA.progresBars();
 
         $(window).on('resize', function(){
             window.requestAnimationFrame( CRUMINA.layerInit);
@@ -797,6 +712,35 @@ export class WorkflowComponent implements OnInit {
             }, 100);
           }
     }, 200);
+  }
+
+  makeBodyScrollable() {
+    $('body').removeClass('noScrolling');
+  }
+
+  goStep2() {
+    $('.work-controltab').click();
+  }
+  goStep3() {
+    $('.home-controltab').click();
+  }
+  goStep4() {
+    $('.credit-controltab').click();
+  }
+  goStep5() {
+    $('.resolution-controltab').click();
+  }
+  goBackStep1() {
+    $('.personal-controltab').click();
+  }
+  goBackStep2() {
+    $('.work-controltab').click();
+  }
+  goBackStep3() {
+    $('.home-controltab').click();
+  }
+  goBackStep4() {
+    $('.credit-controltab').click();
   }
 
 }

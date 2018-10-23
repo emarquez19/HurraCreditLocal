@@ -154,27 +154,25 @@
         <div class="row" id="register-block">
           <div class="col-lg-7 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
               <div class="registry-login-block back-to-login-account">
-                <a href="javascript:void(0)" (click)="flipLoginBoard()">
-                    <i class="fa fa-sing-in"></i> ¿Ya tienes una Cuenta? <b>¡Ingresar ahora!</b>
-                </a>
+                <a href="javascript:void(0)" (click)="flipLoginBoard()" [innerHTML]="'login.registerhiddenlabel' | translate"></a>
               </div>
               <aside aria-label="sidebar" class="sidebar sidebar-right">
                   <aside class="widget w-about items-with-border" style="background: #fff;">
                     <div class="row">
                       <div class="col-lg-8 col-md-8 col-sm-12">
-                          <h6 class="mb-20 mt-30"><span class="fa fa-asterisk c-red"></span> RFC</h6>
-                          <div class="mb-10">
-                              <input name="name" placeholder="Capturalo para autocompletar tus datos." type="text">
+                          <h6 class="mb-20 mt-30"><span class="fa fa-asterisk c-red"></span> {{ 'login.registerformlabel1' | translate }}</h6>
+                          <div  class="form-group mb-10">
+                              <input name="name" placeholder="{{ 'login.registerform1' | translate }}" type="text">
                           </div>
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-12">
-                          <h6 class="mb-20 mt-30"><span class="fa fa-asterisk c-red"></span> Soy</h6>
+                          <h6 class="mb-20 mt-30"><span class="fa fa-asterisk c-red"></span> {{ 'login.registerformlabel2' | translate }}</h6>
                             <div class="radio-tile-group">
                               <div class="input-container">
                                 <input id="man" class="radio-button" type="radio" name="radio" />
                                 <div class="radio-tile">
                                   <img height="24" width="24" src="assets/img/standing-up-man.svg">
-                                  <label for="man" class="radio-tile-label">Hombre</label>
+                                  <label for="man" class="radio-tile-label">{{ 'login.registerformlabel2a' | translate }}</label>
                                 </div>
                               </div>
                           
@@ -182,47 +180,48 @@
                                 <input id="women" class="radio-button" type="radio" name="radio" />
                                 <div class="radio-tile">
                                   <img height="24" width="24" src="assets/img/girl.svg">
-                                  <label for="women" class="radio-tile-label">Mujer</label>
+                                  <label for="women" class="radio-tile-label">{{ 'login.registerformlabel2b' | translate }}</label>
                                 </div>
                               </div>
                           </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h6><span class="fa fa-asterisk c-red"></span> Primer nombre</h6>
-                          <div>
-                              <input name="name" placeholder="¿Cómo te llamas?" type="text">
+                          <h6><span class="fa fa-asterisk c-red"></span> {{ 'login.registerformlabel3' | translate }}</h6>
+                          <div class="form-group">
+                              <input name="name" placeholder="{{ 'login.registerform3' | translate }}" type="text">
                           </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h6>Segundo nombre</h6>
-                          <div>
-                              <input name="name" placeholder="¿Cómo te llamas?" type="text">
+                          <h6>{{ 'login.registerformlabel4' | translate }}</h6>
+                          <div class="form-group">
+                              <input name="name" placeholder="{{ 'login.registerform4' | translate }}" type="text">
                           </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h6><span class="fa fa-asterisk c-red"></span> Primer apellido</h6>
-                          <div>
-                              <input name="name" placeholder="¿Cómo te apellidas?" type="text">
+                          <h6><span class="fa fa-asterisk c-red"></span> {{ 'login.registerformlabel5' | translate }}</h6>
+                          <div class="form-group">
+                              <input name="name" placeholder="{{ 'login.registerform5' | translate }}" type="text">
                           </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h6>Segundo apellido</h6>
-                          <div>
-                              <input name="name" placeholder="¿Cómo te apellidas?" type="text">
+                          <h6>{{ 'login.registerformlabel6' | translate }}</h6>
+                          <div class="form-group">
+                              <input name="name" placeholder="{{ 'login.registerform6' | translate }}" type="text">
                           </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h6><span class="fa fa-asterisk c-red"></span> Fecha de nacimiento</h6>
-                          <div>
-                              <input name="name" placeholder="¿Cuándo naciste?" type="text">
+                          <h6><span class="fa fa-asterisk c-red"></span> {{ 'login.registerformlabel7' | translate }}</h6>
+                          <div class="form-group">
+                              <mat-datepicker-toggle matSuffix [for]="calBirthDayLogin"></mat-datepicker-toggle>
+                              <mat-datepicker #calBirthDayLogin></mat-datepicker>
+                              <input [matDatepicker]="calBirthDayLogin" class="form-control" placeholder="DD/MM/YYYY" mask="00/00/0000">
                           </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h6><span class="fa fa-asterisk c-red"></span> Estado de nacimiento</h6>
-                          <div>
-                              <!-- <input name="name" placeholder="¿Dónde naciste?" type="text"> -->
+                          <h6><span class="fa fa-asterisk c-red"></span> {{ 'login.registerformlabel8' | translate }}</h6>
+                          <div class="form-group">
                               <select>
-                                <option data-display="¿Dónde naciste?">¿Dónde naciste?</option>
+                                <option value="0" selected disabled>{{ 'login.registerform8' | translate }}</option>
                                 <option value="1">Jalisco</option>
                                 <option value="2">Nayarit</option>
                                 <option value="3">Sinaloa</option>
@@ -230,15 +229,15 @@
                           </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h6><span class="fa fa-asterisk c-red"></span> Correo electrónico</h6>
-                          <div>
-                              <input name="name" placeholder="correo@servermail.com" type="email">
+                          <h6><span class="fa fa-asterisk c-red"></span> {{ 'login.registerformlabel9' | translate }}</h6>
+                          <div class="form-group">
+                              <input name="name" placeholder="{{ 'login.registerform9' | translate }}" type="email">
                           </div>
                       </div>
                       <div class="col-lg-6 col-md-6 col-sm-12">
-                          <h6><span class="fa fa-asterisk c-red"></span> Confirmar correo</h6>
-                          <div>
-                              <input name="name" placeholder="correo@servermail.com" type="email">
+                          <h6><span class="fa fa-asterisk c-red"></span> {{ 'login.registerformlabel10' | translate }}</h6>
+                          <div class="form-group">
+                              <input name="name" placeholder="{{ 'login.registerform10' | translate }}" type="email">
                           </div>
                       </div>
                     </div>
@@ -251,7 +250,7 @@
                             <label for="cbtest" class="hurra-checkbox"></label>
                         </li>
                         <li>
-                            Acepto el <a href="#" class="footer-legals js-aviso-popup">aviso de privacidad</a> y los <a href="#" class="footer-legals js-terminos-popup">términos y condiciones</a> de Hurra Credit.
+                            {{ 'login.agreementspart1' | translate }} <a href="#" class="footer-legals js-aviso-popup">{{ 'login.agreementspart2' | translate }}</a> {{ 'login.agreementspart3' | translate }} <a href="#" class="footer-legals js-terminos-popup">{{ 'login.agreementspart4' | translate }}</a> {{ 'login.agreementspart5' | translate }}
                         </li>
                       </ul>
                     </div>
@@ -261,7 +260,7 @@
                         [swal]="{ title: 'Aviso Importante', input: 'number', html: '¡Confirma la creación de tu cuenta, ingresando el código que te enviamos por correo electrónico!', allowEscapeKey: false, allowOutsideClick: false}" 
                         (confirm)="checkMyCode($event)" 
                         (cancel)="handleCancelCodeChecking($event)">
-                            Registrar mi cuenta
+                            {{ 'login.buttonregisternewaccount' | translate }}
                         </a>
                     </div>
 
@@ -270,14 +269,14 @@
           </div>
           <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
             <div class="crumina-module crumina-heading custom-color">
-                <h6 class="heading-sup-title">HURRA CREDIT</h6>
-                <h2 class="h1 heading-title">¿Ya posees una cuenta?</h2>
-                <div class="heading-text"><b>Ingresa rápidamente con el siguiente enlace.</b></div>
+                <h6 class="heading-sup-title">{{ 'login.hurra' | translate }}</h6>
+                <h2 class="h1 heading-title">{{ 'login.registertitle' | translate }}</h2>
+                <div class="heading-text"><b>{{ 'login.registersubtitle' | translate }}</b></div>
             </div>
             <a href="javascript:void(0)" class="btn btn-market btn--with-shadow" (click)="flipLoginBoard()">
                 <svg class="hurra-icon hurra-icon-checked"><use xlink:href="#hurra-icon-checked"></use></svg>
                 <div class="text">
-                    <span class="title">Ingresar con mi cuenta</span>
+                    <span class="title">{{ 'login.buttonregisterlogin' | translate }}</span>
                 </div>
             </a>
           </div>
@@ -312,13 +311,7 @@
               </a>
             </div>
   
-            <p class="declaration">Claritas est etiam processus dynamicus, qui sequitur mutationem
-              consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram,
-              anteposuerit litterarum formas humanitatis per. Investigationes demonstraverunt lectores
-              legere me lius quod ii legunt saepius.
-            </p>
-            
-            <!-- <a href="02_company.html" class="learn-more">Learn more about hurra</a> -->
+            <p class="declaration">{{ 'footer.context' | translate }}</p>
           </div>
   
         </div>
@@ -326,34 +319,34 @@
         <div class="col-lg-3 col-md-3 col-sm-12 col-sm-offset-0 col-xs-12">
           <div class="widget w-list">
   
-            <h5 class="widget-title">Enlaces de Interés</h5>
+            <h5 class="widget-title">{{ 'footer.titlesection1' | translate }}</h5>
             <ul class="list list--primary">
               <li>
-                <a routerLink="/index">Inicio</a>
+                <a routerLink="/index">{{ 'footer.home' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a routerLink="/index">Como funciona</a>
+                <a routerLink="/index">{{ 'footer.howitworks' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a routerLink="/index">Nosotros</a>
+                <a routerLink="/index">{{ 'footer.about' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a routerLink="/index">Empresas</a>
+                <a routerLink="/index">{{ 'footer.workgroup' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a (click)="scrollToElement(contactus)" href="javascript:void(0);">Contacto</a>
+                <a (click)="scrollToElement(contactus)" href="javascript:void(0);">{{ 'footer.contact' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a routerLink="/login">Mi Cuenta</a>
+                <a routerLink="/login">{{ 'footer.account' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
               <li>
-                <a routerLink="/faqs">Preguntas Frecuentes</a>
+                <a routerLink="/faqs">{{ 'footer.faqs' | translate }}</a>
                 <svg class="hurra-icon hurra-icon-arrow-right"><use xlink:href="#hurra-icon-arrow-right"></use></svg>
               </li>
             </ul>
@@ -363,10 +356,7 @@
         <div class="col-lg-4 col-md-4 col-sm-12 col-sm-offset-0 col-xs-12">
           <div class="widget w-contacts">
   
-            <h5 class="widget-title">Importante</h5>
-            <!-- <a href="#" class="btn btn--green full-width btn--with-shadow js-message-popup cd-nav-trigger">
-              Send a Message
-            </a> -->
+            <h5 class="widget-title">{{ 'footer.titlesection2' | translate }}</h5>
             <div class="contact-item display-flex mt-minus-20">
               <img src="assets/img/ssl-logo.png" alt="ssl">
             </div>
@@ -376,8 +366,8 @@
           </div>
           <div class="widget w-follow mt-40">
             <ul>
-              <li style="color: orange; width: 100%">Siguenos en nuestras redes sociales
-  
+              <li style="color: orange; width: 100%">
+                  {{ 'footer.follow' | translate }}
               </li>
               <li>
                 <a href="#" class="c-white">
@@ -404,8 +394,8 @@
               <span>
                   Copyright © 2018 <a routerLink="/index" class="sub-footer__link">HURRA</a>
               </span>
-
-              <span>Todos los derechos reservados. Consulta nuestro <a href="#" class="footer-legals js-aviso-popup">aviso de privacidad</a> y nuestros <a href="#" class="footer-legals js-terminos-popup">términos y condiciones</a>.</span>
+  
+              <span>{{ 'footer.legalpart1' | translate }} <a href="#" class="footer-legals js-aviso-popup">{{ 'footer.legalpart2' | translate }}</a> {{ 'footer.legalpart3' | translate }} <a href="#" class="footer-legals js-terminos-popup">{{ 'footer.legalpart4' | translate }}</a>.</span>
           </div>
         </div>
       </div>
